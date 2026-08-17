@@ -1,10 +1,16 @@
 {
-  "generatedAt": "2026-08-17T06:15:07.300Z",
+  "generatedAt": "2026-08-17T06:34:16.432Z",
   "sources": {
     "douban": {
       "live": 0,
       "cached": 16,
       "unavailable": 4,
+      "total": 20
+    },
+    "mtime": {
+      "live": 11,
+      "cached": 0,
+      "unavailable": 9,
       "total": 20
     },
     "maoyan": {

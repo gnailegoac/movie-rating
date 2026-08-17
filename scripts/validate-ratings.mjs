@@ -1,11 +1,11 @@
 import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
-import { calculateComposite, calculateCoverage } from "../lib/ratings.js";
+import { PLATFORMS, calculateComposite, calculateCoverage } from "../lib/ratings.js";
 
 const path = new URL("../data/movies.json", import.meta.url);
 const dataset = JSON.parse(await readFile(path, "utf8"));
 const ids = new Set();
-const platforms = ["douban", "maoyan", "taopiaopiao"];
+const platforms = PLATFORMS;
 const validStatuses = new Set(["live", "cached", "unavailable"]);
 const validCatalogStatuses = new Set(["current", "archived"]);
 

@@ -6,6 +6,7 @@ on:
     paths:
       - "data/ratings-source.json"
       - "lib/ratings.js"
+      - "lib/movie-match.js"
       - "scripts/sync-ratings.mjs"
       - "scripts/validate-ratings.mjs"
       - ".github/workflows/sync-movie-ratings.yml"

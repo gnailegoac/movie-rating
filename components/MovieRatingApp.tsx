@@ -11,7 +11,7 @@ import {
   normalizeWeights,
 } from "../lib/ratings.js";
 
-type Platform = "douban" | "maoyan" | "taopiaopiao";
+type Platform = "douban" | "mtime" | "maoyan" | "taopiaopiao";
 type Rating = {
   score: number | null;
   checkedAt: string;
@@ -63,6 +63,7 @@ type Weights = Record<Platform, number>;
 
 const PLATFORM_META: Record<Platform, { name: string; short: string; color: string }> = {
   douban: { name: "豆瓣", short: "豆", color: "#2f8b57" },
+  mtime: { name: "时光网", short: "时", color: "#3576a8" },
   maoyan: { name: "猫眼", short: "猫", color: "#ef4452" },
   taopiaopiao: { name: "淘票票", short: "淘", color: "#f28a2d" },
 };
@@ -160,6 +161,7 @@ export default function MovieRatingApp({ dataset }: { dataset: Dataset }) {
       })
       .sort((a, b) => {
         if (sort === "douban") return (b.ratings.douban.score ?? -1) - (a.ratings.douban.score ?? -1);
+        if (sort === "mtime") return (b.ratings.mtime.score ?? -1) - (a.ratings.mtime.score ?? -1);
         if (sort === "date") return b.releaseDateChina.localeCompare(a.releaseDateChina);
         return (b.composite ?? -1) - (a.composite ?? -1);
       });
@@ -192,11 +194,11 @@ export default function MovieRatingApp({ dataset }: { dataset: Dataset }) {
 
       <section className="hero">
         <div>
-          <p className="eyebrow">DOUBAN × MAOYAN × TAOPIAOPIAO</p>
-          <h1>三种口碑，<br />一个<em>透明</em>的分数。</h1>
+          <p className="eyebrow">DOUBAN × MTIME × MAOYAN × TAOPIAOPIAO</p>
+          <h1>四种口碑，<br />一个<em>透明</em>的分数。</h1>
         </div>
         <div className="hero-side">
-          <p>先校准豆瓣、猫眼与淘票票各自的评分分布，再用可调权重呈现中国上映电影的综合口碑。</p>
+          <p>先校准豆瓣、时光网、猫眼与淘票票各自的评分分布，再用可调权重呈现中国上映电影的综合口碑。</p>
           <button className="text-button" type="button" onClick={() => setMethodOpen(true)}>查看评分方法 <span>↗</span></button>
         </div>
       </section>
@@ -227,6 +229,7 @@ export default function MovieRatingApp({ dataset }: { dataset: Dataset }) {
               <select value={sort} onChange={(event) => setSort(event.target.value)}>
                 <option value="composite">综合评分</option>
                 <option value="douban">豆瓣评分</option>
+                <option value="mtime">时光网评分</option>
                 <option value="date">内地上映日期</option>
               </select>
             </label>
@@ -299,7 +302,7 @@ export default function MovieRatingApp({ dataset }: { dataset: Dataset }) {
 
               <div className="reading-note">
                 <div><p>如何理解这个分数</p><h3>{selected.editorial}</h3></div>
-                <div className="spread-stat"><strong>{scoreSpread(selected).toFixed(1)}</strong><span>三平台最高分差</span></div>
+                <div className="spread-stat"><strong>{scoreSpread(selected).toFixed(1)}</strong><span>四平台最高分差</span></div>
               </div>
             </>
           ) : null}
@@ -337,11 +340,11 @@ export default function MovieRatingApp({ dataset }: { dataset: Dataset }) {
             </div>
             <div className="method-rule">
               <strong>为什么需要分布校准？</strong>
-              <p>三个平台的打分松紧不同。校准比较的是一部电影在各自平台分布中的相对位置，而不是直接比较原始数字；当前使用 {dataset.calibration.sampleSize} 部三家均有评分的影片作为共同样本。</p>
+              <p>四个平台的打分松紧不同。校准比较的是一部电影在各自平台分布中的相对位置，而不是直接比较原始数字；当前使用 {dataset.calibration.sampleSize} 部四家均有评分的影片作为共同样本。</p>
             </div>
             <div className="method-rule">
               <strong>缺失评分怎么处理？</strong>
-              <p>不按 0 分计算。系统只使用已有平台，并保持它们原来的相对权重。例如淘票票缺失时，50:25 会归一化为 67%:33%。</p>
+              <p>不按 0 分计算。系统只使用已有平台，并保持它们原来的相对权重。例如淘票票缺失时，40:20:20 会归一化为 50%:25%:25%。</p>
             </div>
             <div className="method-actions">
               <button type="button" className="secondary-button" onClick={() => setWeights({ ...DEFAULT_WEIGHTS } as Weights)}>恢复默认</button>

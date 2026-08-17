@@ -10,7 +10,8 @@ test("builds a GitHub Pages-compatible static entry point", async () => {
   assert.match(html, /<title>映鉴｜中国电影综合评分<\/title>/);
   assert.match(html, /\.\/assets\/[^"']+\.js/);
   assert.match(html, /https:\/\/gnailegoac\.github\.io\/movie-rating\/og\.png/);
-  assert.match(component, /三种口碑/);
+  assert.match(component, /四种口碑/);
+  assert.match(component, /时光网/);
   assert.match(component, /评分拆解/);
   assert.match(component, /正在上映/);
   assert.match(component, /历史归档/);

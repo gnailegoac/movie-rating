@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
-  "snapshotLabel": "三平台公开评分快照",
+  "snapshotLabel": "四平台公开评分快照",
   "generatedAt": "2026-08-17T00:00:00.000Z",
   "isDemo": false,
-  "defaultWeights": { "douban": 50, "maoyan": 25, "taopiaopiao": 25 },
+  "defaultWeights": { "douban": 40, "mtime": 20, "maoyan": 20, "taopiaopiao": 20 },
   "movies": [
     {
       "id": "once-upon-a-time-middle-east-2026",
@@ -19,9 +19,10 @@
       "editorial": "豆瓣更克制，两个购票平台都在高分区；综合分保留了这种显著的平台差异。",
       "palette": ["#4c231b", "#d89743"],
       "motif": "龙",
-      "platformIds": { "douban": "35811064", "maoyan": "1462628", "taopiaopiao": "1425620" },
+      "platformIds": { "douban": "35811064", "mtime": "271884", "maoyan": "1462628", "taopiaopiao": "1425620" },
       "ratings": {
         "douban": { "score": 8.5, "checkedAt": "2026-08-17", "url": "https://movie.douban.com/subject/35811064/", "linkLabel": "豆瓣电影页", "status": "cached", "collectionMode": "public-json" },
+        "mtime": { "score": 8.8, "checkedAt": "2026-08-17", "url": "https://movie.mtime.com/271884/", "linkLabel": "时光网电影页", "status": "cached", "collectionMode": "public-json" },
         "maoyan": { "score": 9.7, "checkedAt": "2026-08-17", "url": "https://www.maoyan.com/films/1462628", "linkLabel": "猫眼电影页", "status": "cached", "collectionMode": "public-json" },
         "taopiaopiao": { "score": 9.9, "checkedAt": "2026-08-17", "url": "https://dianying.taobao.com/showDetail.htm?showId=1425620&n_s=new", "linkLabel": "淘票票电影页", "status": "cached", "collectionMode": "public-page" }
       }
@@ -37,12 +38,13 @@
       "runtimeMinutes": 144,
       "region": "中国大陆",
       "summary": "八位身份各异的凡人在蓬莱意外成团，开起道观帮助百姓，也被卷入一场隐藏在仙境中的阴谋。",
-      "editorial": "三平台都给出正向评价，豆瓣与购票平台仍有约一点多的分差。",
+      "editorial": "已开分平台都给出正向评价，社区与购票平台仍存在一定分差。",
       "palette": ["#166f72", "#f2b842"],
       "motif": "仙",
-      "platformIds": { "douban": "36882191", "maoyan": "1525868", "taopiaopiao": "1525003" },
+      "platformIds": { "douban": "36882191", "mtime": "278385", "maoyan": "1525868", "taopiaopiao": "1525003" },
       "ratings": {
         "douban": { "score": 8.2, "checkedAt": "2026-08-17", "url": "https://movie.douban.com/subject/36882191/", "linkLabel": "豆瓣电影页", "status": "cached", "collectionMode": "public-json" },
+        "mtime": { "score": 8.2, "checkedAt": "2026-08-17", "url": "https://movie.mtime.com/278385/", "linkLabel": "时光网电影页", "status": "cached", "collectionMode": "public-json" },
         "maoyan": { "score": 9.7, "checkedAt": "2026-08-17", "url": "https://www.maoyan.com/films/1525868", "linkLabel": "猫眼电影页", "status": "cached", "collectionMode": "public-json" },
         "taopiaopiao": { "score": 9.6, "checkedAt": "2026-08-17", "url": "https://dianying.taobao.com/showDetail.htm?showId=1525003&n_s=new", "linkLabel": "淘票票电影页", "status": "cached", "collectionMode": "public-page" }
       }
@@ -61,9 +63,10 @@
       "editorial": "购票评分明显更高，默认权重让豆瓣的社区口碑对最终结果发挥更大影响。",
       "palette": ["#334a84", "#ef8f9b"],
       "motif": "岛",
-      "platformIds": { "douban": "35275131", "maoyan": "1375786", "taopiaopiao": "1428844" },
+      "platformIds": { "douban": "35275131", "mtime": "274060", "maoyan": "1375786", "taopiaopiao": "1428844" },
       "ratings": {
         "douban": { "score": 7.9, "checkedAt": "2026-08-17", "url": "https://movie.douban.com/subject/35275131/", "linkLabel": "豆瓣电影页", "status": "cached", "collectionMode": "public-json" },
+        "mtime": { "score": null, "checkedAt": "2026-08-17", "url": "https://movie.mtime.com/274060/", "linkLabel": "时光网电影页", "status": "unavailable", "collectionMode": "public-json" },
         "maoyan": { "score": 9.5, "checkedAt": "2026-08-17", "url": "https://www.maoyan.com/films/1375786", "linkLabel": "猫眼电影页", "status": "cached", "collectionMode": "public-json" },
         "taopiaopiao": { "score": 9.2, "checkedAt": "2026-08-17", "url": "https://dianying.taobao.com/showDetail.htm?showId=1428844&n_s=new", "linkLabel": "淘票票电影页", "status": "cached", "collectionMode": "public-page" }
       }
@@ -79,12 +82,13 @@
       "runtimeMinutes": 106,
       "region": "中国大陆 / 中国香港",
       "summary": "一支身怀功夫的女足球队迎战强敌与赛场之外的压力，尝试用自己的方式完成逆风翻盘。",
-      "editorial": "三个平台分差接近三分，是最能体现权重选择如何改变综合结果的影片之一。",
+      "editorial": "各平台原始分差较大，是最能体现权重选择如何改变综合结果的影片之一。",
       "palette": ["#225d3b", "#e0c040"],
       "motif": "足",
-      "platformIds": { "douban": "36452545", "maoyan": "1500469", "taopiaopiao": "1521067" },
+      "platformIds": { "douban": "36452545", "mtime": "275043", "maoyan": "1500469", "taopiaopiao": "1521067" },
       "ratings": {
         "douban": { "score": 6.4, "checkedAt": "2026-08-17", "url": "https://movie.douban.com/subject/36452545/", "linkLabel": "豆瓣电影页", "status": "cached", "collectionMode": "public-json" },
+        "mtime": { "score": 5.9, "checkedAt": "2026-08-17", "url": "https://movie.mtime.com/275043/", "linkLabel": "时光网电影页", "status": "cached", "collectionMode": "public-json" },
         "maoyan": { "score": 9.4, "checkedAt": "2026-08-17", "url": "https://www.maoyan.com/films/1500469", "linkLabel": "猫眼电影页", "status": "cached", "collectionMode": "public-json" },
         "taopiaopiao": { "score": 9.1, "checkedAt": "2026-08-17", "url": "https://dianying.taobao.com/showDetail.htm?showId=1521067&n_s=new", "linkLabel": "淘票票电影页", "status": "cached", "collectionMode": "public-page" }
       }
@@ -103,9 +107,10 @@
       "editorial": "豆瓣与购票平台评价分化明显，综合分避免直接沿用任何一家平台的结论。",
       "palette": ["#814635", "#e9c35d"],
       "motif": "会",
-      "platformIds": { "douban": "36850814", "maoyan": "1525000", "taopiaopiao": "1577748" },
+      "platformIds": { "douban": "36850814", "mtime": "278119", "maoyan": "1525000", "taopiaopiao": "1577748" },
       "ratings": {
         "douban": { "score": 6.6, "checkedAt": "2026-08-17", "url": "https://movie.douban.com/subject/36850814/", "linkLabel": "豆瓣电影页", "status": "cached", "collectionMode": "public-json" },
+        "mtime": { "score": null, "checkedAt": "2026-08-17", "url": "https://movie.mtime.com/278119/", "linkLabel": "时光网电影页", "status": "unavailable", "collectionMode": "public-json" },
         "maoyan": { "score": 9.5, "checkedAt": "2026-08-17", "url": "https://www.maoyan.com/films/1525000", "linkLabel": "猫眼电影页", "status": "cached", "collectionMode": "public-json" },
         "taopiaopiao": { "score": 9.2, "checkedAt": "2026-08-17", "url": "https://dianying.taobao.com/showDetail.htm?showId=1577748&n_s=new", "linkLabel": "淘票票电影页", "status": "cached", "collectionMode": "public-page" }
       }
@@ -121,12 +126,13 @@
       "runtimeMinutes": 118,
       "region": "中国大陆",
       "summary": "孙子为寻找传闻中的阿公展开调查，一封封往来多年的信件由此揭开阿嬷隐藏半生的情感往事。",
-      "editorial": "三家评分高度一致，是当前榜单中平台分歧最小、综合分最稳定的影片。",
+      "editorial": "已开分平台评价高度一致，是当前榜单中平台分歧较小、综合分较稳定的影片。",
       "palette": ["#6f4b35", "#d8ad77"],
       "motif": "嬷",
-      "platformIds": { "douban": "37116446", "maoyan": "1516982", "taopiaopiao": "1515727" },
+      "platformIds": { "douban": "37116446", "mtime": "278420", "maoyan": "1516982", "taopiaopiao": "1515727" },
       "ratings": {
         "douban": { "score": 9.3, "checkedAt": "2026-08-17", "url": "https://movie.douban.com/subject/37116446/", "linkLabel": "豆瓣电影页", "status": "cached", "collectionMode": "public-json" },
+        "mtime": { "score": 8.5, "checkedAt": "2026-08-17", "url": "https://movie.mtime.com/278420/", "linkLabel": "时光网电影页", "status": "cached", "collectionMode": "public-json" },
         "maoyan": { "score": 9.7, "checkedAt": "2026-08-17", "url": "https://www.maoyan.com/films/1516982", "linkLabel": "猫眼电影页", "status": "cached", "collectionMode": "public-json" },
         "taopiaopiao": { "score": 9.7, "checkedAt": "2026-08-17", "url": "https://dianying.taobao.com/showDetail.htm?showId=1515727&n_s=new", "linkLabel": "淘票票电影页", "status": "cached", "collectionMode": "public-page" }
       }
@@ -145,9 +151,10 @@
       "editorial": "两个购票平台给分较高，豆瓣相对谨慎，默认权重下综合分落在两类评价之间。",
       "palette": ["#263b3f", "#c28d51"],
       "motif": "谍",
-      "platformIds": { "douban": "36812879", "maoyan": "1522873", "taopiaopiao": "1521692" },
+      "platformIds": { "douban": "36812879", "mtime": "276407", "maoyan": "1522873", "taopiaopiao": "1521692" },
       "ratings": {
         "douban": { "score": 7.4, "checkedAt": "2026-08-17", "url": "https://movie.douban.com/subject/36812879/", "linkLabel": "豆瓣电影页", "status": "cached", "collectionMode": "public-json" },
+        "mtime": { "score": null, "checkedAt": "2026-08-17", "url": "https://movie.mtime.com/276407/", "linkLabel": "时光网电影页", "status": "unavailable", "collectionMode": "public-json" },
         "maoyan": { "score": 9.0, "checkedAt": "2026-08-17", "url": "https://www.maoyan.com/films/1522873", "linkLabel": "猫眼电影页", "status": "cached", "collectionMode": "public-json" },
         "taopiaopiao": { "score": 9.5, "checkedAt": "2026-08-17", "url": "https://dianying.taobao.com/showDetail.htm?showId=1521692&n_s=new", "linkLabel": "淘票票电影页", "status": "cached", "collectionMode": "public-page" }
       }
@@ -166,9 +173,10 @@
       "editorial": "社区评分低于两个购票平台，综合分展示了不同评分人群对影片接受度的差别。",
       "palette": ["#41433c", "#d37c42"],
       "motif": "行",
-      "platformIds": { "douban": "36953973", "maoyan": "1531115", "taopiaopiao": "1536250" },
+      "platformIds": { "douban": "36953973", "mtime": "277040", "maoyan": "1531115", "taopiaopiao": "1536250" },
       "ratings": {
         "douban": { "score": 6.7, "checkedAt": "2026-08-17", "url": "https://movie.douban.com/subject/36953973/", "linkLabel": "豆瓣电影页", "status": "cached", "collectionMode": "public-json" },
+        "mtime": { "score": null, "checkedAt": "2026-08-17", "url": "https://movie.mtime.com/277040/", "linkLabel": "时光网电影页", "status": "unavailable", "collectionMode": "public-json" },
         "maoyan": { "score": 8.2, "checkedAt": "2026-08-17", "url": "https://www.maoyan.com/films/1531115", "linkLabel": "猫眼电影页", "status": "cached", "collectionMode": "public-json" },
         "taopiaopiao": { "score": 9.4, "checkedAt": "2026-08-17", "url": "https://dianying.taobao.com/showDetail.htm?showId=1536250&n_s=new", "linkLabel": "淘票票电影页", "status": "cached", "collectionMode": "public-page" }
       }

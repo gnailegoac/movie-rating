@@ -1,11 +1,11 @@
 import { readFile, writeFile } from "node:fs/promises";
-import { calculateCalibration, calculateComposite } from "../lib/ratings.js";
-import { selectDoubanCandidate } from "../lib/movie-match.js";
+import { PLATFORMS, calculateCalibration, calculateComposite } from "../lib/ratings.js";
+import { selectDoubanCandidate, selectMtimeCandidate } from "../lib/movie-match.js";
 
 const sourcePath = new URL("../data/ratings-source.json", import.meta.url);
 const outputPath = new URL("../data/movies.json", import.meta.url);
 const statusPath = new URL("../data/source-status.json", import.meta.url);
-const PLATFORMS = ["douban", "maoyan", "taopiaopiao"];
+const PLATFORM_NAMES = { douban: "豆瓣", mtime: "时光网", maoyan: "猫眼", taopiaopiao: "淘票票" };
 const now = new Date();
 const attemptedAt = now.toISOString();
 const checkedAt = attemptedAt.slice(0, 10);
@@ -137,6 +137,76 @@ async function fetchDouban(movie) {
   };
 }
 
+async function findMtimeMovie(movie) {
+  if (movie.platformIds?.mtime) {
+    return {
+      movieId: String(movie.platformIds.mtime),
+      name: movie.title,
+      nameEn: movie.englishTitle,
+      year: movie.originalYear ?? movie.year,
+    };
+  }
+  const body = new URLSearchParams({
+    keyword: movie.title,
+    pageIndex: "1",
+    pageSize: "20",
+    searchType: "0",
+    locationId: "290",
+    genreTypes: "",
+    area: "",
+    year: "",
+  });
+  const response = await fetchWithRetry("https://front-gateway.mtime.com/mtime-search/search/unionSearch2", {
+    method: "POST",
+    headers: {
+      Accept: "application/json, text/plain, */*",
+      "Content-Type": "application/x-www-form-urlencoded",
+      Origin: "https://film.mtime.com",
+      Referer: "https://film.mtime.com/",
+      "User-Agent": "Mozilla/5.0 (compatible; MovieRatingSnapshot/1.0; +https://github.com/gnailegoac/movie-rating)",
+    },
+    body,
+  });
+  const result = await response.json();
+  const match = selectMtimeCandidate(result?.data?.movies ?? [], movie);
+  if (!match) throw new Error(`No exact Mtime title/year result for ${movie.title}`);
+  return match;
+}
+
+async function fetchMtime(movie) {
+  const match = await findMtimeMovie(movie);
+  const movieId = String(match.movieId);
+  const result = await fetchJson(`https://front-gateway.mtime.com/library/movie/detail.api?tt=${Date.now()}&movieId=${movieId}&locationId=290`, {
+    Accept: "application/json, text/plain, */*",
+    Origin: "https://movie.mtime.com",
+    Referer: "https://movie.mtime.com/",
+    "X-Mtime-Wap-CheckValue": "mtime",
+    "User-Agent": "Mozilla/5.0 (compatible; MovieRatingSnapshot/1.0; +https://github.com/gnailegoac/movie-rating)",
+  });
+  const detail = result?.data?.basic;
+  if (!detail) throw new Error(`No Mtime detail for ${movie.title}`);
+  assertTitle(movie, detail.name, "mtime");
+  const subjectYear = Number(detail.year ?? match.year ?? match.rYear) || null;
+  const expectedYear = Number(movie.originalYear ?? movie.year);
+  if (subjectYear && Number.isFinite(expectedYear) && Math.abs(subjectYear - expectedYear) > 1) {
+    throw new Error(`Mtime year mismatch for ${movie.id}: ${subjectYear}`);
+  }
+
+  const score = validScore(detail.overallRating);
+  return {
+    score,
+    checkedAt,
+    url: `https://movie.mtime.com/${movieId}/`,
+    linkLabel: "时光网电影页",
+    status: score === null ? "unavailable" : "live",
+    collectionMode: "public-json",
+    voteCount: Number(detail.ratingCount) || null,
+    platformId: movieId,
+    subjectYear,
+    lastAttemptAt: attemptedAt,
+  };
+}
+
 async function findMaoyanId(movie) {
   if (movie.platformIds?.maoyan) return String(movie.platformIds.maoyan);
   const query = encodeURIComponent(movie.title);
@@ -243,17 +313,13 @@ async function fetchTaopiaopiao(movie) {
 
 const fetchers = {
   douban: fetchDouban,
+  mtime: fetchMtime,
   maoyan: fetchMaoyan,
   taopiaopiao: fetchTaopiaopiao,
 };
 
 function cachedRating(movie, platform) {
-  return previousById.get(movie.id)?.ratings?.[platform] ?? movie.ratings?.[platform] ?? {
-    score: null,
-    checkedAt: "",
-    url: "#",
-    linkLabel: "暂无来源页",
-  };
+  return previousById.get(movie.id)?.ratings?.[platform] ?? movie.ratings?.[platform] ?? emptyRating(platform, movie);
 }
 
 function fallbackRating(movie, platform, error) {
@@ -270,6 +336,7 @@ function emptyRating(platform, movie) {
   const query = encodeURIComponent(movie.title);
   const urls = {
     douban: `https://search.douban.com/movie/subject_search?search_text=${query}`,
+    mtime: movie.platformIds?.mtime ? `https://movie.mtime.com/${movie.platformIds.mtime}/` : "https://film.mtime.com/",
     maoyan: `https://www.maoyan.com/query?kw=${query}`,
     taopiaopiao: movie.platformIds?.taopiaopiao
       ? `https://dianying.taobao.com/showDetail.htm?showId=${movie.platformIds.taopiaopiao}&n_s=new`
@@ -279,7 +346,7 @@ function emptyRating(platform, movie) {
     score: null,
     checkedAt: "",
     url: urls[platform],
-    linkLabel: `${platform === "douban" ? "豆瓣" : platform === "maoyan" ? "猫眼" : "淘票票"}来源页`,
+    linkLabel: `${PLATFORM_NAMES[platform]}来源页`,
     status: "unavailable",
     collectionMode: platform === "taopiaopiao" ? "public-page" : "public-json",
     lastAttemptAt: attemptedAt,
@@ -358,6 +425,13 @@ async function discoverMovie(card) {
   } catch (error) {
     movie.ratings.douban = fallbackRating(movie, "douban", error);
   }
+  movie.ratings.mtime = emptyRating("mtime", movie);
+  try {
+    movie.ratings.mtime = await fetchMtime(movie);
+    movie.platformIds.mtime = movie.ratings.mtime.platformId;
+  } catch (error) {
+    movie.ratings.mtime = fallbackRating(movie, "mtime", error);
+  }
   movie.editorial = generatedEditorial(movie.ratings);
   await delay(450);
 
@@ -379,7 +453,7 @@ async function refreshMovie(movie) {
       }
       ratings[platform] = fresh;
       if (fresh.platformId) platformIds[platform] = fresh.platformId;
-      if (movie.autoDiscovered && fresh.subjectYear && (platform === "douban" || platform === "maoyan")) {
+      if (movie.autoDiscovered && fresh.subjectYear && ["douban", "mtime", "maoyan"].includes(platform)) {
         originalYear = fresh.subjectYear;
         year = fresh.subjectYear;
       }
@@ -387,6 +461,7 @@ async function refreshMovie(movie) {
       ratings[platform] = fallbackRating(movie, platform, error);
     }
     if (platform === "douban") await delay(450);
+    if (platform === "mtime") await delay(120);
   }
   return {
     ...movie,
@@ -431,7 +506,7 @@ function mergeFeed(base, feed) {
 let dataset = {
   ...source,
   generatedAt: attemptedAt,
-  snapshotLabel: "三平台公开评分快照",
+  snapshotLabel: "四平台公开评分快照",
   isDemo: false,
   movies: [],
 };
@@ -447,6 +522,7 @@ const catalogById = new Map(source.movies.map((movie) => {
   const prior = previousById.get(movie.id);
   return [movie.id, {
     ...movie,
+    platformIds: { ...movie.platformIds, ...prior?.platformIds },
     catalogStatus: prior?.catalogStatus ?? movie.catalogStatus ?? "current",
     autoDiscovered: false,
     firstSeenInTheatersAt: prior?.firstSeenInTheatersAt,
