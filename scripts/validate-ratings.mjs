@@ -10,6 +10,10 @@ const validStatuses = new Set(["live", "cached", "unavailable"]);
 
 assert.equal(dataset.schemaVersion, 1, "Unsupported dataset schema");
 assert.ok(Array.isArray(dataset.movies) && dataset.movies.length > 0, "No movies found");
+assert.equal(dataset.calibration?.method, "z-score", "Unexpected calibration method");
+assert.equal(dataset.calibration?.sampleMode, "complete-cases", "Calibration must use comparable films");
+assert.ok(dataset.calibration?.sampleSize >= 5, "Calibration needs at least five complete films");
+assert.equal(dataset.calibration?.enabled, true, "Distribution calibration is not active");
 
 for (const movie of dataset.movies) {
   assert.ok(movie.id && !ids.has(movie.id), `Duplicate or missing id: ${movie.id}`);
@@ -23,13 +27,17 @@ for (const movie of dataset.movies) {
     assert.match(rating.url, /^https:\/\//, `${movie.id}.${platform} source URL must use HTTPS`);
     if (rating.score !== null) assert.match(rating.checkedAt, /^\d{4}-\d{2}-\d{2}$/, `${movie.id}.${platform} checkedAt is invalid`);
   }
-  const score = calculateComposite(movie.ratings, dataset.defaultWeights);
+  const score = calculateComposite(movie.ratings, dataset.defaultWeights, dataset.calibration);
   assert.equal(movie.cachedComposite, score, `${movie.id} cached score is stale`);
   assert.ok(score === null || (score >= 0 && score <= 10), `${movie.id} score is out of range`);
   assert.ok(calculateCoverage(movie.ratings, dataset.defaultWeights) > 0, `${movie.id} has no score coverage`);
 }
 
 for (const platform of platforms) {
+  const stats = dataset.calibration.platforms?.[platform];
+  assert.equal(stats?.count, dataset.calibration.sampleSize, `${platform} calibration sample count is inconsistent`);
+  assert.ok(stats?.mean > 0 && stats.mean <= 10, `${platform} calibration mean is invalid`);
+  assert.ok(stats?.standardDeviation >= 0.05, `${platform} calibration spread is too small`);
   const status = dataset.sourceStatus?.[platform];
   assert.ok(status, `Missing source status for ${platform}`);
   assert.equal(status.live + status.cached + status.unavailable, dataset.movies.length, `${platform} status totals do not reconcile`);

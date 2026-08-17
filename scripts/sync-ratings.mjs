@@ -1,5 +1,5 @@
 import { readFile, writeFile } from "node:fs/promises";
-import { calculateComposite } from "../lib/ratings.js";
+import { calculateCalibration, calculateComposite } from "../lib/ratings.js";
 
 const sourcePath = new URL("../data/ratings-source.json", import.meta.url);
 const outputPath = new URL("../data/movies.json", import.meta.url);
@@ -281,6 +281,7 @@ if (!Array.isArray(dataset.movies) || dataset.movies.length === 0) {
 }
 
 const seen = new Set();
+const calibration = calculateCalibration(dataset.movies);
 const movies = dataset.movies.map((movie) => {
   if (!movie.id || seen.has(movie.id)) throw new Error(`Duplicate or missing movie id: ${movie.id}`);
   seen.add(movie.id);
@@ -290,7 +291,7 @@ const movies = dataset.movies.map((movie) => {
   }
   return {
     ...movie,
-    cachedComposite: calculateComposite(movie.ratings, dataset.defaultWeights),
+    cachedComposite: calculateComposite(movie.ratings, dataset.defaultWeights, calibration),
   };
 });
 
@@ -304,7 +305,7 @@ const sourceStatus = Object.fromEntries(PLATFORMS.map((platform) => {
   }];
 }));
 
-dataset = { ...dataset, sourceStatus, movies };
+dataset = { ...dataset, calibration, sourceStatus, movies };
 await writeFile(outputPath, `${JSON.stringify(dataset, null, 2)}\n`, "utf8");
 await writeFile(statusPath, `${JSON.stringify({ generatedAt: attemptedAt, sources: sourceStatus }, null, 2)}\n`, "utf8");
 

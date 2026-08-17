@@ -7,6 +7,7 @@ import {
   calculateComposite,
   calculateCoverage,
   effectiveWeights,
+  normalizePlatformScore,
   normalizeWeights,
 } from "../lib/ratings.js";
 
@@ -42,6 +43,14 @@ type Dataset = {
   snapshotLabel: string;
   isDemo: boolean;
   defaultWeights: Record<Platform, number>;
+  calibration: {
+    method: "z-score";
+    enabled: boolean;
+    sampleSize: number;
+    targetMean: number;
+    targetStandardDeviation: number;
+    platforms: Record<Platform, { count: number; mean: number; standardDeviation: number }>;
+  };
   sourceStatus?: Record<Platform, { live: number; cached: number; unavailable: number; total: number }>;
   movies: Movie[];
 };
@@ -92,7 +101,7 @@ function Poster({ movie, compact = false }: { movie: Movie; compact?: boolean })
   );
 }
 
-function ScoreRing({ score, label = "映鉴综合分" }: { score: number | null; label?: string }) {
+function ScoreRing({ score, label = "映鉴校准分" }: { score: number | null; label?: string }) {
   const degree = score === null ? 0 : score * 36;
   return (
     <div className="score-ring" style={{ "--score-degree": `${degree}deg` } as React.CSSProperties}>
@@ -129,7 +138,7 @@ export default function MovieRatingApp({ dataset }: { dataset: Dataset }) {
   const ranked = useMemo(() => {
     const search = query.trim().toLocaleLowerCase("zh-CN");
     return dataset.movies
-      .map((movie) => ({ ...movie, composite: calculateComposite(movie.ratings, weights) as number | null }))
+      .map((movie) => ({ ...movie, composite: calculateComposite(movie.ratings, weights, dataset.calibration) as number | null }))
       .filter((movie) => {
         const haystack = [movie.title, movie.englishTitle, movie.director, movie.region, ...movie.genres]
           .join(" ")
@@ -145,7 +154,7 @@ export default function MovieRatingApp({ dataset }: { dataset: Dataset }) {
         if (sort === "date") return b.releaseDateChina.localeCompare(a.releaseDateChina);
         return (b.composite ?? -1) - (a.composite ?? -1);
       });
-  }, [dataset.movies, filter, query, sort, weights]);
+  }, [dataset.calibration, dataset.movies, filter, query, sort, weights]);
 
   const selected = ranked.find((movie) => movie.id === selectedId) ?? ranked[0] ?? null;
   const selectedApplied = selected
@@ -178,7 +187,7 @@ export default function MovieRatingApp({ dataset }: { dataset: Dataset }) {
           <h1>三种口碑，<br />一个<em>透明</em>的分数。</h1>
         </div>
         <div className="hero-side">
-          <p>聚合豆瓣、猫眼与淘票票评分，用可调权重呈现中国上映电影的综合口碑。</p>
+          <p>先校准豆瓣、猫眼与淘票票各自的评分分布，再用可调权重呈现中国上映电影的综合口碑。</p>
           <button className="text-button" type="button" onClick={() => setMethodOpen(true)}>查看评分方法 <span>↗</span></button>
         </div>
       </section>
@@ -250,15 +259,17 @@ export default function MovieRatingApp({ dataset }: { dataset: Dataset }) {
               </div>
 
               <div className="score-breakdown">
-                <div className="section-heading"><div><p>评分拆解</p><h3>每一分，都能追溯</h3></div><span>覆盖度 {calculateCoverage(selected.ratings, weights)}%</span></div>
+                <div className="section-heading"><div><p>评分拆解</p><h3>原始分可追溯，校准分可比较</h3></div><span>共同样本 {dataset.calibration.sampleSize} 部 · 覆盖度 {calculateCoverage(selected.ratings, weights)}%</span></div>
                 <div className="source-scores">
                   {PLATFORMS.map((platform) => {
                     const rating = selected.ratings[platform];
                     const meta = PLATFORM_META[platform];
+                    const calibratedScore = normalizePlatformScore(rating.score, platform, dataset.calibration);
                     return (
                       <article className="source-score-card" key={platform}>
                         <div className="source-name"><span style={{ background: meta.color }}>{meta.short}</span><strong>{meta.name}</strong><em>有效权重 {Math.round(selectedApplied[platform] * 100)}%</em></div>
                         <div className={`platform-score ${rating.score === null ? "is-missing" : ""}`}>{rating.score?.toFixed(1) ?? "暂无"}</div>
+                        <div className="calibrated-score">校准后 {calibratedScore?.toFixed(1) ?? "—"}</div>
                         <div className="score-track"><i style={{ width: `${(rating.score ?? 0) * 10}%`, background: meta.color }} /></div>
                         <div className={`source-freshness is-${rating.status}`}><span>{ratingStatusLabel(rating)}</span><time>{rating.checkedAt || "—"}</time></div>
                         <a href={rating.url} target="_blank" rel="noreferrer">{rating.linkLabel} <span>↗</span></a>
@@ -267,10 +278,10 @@ export default function MovieRatingApp({ dataset }: { dataset: Dataset }) {
                   })}
                 </div>
                 <div className="formula-strip">
-                  <span className="formula-label">本片公式</span>
+                  <span className="formula-label">校准分公式</span>
                   <div className="formula-expression">
                     {PLATFORMS.filter((platform) => selected.ratings[platform].score !== null).map((platform, index, available) => (
-                      <span key={platform}>{selected.ratings[platform].score?.toFixed(1)} × {Math.round(selectedApplied[platform] * 100)}% {index < available.length - 1 ? <b>＋</b> : null}</span>
+                      <span key={platform}>{normalizePlatformScore(selected.ratings[platform].score, platform, dataset.calibration)?.toFixed(1)} × {Math.round(selectedApplied[platform] * 100)}% {index < available.length - 1 ? <b>＋</b> : null}</span>
                     ))}
                     <strong>＝ {selected.composite?.toFixed(1)}</strong>
                   </div>
@@ -298,7 +309,12 @@ export default function MovieRatingApp({ dataset }: { dataset: Dataset }) {
             <button className="modal-close" type="button" aria-label="关闭评分方法" onClick={() => setMethodOpen(false)}>×</button>
             <p className="eyebrow">TRANSPARENT BY DESIGN</p>
             <h2 id="method-title">评分方法</h2>
-            <p className="method-intro">默认更重视豆瓣的长期社区口碑，同时保留猫眼和淘票票的购票观众反馈。拖动权重，榜单与本片评分会立即重算。</p>
+            <p className="method-intro">系统先用共同影片样本计算每个平台的均值和标准差，将原始分映射到均值 7.5、标准差 1.0 的共同尺度，再按权重合成。这样猫眼或淘票票的 9.5 不会被直接当成豆瓣的 9.5。拖动权重后，榜单会立即重算。</p>
+            <div className="calibration-stats" aria-label="当前平台校准参数">
+              {PLATFORMS.map((platform) => (
+                <span key={platform}><i style={{ background: PLATFORM_META[platform].color }} />{PLATFORM_META[platform].name}<strong>均值 {dataset.calibration.platforms[platform].mean.toFixed(2)}</strong><small>标准差 {dataset.calibration.platforms[platform].standardDeviation.toFixed(2)}</small></span>
+              ))}
+            </div>
             <div className="weight-controls">
               {PLATFORMS.map((platform) => {
                 const meta = PLATFORM_META[platform];
@@ -309,6 +325,10 @@ export default function MovieRatingApp({ dataset }: { dataset: Dataset }) {
                   </label>
                 );
               })}
+            </div>
+            <div className="method-rule">
+              <strong>为什么需要分布校准？</strong>
+              <p>三个平台的打分松紧不同。校准比较的是一部电影在各自平台分布中的相对位置，而不是直接比较原始数字；当前使用 {dataset.calibration.sampleSize} 部三家均有评分的影片作为共同样本。</p>
             </div>
             <div className="method-rule">
               <strong>缺失评分怎么处理？</strong>
