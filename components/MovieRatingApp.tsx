@@ -344,7 +344,7 @@ export default function MovieRatingApp({ dataset }: { dataset: Dataset }) {
             </div>
             <div className="method-rule">
               <strong>缺失评分怎么处理？</strong>
-              <p>不按 0 分计算。系统只使用已有平台，并保持它们原来的相对权重。例如淘票票缺失时，40:20:20 会归一化为 50%:25%:25%。</p>
+              <p>不按 0 分计算。系统只使用已有平台，并保持它们原来的相对权重。例如淘票票缺失时，25:25:25 会归一化为约 33%:33%:33%。</p>
             </div>
             <div className="method-actions">
               <button type="button" className="secondary-button" onClick={() => setWeights({ ...DEFAULT_WEIGHTS } as Weights)}>恢复默认</button>

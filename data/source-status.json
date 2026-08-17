@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-08-17T06:37:05.996Z",
+  "generatedAt": "2026-08-17T06:45:49.886Z",
   "sources": {
     "douban": {
-      "live": 8,
-      "cached": 8,
+      "live": 0,
+      "cached": 16,
       "unavailable": 4,
       "total": 20
     },

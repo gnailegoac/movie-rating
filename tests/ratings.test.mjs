@@ -16,20 +16,20 @@ const ratings = {
   taopiaopiao: { score: 10 },
 };
 
-test("uses the default 40/20/20/20 weighting", () => {
-  assert.equal(calculateComposite(ratings), 8.7);
+test("uses the default 25/25/25/25 weighting", () => {
+  assert.equal(calculateComposite(ratings), 8.9);
 });
 
 test("renormalizes remaining weights when a platform score is missing", () => {
   const partial = { ...ratings, taopiaopiao: { score: null } };
-  assert.deepEqual(effectiveWeights(partial), { douban: .5, mtime: .25, maoyan: .25, taopiaopiao: 0 });
-  assert.equal(calculateComposite(partial), 8.4);
-  assert.equal(calculateCoverage(partial), 80);
+  assert.deepEqual(effectiveWeights(partial), { douban: 1 / 3, mtime: 1 / 3, maoyan: 1 / 3, taopiaopiao: 0 });
+  assert.equal(calculateComposite(partial), 8.5);
+  assert.equal(calculateCoverage(partial), 75);
 });
 
 test("normalizes user supplied weights and handles all-zero input", () => {
   assert.deepEqual(normalizeWeights({ douban: 20, mtime: 10, maoyan: 30, taopiaopiao: 40 }), { douban: .2, mtime: .1, maoyan: .3, taopiaopiao: .4 });
-  assert.deepEqual(normalizeWeights({ douban: 0, mtime: 0, maoyan: 0, taopiaopiao: 0 }), { douban: .4, mtime: .2, maoyan: .2, taopiaopiao: .2 });
+  assert.deepEqual(normalizeWeights({ douban: 0, mtime: 0, maoyan: 0, taopiaopiao: 0 }), { douban: .25, mtime: .25, maoyan: .25, taopiaopiao: .25 });
 });
 
 test("rebalances compressed platform scales before weighting", () => {

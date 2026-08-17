@@ -3,7 +3,7 @@
   "snapshotLabel": "四平台公开评分快照",
   "generatedAt": "2026-08-17T00:00:00.000Z",
   "isDemo": false,
-  "defaultWeights": { "douban": 40, "mtime": 20, "maoyan": 20, "taopiaopiao": 20 },
+  "defaultWeights": { "douban": 25, "mtime": 25, "maoyan": 25, "taopiaopiao": 25 },
   "movies": [
     {
       "id": "once-upon-a-time-middle-east-2026",
