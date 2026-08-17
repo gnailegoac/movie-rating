@@ -51,6 +51,22 @@ test("rebalances compressed platform scales before weighting", () => {
   assert.equal(calculateComposite(equivalentPositions, undefined, calibration), 8.5);
 });
 
+test("caps extreme z-scores before mapping them to the common scale", () => {
+  const calibration = {
+    enabled: true,
+    targetMean: 7.5,
+    targetStandardDeviation: 1,
+    zLimit: 2.5,
+    platforms: {
+      douban: { mean: 7.5, standardDeviation: 1 },
+      maoyan: { mean: 9.3, standardDeviation: 0.1 },
+      taopiaopiao: { mean: 9.4, standardDeviation: 0.1 },
+    },
+  };
+  assert.equal(normalizePlatformScore(8, "maoyan", calibration), 5);
+  assert.equal(normalizePlatformScore(10, "maoyan", calibration), 10);
+});
+
 test("only enables calibration with a sufficient common sample", () => {
   const repeated = Array.from({ length: 5 }, (_, index) => ({
     ratings: {

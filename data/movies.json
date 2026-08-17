@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "snapshotLabel": "三平台公开评分快照",
-  "generatedAt": "2026-08-17T05:24:41.726Z",
+  "generatedAt": "2026-08-17T05:38:55.776Z",
   "isDemo": false,
   "defaultWeights": {
     "douban": 50,
@@ -10,66 +10,476 @@
   },
   "movies": [
     {
-      "id": "once-upon-a-time-middle-east-2026",
-      "title": "欢迎来龙餐馆",
-      "englishTitle": "Once Upon a Time in the Middle East",
-      "year": 2026,
-      "releaseDateChina": "2026-08-11",
-      "director": "文牧野",
-      "genres": [
-        "剧情",
-        "战争"
-      ],
-      "runtimeMinutes": 140,
-      "region": "中国大陆",
-      "summary": "东北大厨徐福远赴中东谋生，在与伙伴经营中餐馆的过程中遭遇战火，也努力守住日常生活与人与人之间的善意。",
-      "editorial": "豆瓣更克制，两个购票平台都在高分区；综合分保留了这种显著的平台差异。",
-      "palette": [
-        "#4c231b",
-        "#d89743"
-      ],
-      "motif": "龙",
+      "id": "taopiaopiao-77409",
+      "title": "恐怖游轮",
+      "year": 2009,
       "platformIds": {
-        "douban": "35811064",
-        "maoyan": "1462628",
-        "taopiaopiao": "1425620"
+        "maoyan": "38270",
+        "taopiaopiao": "77409"
       },
+      "englishTitle": "Triangle",
+      "releaseDateChina": "2026-07-17",
+      "director": "克里斯托弗·史密斯",
+      "genres": [
+        "悬疑",
+        "惊悚"
+      ],
+      "runtimeMinutes": 99,
+      "region": "英国,澳大利亚",
+      "summary": "恐怖游轮于 2026-07-17 在中国内地上映，由克里斯托弗·史密斯执导，类型包括悬疑、惊悚。",
+      "editorial": "各平台原始评分接近，分布校准后综合评价相对稳定。",
+      "palette": [
+        "#214e47",
+        "#dc7759"
+      ],
+      "motif": "恐",
+      "catalogStatus": "current",
+      "autoDiscovered": true,
+      "firstSeenInTheatersAt": "2026-08-17",
+      "lastSeenInTheatersAt": "2026-08-17",
       "ratings": {
         "douban": {
-          "score": 8.5,
-          "checkedAt": "2026-08-17",
-          "url": "https://movie.douban.com/subject/35811064/",
-          "linkLabel": "豆瓣电影页",
-          "status": "live",
+          "score": null,
+          "checkedAt": "",
+          "url": "https://search.douban.com/movie/subject_search?search_text=%E6%81%90%E6%80%96%E6%B8%B8%E8%BD%AE",
+          "linkLabel": "豆瓣来源页",
+          "status": "unavailable",
           "collectionMode": "public-json",
-          "voteCount": 361347,
-          "platformId": "35811064",
-          "lastAttemptAt": "2026-08-17T05:24:41.726Z"
+          "lastAttemptAt": "2026-08-17T05:38:55.776Z",
+          "statusReason": "HTTP 403"
         },
         "maoyan": {
-          "score": 9.7,
+          "score": 8.5,
           "checkedAt": "2026-08-17",
-          "url": "https://www.maoyan.com/films/1462628",
+          "url": "https://www.maoyan.com/films/38270",
           "linkLabel": "猫眼电影页",
           "status": "live",
           "collectionMode": "public-json",
-          "voteCount": 190081,
-          "platformId": "1462628",
-          "lastAttemptAt": "2026-08-17T05:24:41.726Z"
+          "voteCount": 11650,
+          "platformId": "38270",
+          "subjectYear": 2009,
+          "lastAttemptAt": "2026-08-17T05:38:55.776Z"
         },
         "taopiaopiao": {
-          "score": 9.9,
+          "score": 8.8,
           "checkedAt": "2026-08-17",
-          "url": "https://dianying.taobao.com/showDetail.htm?showId=1425620&n_s=new",
+          "url": "https://dianying.taobao.com/showDetail.htm?showId=77409&n_s=new",
           "linkLabel": "淘票票电影页",
           "status": "live",
           "collectionMode": "public-page",
           "voteCount": null,
-          "platformId": "1425620",
-          "lastAttemptAt": "2026-08-17T05:24:41.726Z"
+          "platformId": "77409",
+          "lastAttemptAt": "2026-08-17T05:38:55.776Z"
         }
       },
-      "cachedComposite": 8.6
+      "cachedComposite": 6.4,
+      "originalYear": 2009
+    },
+    {
+      "id": "taopiaopiao-1554055",
+      "title": "四渡",
+      "year": 2026,
+      "platformIds": {
+        "maoyan": "1545588",
+        "taopiaopiao": "1554055",
+        "douban": "37191746"
+      },
+      "englishTitle": "CROSSING",
+      "releaseDateChina": "2026-06-26",
+      "director": "徐展雄",
+      "genres": [
+        "剧情",
+        "战争"
+      ],
+      "runtimeMinutes": 122,
+      "region": "中国大陆",
+      "summary": "四渡于 2026-06-26 在中国内地上映，由徐展雄执导，类型包括剧情、战争。",
+      "editorial": "各平台原始评分接近，分布校准后综合评价相对稳定。",
+      "palette": [
+        "#604128",
+        "#d7b66b"
+      ],
+      "motif": "四",
+      "catalogStatus": "current",
+      "autoDiscovered": true,
+      "firstSeenInTheatersAt": "2026-08-17",
+      "lastSeenInTheatersAt": "2026-08-17",
+      "ratings": {
+        "douban": {
+          "score": null,
+          "checkedAt": "2026-08-17",
+          "url": "https://movie.douban.com/subject/37191746/",
+          "linkLabel": "豆瓣电影页",
+          "status": "unavailable",
+          "collectionMode": "public-json",
+          "voteCount": null,
+          "platformId": "37191746",
+          "lastAttemptAt": "2026-08-17T05:38:55.776Z",
+          "statusReason": "HTTP 403"
+        },
+        "maoyan": {
+          "score": 9.1,
+          "checkedAt": "2026-08-17",
+          "url": "https://www.maoyan.com/films/1545588",
+          "linkLabel": "猫眼电影页",
+          "status": "live",
+          "collectionMode": "public-json",
+          "voteCount": 44604,
+          "platformId": "1545588",
+          "subjectYear": 2026,
+          "lastAttemptAt": "2026-08-17T05:38:55.776Z"
+        },
+        "taopiaopiao": {
+          "score": 9.1,
+          "checkedAt": "2026-08-17",
+          "url": "https://dianying.taobao.com/showDetail.htm?showId=1554055&n_s=new",
+          "linkLabel": "淘票票电影页",
+          "status": "live",
+          "collectionMode": "public-page",
+          "voteCount": null,
+          "platformId": "1554055",
+          "lastAttemptAt": "2026-08-17T05:38:55.776Z"
+        }
+      },
+      "cachedComposite": 7.2,
+      "originalYear": 2026
+    },
+    {
+      "id": "taopiaopiao-1520877",
+      "title": "汪汪队立大功大电影3：勇闯恐龙岛",
+      "year": 2026,
+      "platformIds": {
+        "maoyan": "1521734",
+        "taopiaopiao": "1520877"
+      },
+      "englishTitle": "PAW PATROL: THE DINO MOVIE",
+      "releaseDateChina": "2026-08-08",
+      "director": "卡尔·布伦克尔",
+      "genres": [
+        "动画",
+        "喜剧",
+        "冒险"
+      ],
+      "runtimeMinutes": 89,
+      "region": "美国,加拿大",
+      "summary": "汪汪队立大功大电影3：勇闯恐龙岛于 2026-08-08 在中国内地上映，由卡尔·布伦克尔执导，类型包括动画、喜剧、冒险。",
+      "editorial": "各平台原始评分接近，分布校准后综合评价相对稳定。",
+      "palette": [
+        "#214e47",
+        "#dc7759"
+      ],
+      "motif": "汪",
+      "catalogStatus": "current",
+      "autoDiscovered": true,
+      "firstSeenInTheatersAt": "2026-08-17",
+      "lastSeenInTheatersAt": "2026-08-17",
+      "ratings": {
+        "douban": {
+          "score": null,
+          "checkedAt": "",
+          "url": "https://search.douban.com/movie/subject_search?search_text=%E6%B1%AA%E6%B1%AA%E9%98%9F%E7%AB%8B%E5%A4%A7%E5%8A%9F%E5%A4%A7%E7%94%B5%E5%BD%B13%EF%BC%9A%E5%8B%87%E9%97%AF%E6%81%90%E9%BE%99%E5%B2%9B",
+          "linkLabel": "豆瓣来源页",
+          "status": "unavailable",
+          "collectionMode": "public-json",
+          "lastAttemptAt": "2026-08-17T05:38:55.776Z",
+          "statusReason": "HTTP 403"
+        },
+        "maoyan": {
+          "score": 9.5,
+          "checkedAt": "2026-08-17",
+          "url": "https://www.maoyan.com/films/1521734",
+          "linkLabel": "猫眼电影页",
+          "status": "live",
+          "collectionMode": "public-json",
+          "voteCount": 5402,
+          "platformId": "1521734",
+          "subjectYear": 2026,
+          "lastAttemptAt": "2026-08-17T05:38:55.776Z"
+        },
+        "taopiaopiao": {
+          "score": 9.3,
+          "checkedAt": "2026-08-17",
+          "url": "https://dianying.taobao.com/showDetail.htm?showId=1520877&n_s=new",
+          "linkLabel": "淘票票电影页",
+          "status": "live",
+          "collectionMode": "public-page",
+          "voteCount": null,
+          "platformId": "1520877",
+          "lastAttemptAt": "2026-08-17T05:38:55.776Z"
+        }
+      },
+      "cachedComposite": 7.8,
+      "originalYear": 2026
+    },
+    {
+      "id": "taopiaopiao-1537470",
+      "title": "想你了",
+      "year": 2026,
+      "platformIds": {
+        "maoyan": "1531493",
+        "taopiaopiao": "1537470"
+      },
+      "englishTitle": "A Part of Me",
+      "releaseDateChina": "2026-07-17",
+      "director": "麻赢心",
+      "genres": [
+        "剧情",
+        "友情"
+      ],
+      "runtimeMinutes": 107,
+      "region": "中国大陆",
+      "summary": "想你了于 2026-07-17 在中国内地上映，由麻赢心执导，类型包括剧情、友情。",
+      "editorial": "各平台原始评分接近，分布校准后综合评价相对稳定。",
+      "palette": [
+        "#3f3562",
+        "#78b9ae"
+      ],
+      "motif": "想",
+      "catalogStatus": "current",
+      "autoDiscovered": true,
+      "firstSeenInTheatersAt": "2026-08-17",
+      "lastSeenInTheatersAt": "2026-08-17",
+      "ratings": {
+        "douban": {
+          "score": null,
+          "checkedAt": "",
+          "url": "https://search.douban.com/movie/subject_search?search_text=%E6%83%B3%E4%BD%A0%E4%BA%86",
+          "linkLabel": "豆瓣来源页",
+          "status": "unavailable",
+          "collectionMode": "public-json",
+          "lastAttemptAt": "2026-08-17T05:38:55.776Z",
+          "statusReason": "HTTP 403"
+        },
+        "maoyan": {
+          "score": 8.8,
+          "checkedAt": "2026-08-17",
+          "url": "https://www.maoyan.com/films/1531493",
+          "linkLabel": "猫眼电影页",
+          "status": "live",
+          "collectionMode": "public-json",
+          "voteCount": 54663,
+          "platformId": "1531493",
+          "subjectYear": null,
+          "lastAttemptAt": "2026-08-17T05:38:55.776Z"
+        },
+        "taopiaopiao": {
+          "score": 8.6,
+          "checkedAt": "2026-08-17",
+          "url": "https://dianying.taobao.com/showDetail.htm?showId=1537470&n_s=new",
+          "linkLabel": "淘票票电影页",
+          "status": "live",
+          "collectionMode": "public-page",
+          "voteCount": null,
+          "platformId": "1537470",
+          "lastAttemptAt": "2026-08-17T05:38:55.776Z"
+        }
+      },
+      "cachedComposite": 6.5
+    },
+    {
+      "id": "taopiaopiao-1591520",
+      "title": "小黄人与大怪兽",
+      "year": 2026,
+      "platformIds": {
+        "maoyan": "1528803",
+        "taopiaopiao": "1591520"
+      },
+      "englishTitle": "Minions & Monsters",
+      "releaseDateChina": "2026-07-03",
+      "director": "皮埃尔·柯芬",
+      "genres": [
+        "动画",
+        "喜剧",
+        "科幻",
+        "冒险"
+      ],
+      "runtimeMinutes": 90,
+      "region": "美国",
+      "summary": "小黄人与大怪兽于 2026-07-03 在中国内地上映，由皮埃尔·柯芬执导，类型包括动画、喜剧、科幻。",
+      "editorial": "各平台原始评分接近，分布校准后综合评价相对稳定。",
+      "palette": [
+        "#28436d",
+        "#dc8f9e"
+      ],
+      "motif": "小",
+      "catalogStatus": "current",
+      "autoDiscovered": true,
+      "firstSeenInTheatersAt": "2026-08-17",
+      "lastSeenInTheatersAt": "2026-08-17",
+      "ratings": {
+        "douban": {
+          "score": null,
+          "checkedAt": "",
+          "url": "https://search.douban.com/movie/subject_search?search_text=%E5%B0%8F%E9%BB%84%E4%BA%BA%E4%B8%8E%E5%A4%A7%E6%80%AA%E5%85%BD",
+          "linkLabel": "豆瓣来源页",
+          "status": "unavailable",
+          "collectionMode": "public-json",
+          "lastAttemptAt": "2026-08-17T05:38:55.776Z",
+          "statusReason": "HTTP 403"
+        },
+        "maoyan": {
+          "score": 8.9,
+          "checkedAt": "2026-08-17",
+          "url": "https://www.maoyan.com/films/1528803",
+          "linkLabel": "猫眼电影页",
+          "status": "live",
+          "collectionMode": "public-json",
+          "voteCount": 30182,
+          "platformId": "1528803",
+          "subjectYear": 2026,
+          "lastAttemptAt": "2026-08-17T05:38:55.776Z"
+        },
+        "taopiaopiao": {
+          "score": 8.6,
+          "checkedAt": "2026-08-17",
+          "url": "https://dianying.taobao.com/showDetail.htm?showId=1591520&n_s=new",
+          "linkLabel": "淘票票电影页",
+          "status": "live",
+          "collectionMode": "public-page",
+          "voteCount": null,
+          "platformId": "1591520",
+          "lastAttemptAt": "2026-08-17T05:38:55.776Z"
+        }
+      },
+      "cachedComposite": 6.6,
+      "originalYear": 2026
+    },
+    {
+      "id": "taopiaopiao-1522792",
+      "title": "蜘蛛侠：崭新之日",
+      "year": 2026,
+      "platformIds": {
+        "maoyan": "1490607",
+        "taopiaopiao": "1522792"
+      },
+      "englishTitle": "Spider-Man: Brand New Day",
+      "releaseDateChina": "2026-07-29",
+      "director": "德斯汀·克里顿",
+      "genres": [
+        "动作",
+        "冒险"
+      ],
+      "runtimeMinutes": 145,
+      "region": "美国",
+      "summary": "蜘蛛侠：崭新之日于 2026-07-29 在中国内地上映，由德斯汀·克里顿执导，类型包括动作、冒险。",
+      "editorial": "各平台原始评分接近，分布校准后综合评价相对稳定。",
+      "palette": [
+        "#604128",
+        "#d7b66b"
+      ],
+      "motif": "蜘",
+      "catalogStatus": "current",
+      "autoDiscovered": true,
+      "firstSeenInTheatersAt": "2026-08-17",
+      "lastSeenInTheatersAt": "2026-08-17",
+      "ratings": {
+        "douban": {
+          "score": null,
+          "checkedAt": "",
+          "url": "https://search.douban.com/movie/subject_search?search_text=%E8%9C%98%E8%9B%9B%E4%BE%A0%EF%BC%9A%E5%B4%AD%E6%96%B0%E4%B9%8B%E6%97%A5",
+          "linkLabel": "豆瓣来源页",
+          "status": "unavailable",
+          "collectionMode": "public-json",
+          "lastAttemptAt": "2026-08-17T05:38:55.776Z",
+          "statusReason": "HTTP 403"
+        },
+        "maoyan": {
+          "score": 9.5,
+          "checkedAt": "2026-08-17",
+          "url": "https://www.maoyan.com/films/1490607",
+          "linkLabel": "猫眼电影页",
+          "status": "live",
+          "collectionMode": "public-json",
+          "voteCount": 187233,
+          "platformId": "1490607",
+          "subjectYear": 2026,
+          "lastAttemptAt": "2026-08-17T05:38:55.776Z"
+        },
+        "taopiaopiao": {
+          "score": 9.2,
+          "checkedAt": "2026-08-17",
+          "url": "https://dianying.taobao.com/showDetail.htm?showId=1522792&n_s=new",
+          "linkLabel": "淘票票电影页",
+          "status": "live",
+          "collectionMode": "public-page",
+          "voteCount": null,
+          "platformId": "1522792",
+          "lastAttemptAt": "2026-08-17T05:38:55.776Z"
+        }
+      },
+      "cachedComposite": 7.7,
+      "originalYear": 2026
+    },
+    {
+      "id": "taopiaopiao-1556767",
+      "title": "奥德赛",
+      "year": 2026,
+      "platformIds": {
+        "maoyan": "1545360",
+        "taopiaopiao": "1556767",
+        "douban": "36808876"
+      },
+      "englishTitle": "The Odyssey",
+      "releaseDateChina": "2026-08-14",
+      "director": "克里斯托弗·诺兰",
+      "genres": [
+        "动作",
+        "历史",
+        "冒险",
+        "奇幻"
+      ],
+      "runtimeMinutes": 172,
+      "region": "美国",
+      "summary": "奥德赛于 2026-08-14 在中国内地上映，由克里斯托弗·诺兰执导，类型包括动作、历史、冒险。",
+      "editorial": "平台之间存在一定评价差异，校准后的综合分更适合横向比较。",
+      "palette": [
+        "#5b2c36",
+        "#d5aa61"
+      ],
+      "motif": "奥",
+      "catalogStatus": "current",
+      "autoDiscovered": true,
+      "firstSeenInTheatersAt": "2026-08-17",
+      "lastSeenInTheatersAt": "2026-08-17",
+      "ratings": {
+        "douban": {
+          "score": 8.4,
+          "checkedAt": "2026-08-17",
+          "url": "https://movie.douban.com/subject/36808876/",
+          "linkLabel": "豆瓣电影页",
+          "status": "cached",
+          "collectionMode": "public-json",
+          "voteCount": 228239,
+          "platformId": "36808876",
+          "lastAttemptAt": "2026-08-17T05:38:55.776Z",
+          "statusReason": "HTTP 403"
+        },
+        "maoyan": {
+          "score": 9.7,
+          "checkedAt": "2026-08-17",
+          "url": "https://www.maoyan.com/films/1545360",
+          "linkLabel": "猫眼电影页",
+          "status": "live",
+          "collectionMode": "public-json",
+          "voteCount": 32491,
+          "platformId": "1545360",
+          "subjectYear": 2026,
+          "lastAttemptAt": "2026-08-17T05:38:55.776Z"
+        },
+        "taopiaopiao": {
+          "score": 9.6,
+          "checkedAt": "2026-08-17",
+          "url": "https://dianying.taobao.com/showDetail.htm?showId=1556767&n_s=new",
+          "linkLabel": "淘票票电影页",
+          "status": "live",
+          "collectionMode": "public-page",
+          "voteCount": null,
+          "platformId": "1556767",
+          "lastAttemptAt": "2026-08-17T05:38:55.776Z"
+        }
+      },
+      "cachedComposite": 8.3,
+      "originalYear": 2026
     },
     {
       "id": "all-wishes-come-true-2026",
@@ -104,11 +514,12 @@
           "checkedAt": "2026-08-17",
           "url": "https://movie.douban.com/subject/36882191/",
           "linkLabel": "豆瓣电影页",
-          "status": "live",
+          "status": "cached",
           "collectionMode": "public-json",
           "voteCount": 371836,
           "platformId": "36882191",
-          "lastAttemptAt": "2026-08-17T05:24:41.726Z"
+          "lastAttemptAt": "2026-08-17T05:38:55.776Z",
+          "statusReason": "HTTP 403"
         },
         "maoyan": {
           "score": 9.7,
@@ -117,9 +528,10 @@
           "linkLabel": "猫眼电影页",
           "status": "live",
           "collectionMode": "public-json",
-          "voteCount": 255926,
+          "voteCount": 255975,
           "platformId": "1525868",
-          "lastAttemptAt": "2026-08-17T05:24:41.726Z"
+          "subjectYear": 2026,
+          "lastAttemptAt": "2026-08-17T05:38:55.776Z"
         },
         "taopiaopiao": {
           "score": 9.6,
@@ -130,198 +542,83 @@
           "collectionMode": "public-page",
           "voteCount": null,
           "platformId": "1525003",
-          "lastAttemptAt": "2026-08-17T05:24:41.726Z"
+          "lastAttemptAt": "2026-08-17T05:38:55.776Z"
         }
       },
-      "cachedComposite": 8.1
+      "catalogStatus": "current",
+      "autoDiscovered": false,
+      "lastSeenInTheatersAt": "2026-08-17",
+      "firstSeenInTheatersAt": "2026-08-17",
+      "cachedComposite": 8.2
     },
     {
-      "id": "to-your-island-2026",
-      "title": "去你的岛",
-      "englishTitle": "To Your Island",
-      "year": 2026,
-      "releaseDateChina": "2026-08-07",
-      "director": "周浩然",
-      "genres": [
-        "动画",
-        "爱情",
-        "奇幻"
-      ],
-      "runtimeMinutes": 119,
-      "region": "中国大陆",
-      "summary": "王结香进入一座奇幻小岛，与化身兔子的失忆前男友共同闯关，在循环冒险中重新面对遗憾与和解。",
-      "editorial": "购票评分明显更高，默认权重让豆瓣的社区口碑对最终结果发挥更大影响。",
-      "palette": [
-        "#334a84",
-        "#ef8f9b"
-      ],
-      "motif": "岛",
+      "id": "taopiaopiao-1615638",
+      "title": "痴迷",
+      "year": 2025,
       "platformIds": {
-        "douban": "35275131",
-        "maoyan": "1375786",
-        "taopiaopiao": "1428844"
+        "maoyan": "1587931",
+        "taopiaopiao": "1615638",
+        "douban": "37450627"
       },
+      "englishTitle": "Obsession",
+      "releaseDateChina": "2026-07-24",
+      "director": "库里·巴克",
+      "genres": [
+        "惊悚",
+        "爱情"
+      ],
+      "runtimeMinutes": 110,
+      "region": "美国",
+      "summary": "痴迷于 2026-07-24 在中国内地上映，由库里·巴克执导，类型包括惊悚、爱情。",
+      "editorial": "平台之间存在一定评价差异，校准后的综合分更适合横向比较。",
+      "palette": [
+        "#5b2c36",
+        "#d5aa61"
+      ],
+      "motif": "痴",
+      "catalogStatus": "current",
+      "autoDiscovered": true,
+      "firstSeenInTheatersAt": "2026-08-17",
+      "lastSeenInTheatersAt": "2026-08-17",
       "ratings": {
         "douban": {
-          "score": 7.9,
+          "score": 7.6,
           "checkedAt": "2026-08-17",
-          "url": "https://movie.douban.com/subject/35275131/",
-          "linkLabel": "豆瓣电影页",
-          "status": "live",
-          "collectionMode": "public-json",
-          "voteCount": 21866,
-          "platformId": "35275131",
-          "lastAttemptAt": "2026-08-17T05:24:41.726Z"
-        },
-        "maoyan": {
-          "score": 9.5,
-          "checkedAt": "2026-08-17",
-          "url": "https://www.maoyan.com/films/1375786",
-          "linkLabel": "猫眼电影页",
-          "status": "live",
-          "collectionMode": "public-json",
-          "voteCount": 32264,
-          "platformId": "1375786",
-          "lastAttemptAt": "2026-08-17T05:24:41.726Z"
-        },
-        "taopiaopiao": {
-          "score": 9.2,
-          "checkedAt": "2026-08-17",
-          "url": "https://dianying.taobao.com/showDetail.htm?showId=1428844&n_s=new",
-          "linkLabel": "淘票票电影页",
-          "status": "live",
-          "collectionMode": "public-page",
-          "voteCount": null,
-          "platformId": "1428844",
-          "lastAttemptAt": "2026-08-17T05:24:41.726Z"
-        }
-      },
-      "cachedComposite": 7.5
-    },
-    {
-      "id": "kung-fu-soccer-2026",
-      "title": "功夫女足",
-      "englishTitle": "Kung Fu Soccer",
-      "year": 2026,
-      "releaseDateChina": "2026-07-11",
-      "director": "周星驰",
-      "genres": [
-        "喜剧",
-        "运动"
-      ],
-      "runtimeMinutes": 106,
-      "region": "中国大陆 / 中国香港",
-      "summary": "一支身怀功夫的女足球队迎战强敌与赛场之外的压力，尝试用自己的方式完成逆风翻盘。",
-      "editorial": "三个平台分差接近三分，是最能体现权重选择如何改变综合结果的影片之一。",
-      "palette": [
-        "#225d3b",
-        "#e0c040"
-      ],
-      "motif": "足",
-      "platformIds": {
-        "douban": "36452545",
-        "maoyan": "1500469",
-        "taopiaopiao": "1521067"
-      },
-      "ratings": {
-        "douban": {
-          "score": 6.4,
-          "checkedAt": "2026-08-17",
-          "url": "https://movie.douban.com/subject/36452545/",
-          "linkLabel": "豆瓣电影页",
-          "status": "live",
-          "collectionMode": "public-json",
-          "voteCount": 300930,
-          "platformId": "36452545",
-          "lastAttemptAt": "2026-08-17T05:24:41.726Z"
-        },
-        "maoyan": {
-          "score": 9.4,
-          "checkedAt": "2026-08-17",
-          "url": "https://www.maoyan.com/films/1500469",
-          "linkLabel": "猫眼电影页",
-          "status": "live",
-          "collectionMode": "public-json",
-          "voteCount": 687770,
-          "platformId": "1500469",
-          "lastAttemptAt": "2026-08-17T05:24:41.726Z"
-        },
-        "taopiaopiao": {
-          "score": 9.1,
-          "checkedAt": "2026-08-17",
-          "url": "https://dianying.taobao.com/showDetail.htm?showId=1521067&n_s=new",
-          "linkLabel": "淘票票电影页",
-          "status": "live",
-          "collectionMode": "public-page",
-          "voteCount": null,
-          "platformId": "1521067",
-          "lastAttemptAt": "2026-08-17T05:24:41.726Z"
-        }
-      },
-      "cachedComposite": 6.6
-    },
-    {
-      "id": "make-zhonghe-great-again-2026",
-      "title": "年会不能停！2",
-      "englishTitle": "Make Zhonghe Great Again",
-      "year": 2026,
-      "releaseDateChina": "2026-08-01",
-      "director": "董润年",
-      "genres": [
-        "喜剧",
-        "职场"
-      ],
-      "runtimeMinutes": 125,
-      "region": "中国大陆",
-      "summary": "两个职场倒霉蛋意外陷入反复重启的一天，在一次次重来中挑战不公，也追查公司乱象背后的原因。",
-      "editorial": "豆瓣与购票平台评价分化明显，综合分避免直接沿用任何一家平台的结论。",
-      "palette": [
-        "#814635",
-        "#e9c35d"
-      ],
-      "motif": "会",
-      "platformIds": {
-        "douban": "36850814",
-        "maoyan": "1525000",
-        "taopiaopiao": "1577748"
-      },
-      "ratings": {
-        "douban": {
-          "score": 6.6,
-          "checkedAt": "2026-08-17",
-          "url": "https://movie.douban.com/subject/36850814/",
+          "url": "https://movie.douban.com/subject/37450627/",
           "linkLabel": "豆瓣电影页",
           "status": "cached",
           "collectionMode": "public-json",
-          "voteCount": 97115,
-          "platformId": "36850814",
-          "lastAttemptAt": "2026-08-17T05:24:41.726Z",
+          "voteCount": 239215,
+          "platformId": "37450627",
+          "lastAttemptAt": "2026-08-17T05:38:55.776Z",
           "statusReason": "HTTP 403"
         },
         "maoyan": {
-          "score": 9.5,
+          "score": 9,
           "checkedAt": "2026-08-17",
-          "url": "https://www.maoyan.com/films/1525000",
+          "url": "https://www.maoyan.com/films/1587931",
           "linkLabel": "猫眼电影页",
           "status": "live",
           "collectionMode": "public-json",
-          "voteCount": 39678,
-          "platformId": "1525000",
-          "lastAttemptAt": "2026-08-17T05:24:41.726Z"
+          "voteCount": 37999,
+          "platformId": "1587931",
+          "subjectYear": 2025,
+          "lastAttemptAt": "2026-08-17T05:38:55.776Z"
         },
         "taopiaopiao": {
-          "score": 9.2,
+          "score": 9,
           "checkedAt": "2026-08-17",
-          "url": "https://dianying.taobao.com/showDetail.htm?showId=1577748&n_s=new",
+          "url": "https://dianying.taobao.com/showDetail.htm?showId=1615638&n_s=new",
           "linkLabel": "淘票票电影页",
           "status": "live",
           "collectionMode": "public-page",
           "voteCount": null,
-          "platformId": "1577748",
-          "lastAttemptAt": "2026-08-17T05:24:41.726Z"
+          "platformId": "1615638",
+          "lastAttemptAt": "2026-08-17T05:38:55.776Z"
         }
       },
-      "cachedComposite": 6.8
+      "cachedComposite": 7.2,
+      "originalYear": 2025
     },
     {
       "id": "dear-you-2026",
@@ -359,7 +656,7 @@
           "collectionMode": "public-json",
           "voteCount": 929409,
           "platformId": "37116446",
-          "lastAttemptAt": "2026-08-17T05:24:41.726Z",
+          "lastAttemptAt": "2026-08-17T05:38:55.776Z",
           "statusReason": "HTTP 403"
         },
         "maoyan": {
@@ -369,9 +666,10 @@
           "linkLabel": "猫眼电影页",
           "status": "live",
           "collectionMode": "public-json",
-          "voteCount": 422191,
+          "voteCount": 422197,
           "platformId": "1516982",
-          "lastAttemptAt": "2026-08-17T05:24:41.726Z"
+          "subjectYear": 2026,
+          "lastAttemptAt": "2026-08-17T05:38:55.776Z"
         },
         "taopiaopiao": {
           "score": 9.7,
@@ -382,72 +680,426 @@
           "collectionMode": "public-page",
           "voteCount": null,
           "platformId": "1515727",
-          "lastAttemptAt": "2026-08-17T05:24:41.726Z"
+          "lastAttemptAt": "2026-08-17T05:38:55.776Z"
         }
       },
-      "cachedComposite": 8.8
+      "catalogStatus": "current",
+      "autoDiscovered": false,
+      "lastSeenInTheatersAt": "2026-08-17",
+      "firstSeenInTheatersAt": "2026-08-17",
+      "cachedComposite": 8.9
     },
     {
-      "id": "i-know-who-you-are-2026",
-      "title": "抓特务",
-      "englishTitle": "I Know Who You Are",
+      "id": "kung-fu-soccer-2026",
+      "title": "功夫女足",
+      "englishTitle": "Kung Fu Soccer",
       "year": 2026,
-      "releaseDateChina": "2026-06-19",
-      "director": "冯小刚",
+      "releaseDateChina": "2026-07-11",
+      "director": "周星驰",
       "genres": [
-        "剧情",
-        "年代"
+        "喜剧",
+        "运动"
       ],
-      "runtimeMinutes": 141,
-      "region": "中国大陆",
-      "summary": "新中国成立之初，一位派出所所长搬进胡同追查潜伏特务；长期相处让两人的较量牵动了两个家庭。",
-      "editorial": "两个购票平台给分较高，豆瓣相对谨慎，默认权重下综合分落在两类评价之间。",
+      "runtimeMinutes": 106,
+      "region": "中国大陆 / 中国香港",
+      "summary": "一支身怀功夫的女足球队迎战强敌与赛场之外的压力，尝试用自己的方式完成逆风翻盘。",
+      "editorial": "三个平台分差接近三分，是最能体现权重选择如何改变综合结果的影片之一。",
       "palette": [
-        "#263b3f",
-        "#c28d51"
+        "#225d3b",
+        "#e0c040"
       ],
-      "motif": "谍",
+      "motif": "足",
       "platformIds": {
-        "douban": "36812879",
-        "maoyan": "1522873",
-        "taopiaopiao": "1521692"
+        "douban": "36452545",
+        "maoyan": "1500469",
+        "taopiaopiao": "1521067"
       },
       "ratings": {
         "douban": {
-          "score": 7.4,
+          "score": 6.4,
           "checkedAt": "2026-08-17",
-          "url": "https://movie.douban.com/subject/36812879/",
+          "url": "https://movie.douban.com/subject/36452545/",
           "linkLabel": "豆瓣电影页",
-          "status": "live",
+          "status": "cached",
           "collectionMode": "public-json",
-          "voteCount": 70962,
-          "platformId": "36812879",
-          "lastAttemptAt": "2026-08-17T05:24:41.726Z"
+          "voteCount": 300930,
+          "platformId": "36452545",
+          "lastAttemptAt": "2026-08-17T05:38:55.776Z",
+          "statusReason": "HTTP 403"
         },
         "maoyan": {
-          "score": 9,
+          "score": 9.4,
           "checkedAt": "2026-08-17",
-          "url": "https://www.maoyan.com/films/1522873",
+          "url": "https://www.maoyan.com/films/1500469",
           "linkLabel": "猫眼电影页",
           "status": "live",
           "collectionMode": "public-json",
-          "voteCount": 21903,
-          "platformId": "1522873",
-          "lastAttemptAt": "2026-08-17T05:24:41.726Z"
+          "voteCount": 687785,
+          "platformId": "1500469",
+          "subjectYear": 2026,
+          "lastAttemptAt": "2026-08-17T05:38:55.776Z"
         },
         "taopiaopiao": {
-          "score": 9.5,
+          "score": 9.1,
           "checkedAt": "2026-08-17",
-          "url": "https://dianying.taobao.com/showDetail.htm?showId=1521692&n_s=new",
+          "url": "https://dianying.taobao.com/showDetail.htm?showId=1521067&n_s=new",
           "linkLabel": "淘票票电影页",
           "status": "live",
           "collectionMode": "public-page",
           "voteCount": null,
-          "platformId": "1521692",
-          "lastAttemptAt": "2026-08-17T05:24:41.726Z"
+          "platformId": "1521067",
+          "lastAttemptAt": "2026-08-17T05:38:55.776Z"
         }
       },
-      "cachedComposite": 7.3
+      "catalogStatus": "current",
+      "autoDiscovered": false,
+      "lastSeenInTheatersAt": "2026-08-17",
+      "firstSeenInTheatersAt": "2026-08-17",
+      "cachedComposite": 6.7
+    },
+    {
+      "id": "taopiaopiao-1567301",
+      "title": "后室",
+      "year": 2026,
+      "platformIds": {
+        "maoyan": "1591067",
+        "taopiaopiao": "1567301",
+        "douban": "36235977"
+      },
+      "englishTitle": "Backrooms",
+      "releaseDateChina": "2026-06-26",
+      "director": "凯恩·帕森斯",
+      "genres": [
+        "惊悚",
+        "科幻",
+        "剧情"
+      ],
+      "runtimeMinutes": 111,
+      "region": "美国",
+      "summary": "后室于 2026-06-26 在中国内地上映，由凯恩·帕森斯执导，类型包括惊悚、科幻、剧情。",
+      "editorial": "平台之间存在一定评价差异，校准后的综合分更适合横向比较。",
+      "palette": [
+        "#214e47",
+        "#dc7759"
+      ],
+      "motif": "后",
+      "catalogStatus": "current",
+      "autoDiscovered": true,
+      "firstSeenInTheatersAt": "2026-08-17",
+      "lastSeenInTheatersAt": "2026-08-17",
+      "ratings": {
+        "douban": {
+          "score": 6.7,
+          "checkedAt": "2026-08-17",
+          "url": "https://movie.douban.com/subject/36235977/",
+          "linkLabel": "豆瓣电影页",
+          "status": "cached",
+          "collectionMode": "public-json",
+          "voteCount": 126521,
+          "platformId": "36235977",
+          "lastAttemptAt": "2026-08-17T05:38:55.776Z",
+          "statusReason": "HTTP 403"
+        },
+        "maoyan": {
+          "score": 8,
+          "checkedAt": "2026-08-17",
+          "url": "https://www.maoyan.com/films/1591067",
+          "linkLabel": "猫眼电影页",
+          "status": "live",
+          "collectionMode": "public-json",
+          "voteCount": 37922,
+          "platformId": "1591067",
+          "subjectYear": 2026,
+          "lastAttemptAt": "2026-08-17T05:38:55.776Z"
+        },
+        "taopiaopiao": {
+          "score": 7.7,
+          "checkedAt": "2026-08-17",
+          "url": "https://dianying.taobao.com/showDetail.htm?showId=1567301&n_s=new",
+          "linkLabel": "淘票票电影页",
+          "status": "live",
+          "collectionMode": "public-page",
+          "voteCount": null,
+          "platformId": "1567301",
+          "lastAttemptAt": "2026-08-17T05:38:55.776Z"
+        }
+      },
+      "cachedComposite": 5.7,
+      "originalYear": 2026
+    },
+    {
+      "id": "once-upon-a-time-middle-east-2026",
+      "title": "欢迎来龙餐馆",
+      "englishTitle": "Once Upon a Time in the Middle East",
+      "year": 2026,
+      "releaseDateChina": "2026-08-11",
+      "director": "文牧野",
+      "genres": [
+        "剧情",
+        "战争"
+      ],
+      "runtimeMinutes": 140,
+      "region": "中国大陆",
+      "summary": "东北大厨徐福远赴中东谋生，在与伙伴经营中餐馆的过程中遭遇战火，也努力守住日常生活与人与人之间的善意。",
+      "editorial": "豆瓣更克制，两个购票平台都在高分区；综合分保留了这种显著的平台差异。",
+      "palette": [
+        "#4c231b",
+        "#d89743"
+      ],
+      "motif": "龙",
+      "platformIds": {
+        "douban": "35811064",
+        "maoyan": "1462628",
+        "taopiaopiao": "1425620"
+      },
+      "ratings": {
+        "douban": {
+          "score": 8.5,
+          "checkedAt": "2026-08-17",
+          "url": "https://movie.douban.com/subject/35811064/",
+          "linkLabel": "豆瓣电影页",
+          "status": "cached",
+          "collectionMode": "public-json",
+          "voteCount": 361347,
+          "platformId": "35811064",
+          "lastAttemptAt": "2026-08-17T05:38:55.776Z",
+          "statusReason": "HTTP 403"
+        },
+        "maoyan": {
+          "score": 9.7,
+          "checkedAt": "2026-08-17",
+          "url": "https://www.maoyan.com/films/1462628",
+          "linkLabel": "猫眼电影页",
+          "status": "live",
+          "collectionMode": "public-json",
+          "voteCount": 190243,
+          "platformId": "1462628",
+          "subjectYear": null,
+          "lastAttemptAt": "2026-08-17T05:38:55.776Z"
+        },
+        "taopiaopiao": {
+          "score": 9.9,
+          "checkedAt": "2026-08-17",
+          "url": "https://dianying.taobao.com/showDetail.htm?showId=1425620&n_s=new",
+          "linkLabel": "淘票票电影页",
+          "status": "live",
+          "collectionMode": "public-page",
+          "voteCount": null,
+          "platformId": "1425620",
+          "lastAttemptAt": "2026-08-17T05:38:55.776Z"
+        }
+      },
+      "catalogStatus": "current",
+      "autoDiscovered": false,
+      "lastSeenInTheatersAt": "2026-08-17",
+      "firstSeenInTheatersAt": "2026-08-17",
+      "cachedComposite": 8.5
+    },
+    {
+      "id": "make-zhonghe-great-again-2026",
+      "title": "年会不能停！2",
+      "englishTitle": "Make Zhonghe Great Again",
+      "year": 2026,
+      "releaseDateChina": "2026-08-01",
+      "director": "董润年",
+      "genres": [
+        "喜剧",
+        "职场"
+      ],
+      "runtimeMinutes": 125,
+      "region": "中国大陆",
+      "summary": "两个职场倒霉蛋意外陷入反复重启的一天，在一次次重来中挑战不公，也追查公司乱象背后的原因。",
+      "editorial": "豆瓣与购票平台评价分化明显，综合分避免直接沿用任何一家平台的结论。",
+      "palette": [
+        "#814635",
+        "#e9c35d"
+      ],
+      "motif": "会",
+      "platformIds": {
+        "douban": "36850814",
+        "maoyan": "1525000",
+        "taopiaopiao": "1577748"
+      },
+      "ratings": {
+        "douban": {
+          "score": 6.6,
+          "checkedAt": "2026-08-17",
+          "url": "https://movie.douban.com/subject/36850814/",
+          "linkLabel": "豆瓣电影页",
+          "status": "cached",
+          "collectionMode": "public-json",
+          "voteCount": 97115,
+          "platformId": "36850814",
+          "lastAttemptAt": "2026-08-17T05:38:55.776Z",
+          "statusReason": "HTTP 403"
+        },
+        "maoyan": {
+          "score": 9.5,
+          "checkedAt": "2026-08-17",
+          "url": "https://www.maoyan.com/films/1525000",
+          "linkLabel": "猫眼电影页",
+          "status": "live",
+          "collectionMode": "public-json",
+          "voteCount": 39680,
+          "platformId": "1525000",
+          "subjectYear": null,
+          "lastAttemptAt": "2026-08-17T05:38:55.776Z"
+        },
+        "taopiaopiao": {
+          "score": 9.2,
+          "checkedAt": "2026-08-17",
+          "url": "https://dianying.taobao.com/showDetail.htm?showId=1577748&n_s=new",
+          "linkLabel": "淘票票电影页",
+          "status": "live",
+          "collectionMode": "public-page",
+          "voteCount": null,
+          "platformId": "1577748",
+          "lastAttemptAt": "2026-08-17T05:38:55.776Z"
+        }
+      },
+      "catalogStatus": "current",
+      "autoDiscovered": false,
+      "lastSeenInTheatersAt": "2026-08-17",
+      "firstSeenInTheatersAt": "2026-08-17",
+      "cachedComposite": 7
+    },
+    {
+      "id": "taopiaopiao-1597480",
+      "title": "诺曼底72小时",
+      "year": 2026,
+      "platformIds": {
+        "maoyan": "1594038",
+        "taopiaopiao": "1597480",
+        "douban": "36916000"
+      },
+      "englishTitle": "Pressure",
+      "releaseDateChina": "2026-06-06",
+      "director": "安东尼·马拉斯",
+      "genres": [
+        "剧情",
+        "战争"
+      ],
+      "runtimeMinutes": 100,
+      "region": "英国,法国",
+      "summary": "诺曼底72小时于 2026-06-06 在中国内地上映，由安东尼·马拉斯执导，类型包括剧情、战争。",
+      "editorial": "平台之间存在一定评价差异，校准后的综合分更适合横向比较。",
+      "palette": [
+        "#3f3562",
+        "#78b9ae"
+      ],
+      "motif": "诺",
+      "catalogStatus": "current",
+      "autoDiscovered": true,
+      "firstSeenInTheatersAt": "2026-08-17",
+      "lastSeenInTheatersAt": "2026-08-17",
+      "ratings": {
+        "douban": {
+          "score": 8.2,
+          "checkedAt": "2026-08-17",
+          "url": "https://movie.douban.com/subject/36916000/",
+          "linkLabel": "豆瓣电影页",
+          "status": "cached",
+          "collectionMode": "public-json",
+          "voteCount": 63487,
+          "platformId": "36916000",
+          "lastAttemptAt": "2026-08-17T05:38:55.776Z",
+          "statusReason": "HTTP 403"
+        },
+        "maoyan": {
+          "score": 9,
+          "checkedAt": "2026-08-17",
+          "url": "https://www.maoyan.com/films/1594038",
+          "linkLabel": "猫眼电影页",
+          "status": "live",
+          "collectionMode": "public-json",
+          "voteCount": 6302,
+          "platformId": "1594038",
+          "subjectYear": 2026,
+          "lastAttemptAt": "2026-08-17T05:38:55.776Z"
+        },
+        "taopiaopiao": {
+          "score": 9.2,
+          "checkedAt": "2026-08-17",
+          "url": "https://dianying.taobao.com/showDetail.htm?showId=1597480&n_s=new",
+          "linkLabel": "淘票票电影页",
+          "status": "live",
+          "collectionMode": "public-page",
+          "voteCount": null,
+          "platformId": "1597480",
+          "lastAttemptAt": "2026-08-17T05:38:55.776Z"
+        }
+      },
+      "cachedComposite": 7.7,
+      "originalYear": 2026
+    },
+    {
+      "id": "to-your-island-2026",
+      "title": "去你的岛",
+      "englishTitle": "To Your Island",
+      "year": 2026,
+      "releaseDateChina": "2026-08-07",
+      "director": "周浩然",
+      "genres": [
+        "动画",
+        "爱情",
+        "奇幻"
+      ],
+      "runtimeMinutes": 119,
+      "region": "中国大陆",
+      "summary": "王结香进入一座奇幻小岛，与化身兔子的失忆前男友共同闯关，在循环冒险中重新面对遗憾与和解。",
+      "editorial": "购票评分明显更高，默认权重让豆瓣的社区口碑对最终结果发挥更大影响。",
+      "palette": [
+        "#334a84",
+        "#ef8f9b"
+      ],
+      "motif": "岛",
+      "platformIds": {
+        "douban": "35275131",
+        "maoyan": "1375786",
+        "taopiaopiao": "1428844"
+      },
+      "ratings": {
+        "douban": {
+          "score": 7.9,
+          "checkedAt": "2026-08-17",
+          "url": "https://movie.douban.com/subject/35275131/",
+          "linkLabel": "豆瓣电影页",
+          "status": "cached",
+          "collectionMode": "public-json",
+          "voteCount": 21866,
+          "platformId": "35275131",
+          "lastAttemptAt": "2026-08-17T05:38:55.776Z",
+          "statusReason": "HTTP 403"
+        },
+        "maoyan": {
+          "score": 9.5,
+          "checkedAt": "2026-08-17",
+          "url": "https://www.maoyan.com/films/1375786",
+          "linkLabel": "猫眼电影页",
+          "status": "live",
+          "collectionMode": "public-json",
+          "voteCount": 32282,
+          "platformId": "1375786",
+          "subjectYear": null,
+          "lastAttemptAt": "2026-08-17T05:38:55.776Z"
+        },
+        "taopiaopiao": {
+          "score": 9.2,
+          "checkedAt": "2026-08-17",
+          "url": "https://dianying.taobao.com/showDetail.htm?showId=1428844&n_s=new",
+          "linkLabel": "淘票票电影页",
+          "status": "live",
+          "collectionMode": "public-page",
+          "voteCount": null,
+          "platformId": "1428844",
+          "lastAttemptAt": "2026-08-17T05:38:55.776Z"
+        }
+      },
+      "catalogStatus": "current",
+      "autoDiscovered": false,
+      "lastSeenInTheatersAt": "2026-08-17",
+      "firstSeenInTheatersAt": "2026-08-17",
+      "cachedComposite": 7.7
     },
     {
       "id": "keep-real-2026",
@@ -480,11 +1132,12 @@
           "checkedAt": "2026-08-17",
           "url": "https://movie.douban.com/subject/36953973/",
           "linkLabel": "豆瓣电影页",
-          "status": "live",
+          "status": "cached",
           "collectionMode": "public-json",
           "voteCount": 51366,
           "platformId": "36953973",
-          "lastAttemptAt": "2026-08-17T05:24:41.726Z"
+          "lastAttemptAt": "2026-08-17T05:38:55.776Z",
+          "statusReason": "HTTP 403"
         },
         "maoyan": {
           "score": 8.2,
@@ -495,7 +1148,8 @@
           "collectionMode": "public-json",
           "voteCount": 28718,
           "platformId": "1531115",
-          "lastAttemptAt": "2026-08-17T05:24:41.726Z"
+          "subjectYear": null,
+          "lastAttemptAt": "2026-08-17T05:38:55.776Z"
         },
         "taopiaopiao": {
           "score": 9.4,
@@ -506,55 +1160,204 @@
           "collectionMode": "public-page",
           "voteCount": null,
           "platformId": "1536250",
-          "lastAttemptAt": "2026-08-17T05:24:41.726Z"
+          "lastAttemptAt": "2026-08-17T05:38:55.776Z"
         }
       },
-      "cachedComposite": 6.4
+      "catalogStatus": "current",
+      "autoDiscovered": false,
+      "lastSeenInTheatersAt": "2026-08-17",
+      "firstSeenInTheatersAt": "2026-08-17",
+      "cachedComposite": 6.5
+    },
+    {
+      "id": "taopiaopiao-1519975",
+      "title": "玩具总动员5",
+      "year": 2026,
+      "platformIds": {
+        "maoyan": "1490532",
+        "taopiaopiao": "1519975",
+        "douban": "36238849"
+      },
+      "englishTitle": "Toy Story 5",
+      "releaseDateChina": "2026-06-19",
+      "director": "安德鲁·斯坦顿",
+      "genres": [
+        "剧情",
+        "喜剧",
+        "动画"
+      ],
+      "runtimeMinutes": 102,
+      "region": "美国",
+      "summary": "玩具总动员5于 2026-06-19 在中国内地上映，由安德鲁·斯坦顿执导，类型包括剧情、喜剧、动画。",
+      "editorial": "平台之间存在一定评价差异，校准后的综合分更适合横向比较。",
+      "palette": [
+        "#604128",
+        "#d7b66b"
+      ],
+      "motif": "玩",
+      "catalogStatus": "current",
+      "autoDiscovered": true,
+      "firstSeenInTheatersAt": "2026-08-17",
+      "lastSeenInTheatersAt": "2026-08-17",
+      "ratings": {
+        "douban": {
+          "score": 8,
+          "checkedAt": "2026-08-17",
+          "url": "https://movie.douban.com/subject/36238849/",
+          "linkLabel": "豆瓣电影页",
+          "status": "cached",
+          "collectionMode": "public-json",
+          "voteCount": 116940,
+          "platformId": "36238849",
+          "lastAttemptAt": "2026-08-17T05:38:55.776Z",
+          "statusReason": "HTTP 403"
+        },
+        "maoyan": {
+          "score": 9.3,
+          "checkedAt": "2026-08-17",
+          "url": "https://www.maoyan.com/films/1490532",
+          "linkLabel": "猫眼电影页",
+          "status": "live",
+          "collectionMode": "public-json",
+          "voteCount": 27465,
+          "platformId": "1490532",
+          "subjectYear": 2026,
+          "lastAttemptAt": "2026-08-17T05:38:55.776Z"
+        },
+        "taopiaopiao": {
+          "score": 9.4,
+          "checkedAt": "2026-08-17",
+          "url": "https://dianying.taobao.com/showDetail.htm?showId=1519975&n_s=new",
+          "linkLabel": "淘票票电影页",
+          "status": "live",
+          "collectionMode": "public-page",
+          "voteCount": null,
+          "platformId": "1519975",
+          "lastAttemptAt": "2026-08-17T05:38:55.776Z"
+        }
+      },
+      "cachedComposite": 7.8,
+      "originalYear": 2026
+    },
+    {
+      "id": "i-know-who-you-are-2026",
+      "title": "抓特务",
+      "englishTitle": "I Know Who You Are",
+      "year": 2026,
+      "releaseDateChina": "2026-06-19",
+      "director": "冯小刚",
+      "genres": [
+        "剧情",
+        "年代"
+      ],
+      "runtimeMinutes": 141,
+      "region": "中国大陆",
+      "summary": "新中国成立之初，一位派出所所长搬进胡同追查潜伏特务；长期相处让两人的较量牵动了两个家庭。",
+      "editorial": "两个购票平台给分较高，豆瓣相对谨慎，默认权重下综合分落在两类评价之间。",
+      "palette": [
+        "#263b3f",
+        "#c28d51"
+      ],
+      "motif": "谍",
+      "platformIds": {
+        "douban": "36812879",
+        "maoyan": "1522873",
+        "taopiaopiao": "1521692"
+      },
+      "ratings": {
+        "douban": {
+          "score": 7.4,
+          "checkedAt": "2026-08-17",
+          "url": "https://movie.douban.com/subject/36812879/",
+          "linkLabel": "豆瓣电影页",
+          "status": "cached",
+          "collectionMode": "public-json",
+          "voteCount": 70962,
+          "platformId": "36812879",
+          "lastAttemptAt": "2026-08-17T05:38:55.776Z",
+          "statusReason": "HTTP 403"
+        },
+        "maoyan": {
+          "score": 9,
+          "checkedAt": "2026-08-17",
+          "url": "https://www.maoyan.com/films/1522873",
+          "linkLabel": "猫眼电影页",
+          "status": "live",
+          "collectionMode": "public-json",
+          "voteCount": 21903,
+          "platformId": "1522873",
+          "subjectYear": null,
+          "lastAttemptAt": "2026-08-17T05:38:55.776Z"
+        },
+        "taopiaopiao": {
+          "score": 9.5,
+          "checkedAt": "2026-08-17",
+          "url": "https://dianying.taobao.com/showDetail.htm?showId=1521692&n_s=new",
+          "linkLabel": "淘票票电影页",
+          "status": "live",
+          "collectionMode": "public-page",
+          "voteCount": null,
+          "platformId": "1521692",
+          "lastAttemptAt": "2026-08-17T05:38:55.776Z"
+        }
+      },
+      "catalogStatus": "current",
+      "autoDiscovered": false,
+      "lastSeenInTheatersAt": "2026-08-17",
+      "firstSeenInTheatersAt": "2026-08-17",
+      "cachedComposite": 7.3
     }
   ],
   "calibration": {
     "method": "z-score",
     "enabled": true,
     "sampleMode": "complete-cases",
-    "sampleSize": 8,
+    "sampleSize": 13,
     "targetMean": 7.5,
     "targetStandardDeviation": 1,
+    "zLimit": 2.5,
     "platforms": {
       "douban": {
-        "count": 8,
-        "mean": 7.625000000000001,
-        "standardDeviation": 0.9640409742329422
+        "count": 13,
+        "mean": 7.684615384615386,
+        "standardDeviation": 0.8465733225967759
       },
       "maoyan": {
-        "count": 8,
-        "mean": 9.3375,
-        "standardDeviation": 0.48202048711647105
+        "count": 13,
+        "mean": 9.207692307692307,
+        "standardDeviation": 0.5398882198574333
       },
       "taopiaopiao": {
-        "count": 8,
-        "mean": 9.450000000000001,
-        "standardDeviation": 0.2598076211353318
+        "count": 13,
+        "mean": 9.269230769230772,
+        "standardDeviation": 0.5164741640490621
       }
     }
   },
   "sourceStatus": {
     "douban": {
-      "live": 6,
-      "cached": 2,
-      "unavailable": 0,
-      "total": 8
+      "live": 0,
+      "cached": 13,
+      "unavailable": 6,
+      "total": 19
     },
     "maoyan": {
-      "live": 8,
+      "live": 19,
       "cached": 0,
       "unavailable": 0,
-      "total": 8
+      "total": 19
     },
     "taopiaopiao": {
-      "live": 8,
+      "live": 19,
       "cached": 0,
       "unavailable": 0,
-      "total": 8
+      "total": 19
     }
+  },
+  "catalogStatus": {
+    "current": 19,
+    "archived": 0,
+    "autoDiscovered": 11,
+    "total": 19
   }
 }

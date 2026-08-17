@@ -8,6 +8,7 @@ const PLATFORMS = ["douban", "maoyan", "taopiaopiao"];
 const now = new Date();
 const attemptedAt = now.toISOString();
 const checkedAt = attemptedAt.slice(0, 10);
+const discoveryLimit = Math.max(0, Number(process.env.DISCOVERY_LIMIT ?? 24));
 const source = JSON.parse(await readFile(sourcePath, "utf8"));
 
 let previous = null;
@@ -19,6 +20,42 @@ try {
 
 const previousById = new Map((previous?.movies ?? []).map((movie) => [movie.id, movie]));
 const delay = (milliseconds) => new Promise((resolve) => setTimeout(resolve, milliseconds));
+const generatedPalettes = [
+  ["#243d4a", "#db8a50"],
+  ["#5b2c36", "#d5aa61"],
+  ["#214e47", "#dc7759"],
+  ["#3f3562", "#78b9ae"],
+  ["#604128", "#d7b66b"],
+  ["#28436d", "#dc8f9e"],
+];
+
+function decodeHtml(value = "") {
+  return String(value)
+    .replaceAll("&middot;", "·")
+    .replaceAll("&ldquo;", "“")
+    .replaceAll("&rdquo;", "”")
+    .replaceAll("&amp;", "&")
+    .replaceAll("&#39;", "'")
+    .trim();
+}
+
+function generatedPalette(title) {
+  const hash = [...title].reduce((sum, character) => sum + character.codePointAt(0), 0);
+  return generatedPalettes[hash % generatedPalettes.length];
+}
+
+function generatedMotif(title) {
+  return [...title].find((character) => /[\p{Script=Han}A-Za-z0-9]/u.test(character)) ?? "映";
+}
+
+function generatedEditorial(ratings) {
+  const values = PLATFORMS.map((platform) => ratings[platform]?.score).filter(Number.isFinite);
+  if (values.length < 2) return "目前有效评分来源较少，综合分会随后续平台开分而更新。";
+  const spread = Math.max(...values) - Math.min(...values);
+  if (spread < 0.6) return "各平台原始评分接近，分布校准后综合评价相对稳定。";
+  if (spread < 1.5) return "平台之间存在一定评价差异，校准后的综合分更适合横向比较。";
+  return "社区与购票平台评价分化明显，分布校准可以避免原始量尺差异直接放大结果。";
+}
 
 function normalizedTitle(value = "") {
   return String(value)
@@ -81,7 +118,8 @@ async function fetchDouban(movie) {
     ?? candidates.find(({ target }) => normalizedTitle(target?.title) === normalizedTitle(movie.title));
   if (!match?.target) throw new Error(`No exact Douban result for ${movie.title}`);
   assertTitle(movie, match.target.title, "douban");
-  if (match.target.year && Math.abs(Number(match.target.year) - movie.year) > 1) {
+  const expectedYear = Number(movie.originalYear ?? movie.year);
+  if (match.target.year && Number.isFinite(expectedYear) && Math.abs(Number(match.target.year) - expectedYear) > 1) {
     throw new Error(`Douban year mismatch for ${movie.id}: ${match.target.year}`);
   }
 
@@ -95,6 +133,7 @@ async function fetchDouban(movie) {
     collectionMode: "public-json",
     voteCount: Number(match.target.rating?.count) || null,
     platformId: String(match.target.id),
+    subjectYear: Number(match.target.year) || null,
     lastAttemptAt: attemptedAt,
   };
 }
@@ -112,7 +151,7 @@ async function findMaoyanId(movie) {
   return String(match.id);
 }
 
-async function fetchMaoyan(movie) {
+async function fetchMaoyanDetail(movie) {
   const movieId = await findMaoyanId(movie);
   const result = await fetchJson(`https://m.maoyan.com/ajax/detailmovie?movieId=${movieId}`, {
     Accept: "application/json",
@@ -122,7 +161,10 @@ async function fetchMaoyan(movie) {
   const detail = result?.detailMovie;
   if (!detail) throw new Error(`No Maoyan detail for ${movie.title}`);
   assertTitle(movie, detail.nm, "maoyan");
+  return { movieId, detail };
+}
 
+function maoyanRating(movieId, detail) {
   const score = validScore(detail.sc);
   return {
     score,
@@ -133,8 +175,14 @@ async function fetchMaoyan(movie) {
     collectionMode: "public-json",
     voteCount: Number(detail.snum) || null,
     platformId: movieId,
+    subjectYear: Number(String(detail.frt ?? "").slice(0, 4)) || null,
     lastAttemptAt: attemptedAt,
   };
+}
+
+async function fetchMaoyan(movie) {
+  const { movieId, detail } = await fetchMaoyanDetail(movie);
+  return maoyanRating(movieId, detail);
 }
 
 let taopiaopiaoListPromise;
@@ -150,9 +198,20 @@ async function fetchTaopiaopiaoList() {
       const movies = [];
       const cardPattern = /<a href="https:\/\/dianying\.taobao\.com\/showDetail\.htm\?showId=(\d+)&amp;n_s=new(?:&amp;|&)source=current" class="movie-card">([\s\S]*?)<\/a>/g;
       for (const match of html.matchAll(cardPattern)) {
-        const title = match[2].match(/class="bt-l">\s*([^<]+?)\s*<\/span>/)?.[1]?.trim();
+        const title = decodeHtml(match[2].match(/class="bt-l">\s*([^<]+?)\s*<\/span>/)?.[1]);
         const scoreText = match[2].match(/class="bt-r">\s*([^<]*?)\s*<\/span>/)?.[1]?.trim();
-        if (title) movies.push({ id: match[1], title, score: validScore(scoreText) });
+        const details = [...match[2].matchAll(/<span>([^<]*)<\/span>/g)].map((item) => decodeHtml(item[1]));
+        const detailValue = (label) => details.find((item) => item.startsWith(`${label}：`))?.slice(label.length + 1).trim() ?? "";
+        const runtimeMatch = detailValue("片长").match(/(\d+)/);
+        if (title) movies.push({
+          id: match[1],
+          title,
+          score: validScore(scoreText),
+          director: detailValue("导演").split(/[，,]/)[0]?.trim() ?? "",
+          genres: detailValue("类型").split(/[，,]/).map((item) => item.trim()).filter(Boolean),
+          region: detailValue("地区"),
+          runtimeMinutes: runtimeMatch ? Number(runtimeMatch[1]) : null,
+        });
       }
       if (!movies.length) throw new Error("No current Taopiaopiao movie cards found");
       return movies;
@@ -208,8 +267,110 @@ function fallbackRating(movie, platform, error) {
   };
 }
 
+function emptyRating(platform, movie) {
+  const query = encodeURIComponent(movie.title);
+  const urls = {
+    douban: `https://search.douban.com/movie/subject_search?search_text=${query}`,
+    maoyan: `https://www.maoyan.com/query?kw=${query}`,
+    taopiaopiao: movie.platformIds?.taopiaopiao
+      ? `https://dianying.taobao.com/showDetail.htm?showId=${movie.platformIds.taopiaopiao}&n_s=new`
+      : "https://dianying.taobao.com/showList.htm?n_s=new",
+  };
+  return {
+    score: null,
+    checkedAt: "",
+    url: urls[platform],
+    linkLabel: `${platform === "douban" ? "豆瓣" : platform === "maoyan" ? "猫眼" : "淘票票"}来源页`,
+    status: "unavailable",
+    collectionMode: platform === "taopiaopiao" ? "public-page" : "public-json",
+    lastAttemptAt: attemptedAt,
+  };
+}
+
+async function discoverMovie(card) {
+  const provisional = {
+    id: `taopiaopiao-${card.id}`,
+    title: card.title,
+    year: now.getUTCFullYear(),
+    platformIds: { taopiaopiao: card.id },
+  };
+  let movieId;
+  let detail;
+  try {
+    ({ movieId, detail } = await fetchMaoyanDetail(provisional));
+  } catch (error) {
+    console.warn(`Skipping ${card.title}: Maoyan metadata unavailable (${error.message})`);
+    return null;
+  }
+
+  const releaseDate = String(detail.pubDesc ?? "").match(/\d{4}-\d{2}-\d{2}/)?.[0];
+  if (!releaseDate) {
+    console.warn(`Skipping ${card.title}: no China release date`);
+    return null;
+  }
+  const genres = String(detail.cat || card.genres.join(","))
+    .split(/[，,]/)
+    .map((item) => item.trim())
+    .filter(Boolean);
+  if (genres.includes("影展")) return null;
+  const director = String(detail.dir || card.director || "待补充").split(/[，,/]/)[0].trim();
+  const chinaReleaseYear = Number(releaseDate.slice(0, 4));
+  const originalYear = Number(String(detail.frt ?? "").slice(0, 4)) || chinaReleaseYear;
+  const ratings = {};
+  const movie = {
+    ...provisional,
+    englishTitle: detail.enm || card.title,
+    year: originalYear,
+    originalYear,
+    releaseDateChina: releaseDate,
+    director,
+    genres: genres.length ? genres : ["电影"],
+    runtimeMinutes: Number(detail.dur || card.runtimeMinutes) || 0,
+    region: card.region || detail.src || "中国上映",
+    summary: `${card.title}于 ${releaseDate} 在中国内地上映，由${director}执导，类型包括${(genres.length ? genres : ["电影"]).slice(0, 3).join("、")}。`,
+    editorial: "",
+    palette: generatedPalette(card.title),
+    motif: generatedMotif(card.title),
+    platformIds: { maoyan: movieId, taopiaopiao: card.id },
+    catalogStatus: "current",
+    autoDiscovered: true,
+    firstSeenInTheatersAt: checkedAt,
+    lastSeenInTheatersAt: checkedAt,
+    ratings,
+  };
+
+  ratings.maoyan = maoyanRating(movieId, detail);
+  ratings.taopiaopiao = {
+    score: card.score,
+    checkedAt,
+    url: `https://dianying.taobao.com/showDetail.htm?showId=${card.id}&n_s=new`,
+    linkLabel: "淘票票电影页",
+    status: card.score === null ? "unavailable" : "live",
+    collectionMode: "public-page",
+    voteCount: null,
+    platformId: card.id,
+    lastAttemptAt: attemptedAt,
+  };
+  movie.ratings.douban = emptyRating("douban", movie);
+  try {
+    movie.ratings.douban = await fetchDouban(movie);
+    movie.platformIds.douban = movie.ratings.douban.platformId;
+    movie.originalYear = movie.ratings.douban.subjectYear ?? movie.originalYear;
+  } catch (error) {
+    movie.ratings.douban = fallbackRating(movie, "douban", error);
+  }
+  movie.editorial = generatedEditorial(movie.ratings);
+  await delay(450);
+
+  const available = PLATFORMS.filter((platform) => Number.isFinite(movie.ratings[platform]?.score));
+  return available.length >= 2 ? movie : null;
+}
+
 async function refreshMovie(movie) {
   const ratings = {};
+  const platformIds = { ...movie.platformIds };
+  let originalYear = movie.originalYear;
+  let year = movie.year;
   for (const platform of PLATFORMS) {
     try {
       const fresh = await fetchers[platform](movie);
@@ -218,12 +379,24 @@ async function refreshMovie(movie) {
         throw new Error(`${platform} score jump exceeds guardrail for ${movie.id}`);
       }
       ratings[platform] = fresh;
+      if (fresh.platformId) platformIds[platform] = fresh.platformId;
+      if (movie.autoDiscovered && fresh.subjectYear && (platform === "douban" || platform === "maoyan")) {
+        originalYear = fresh.subjectYear;
+        year = fresh.subjectYear;
+      }
     } catch (error) {
       ratings[platform] = fallbackRating(movie, platform, error);
     }
     if (platform === "douban") await delay(450);
   }
-  return { ...movie, ratings };
+  return {
+    ...movie,
+    year,
+    platformIds,
+    originalYear,
+    ratings,
+    editorial: movie.autoDiscovered ? generatedEditorial(ratings) : movie.editorial,
+  };
 }
 
 function mergeFeed(base, feed) {
@@ -264,8 +437,69 @@ let dataset = {
   movies: [],
 };
 
-for (const movie of source.movies) {
-  dataset.movies.push(await refreshMovie(movie));
+let currentCards = null;
+try {
+  currentCards = await fetchTaopiaopiaoList();
+} catch (error) {
+  console.warn(`Movie discovery skipped: ${error.message}`);
+}
+
+const catalogById = new Map(source.movies.map((movie) => {
+  const prior = previousById.get(movie.id);
+  return [movie.id, {
+    ...movie,
+    catalogStatus: prior?.catalogStatus ?? movie.catalogStatus ?? "current",
+    autoDiscovered: false,
+    firstSeenInTheatersAt: prior?.firstSeenInTheatersAt,
+    lastSeenInTheatersAt: prior?.lastSeenInTheatersAt,
+  }];
+}));
+const idByTitle = new Map(source.movies.map((movie) => [normalizedTitle(movie.title), movie.id]));
+
+for (const movie of previous?.movies ?? []) {
+  if (catalogById.has(movie.id) || idByTitle.has(normalizedTitle(movie.title))) continue;
+  catalogById.set(movie.id, movie);
+  idByTitle.set(normalizedTitle(movie.title), movie.id);
+}
+
+if (currentCards) {
+  const currentByTitle = new Map(currentCards.map((card) => [normalizedTitle(card.title), card]));
+  for (const [id, movie] of catalogById) {
+    const card = currentByTitle.get(normalizedTitle(movie.title));
+    catalogById.set(id, {
+      ...movie,
+      catalogStatus: card ? "current" : "archived",
+      lastSeenInTheatersAt: card ? checkedAt : movie.lastSeenInTheatersAt,
+      firstSeenInTheatersAt: movie.firstSeenInTheatersAt ?? (card ? checkedAt : undefined),
+      platformIds: card
+        ? { ...movie.platformIds, taopiaopiao: card.id }
+        : movie.platformIds,
+    });
+  }
+
+  const discoveryCards = currentCards
+    .filter((card) => Number.isFinite(card.score) && !card.genres.includes("影展"))
+    .slice(0, discoveryLimit);
+  for (const card of discoveryCards) {
+    if (idByTitle.has(normalizedTitle(card.title))) continue;
+    const discovered = await discoverMovie(card);
+    if (!discovered) continue;
+    catalogById.set(discovered.id, discovered);
+    idByTitle.set(normalizedTitle(discovered.title), discovered.id);
+  }
+}
+
+const refreshQueue = [...catalogById.values()].sort((left, right) => {
+  const missingLeft = PLATFORMS.filter((platform) => !Number.isFinite(left.ratings?.[platform]?.score)).length;
+  const missingRight = PLATFORMS.filter((platform) => !Number.isFinite(right.ratings?.[platform]?.score)).length;
+  if (missingLeft !== missingRight) return missingRight - missingLeft;
+  if (left.catalogStatus !== right.catalogStatus) return left.catalogStatus === "current" ? -1 : 1;
+  return left.title.localeCompare(right.title, "zh-CN");
+});
+
+for (const movie of refreshQueue) {
+  const isNew = movie.autoDiscovered && !previousById.has(movie.id);
+  dataset.movies.push(isNew ? movie : await refreshMovie(movie));
 }
 
 if (process.env.RATING_FEED_URL) {
@@ -304,10 +538,16 @@ const sourceStatus = Object.fromEntries(PLATFORMS.map((platform) => {
     total: movies.length,
   }];
 }));
+const catalogStatus = {
+  current: movies.filter((movie) => movie.catalogStatus === "current").length,
+  archived: movies.filter((movie) => movie.catalogStatus === "archived").length,
+  autoDiscovered: movies.filter((movie) => movie.autoDiscovered).length,
+  total: movies.length,
+};
 
-dataset = { ...dataset, calibration, sourceStatus, movies };
+dataset = { ...dataset, calibration, sourceStatus, catalogStatus, movies };
 await writeFile(outputPath, `${JSON.stringify(dataset, null, 2)}\n`, "utf8");
-await writeFile(statusPath, `${JSON.stringify({ generatedAt: attemptedAt, sources: sourceStatus }, null, 2)}\n`, "utf8");
+await writeFile(statusPath, `${JSON.stringify({ generatedAt: attemptedAt, sources: sourceStatus, catalog: catalogStatus }, null, 2)}\n`, "utf8");
 
 const summary = PLATFORMS.map((platform) => `${platform} ${sourceStatus[platform].live}/${movies.length}`).join(", ");
-console.log(`Wrote ${movies.length} movies to ${outputPath.pathname}; live sources: ${summary}`);
+console.log(`Wrote ${movies.length} movies (${catalogStatus.current} current, ${catalogStatus.archived} archived) to ${outputPath.pathname}; live sources: ${summary}`);

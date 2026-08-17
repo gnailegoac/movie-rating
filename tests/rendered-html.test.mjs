@@ -12,5 +12,7 @@ test("builds a GitHub Pages-compatible static entry point", async () => {
   assert.match(html, /https:\/\/gnailegoac\.github\.io\/movie-rating\/og\.png/);
   assert.match(component, /三种口碑/);
   assert.match(component, /评分拆解/);
+  assert.match(component, /正在上映/);
+  assert.match(component, /历史归档/);
   assert.doesNotMatch(html, /codex-preview|SkeletonPreview|Your site is taking shape/);
 });

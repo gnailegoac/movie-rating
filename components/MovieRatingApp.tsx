@@ -26,6 +26,7 @@ type Movie = {
   title: string;
   englishTitle: string;
   year: number;
+  originalYear?: number;
   releaseDateChina: string;
   director: string;
   genres: string[];
@@ -35,6 +36,8 @@ type Movie = {
   editorial: string;
   palette: string[];
   motif: string;
+  catalogStatus: "current" | "archived";
+  autoDiscovered?: boolean;
   cachedComposite: number | null;
   ratings: Record<Platform, Rating>;
 };
@@ -49,8 +52,10 @@ type Dataset = {
     sampleSize: number;
     targetMean: number;
     targetStandardDeviation: number;
+    zLimit: number;
     platforms: Record<Platform, { count: number; mean: number; standardDeviation: number }>;
   };
+  catalogStatus: { current: number; archived: number; autoDiscovered: number; total: number };
   sourceStatus?: Record<Platform, { live: number; cached: number; unavailable: number; total: number }>;
   movies: Movie[];
 };
@@ -64,6 +69,8 @@ const PLATFORM_META: Record<Platform, { name: string; short: string; color: stri
 
 const FILTERS = [
   { id: "all", label: "全部" },
+  { id: "current", label: "正在上映" },
+  { id: "archived", label: "历史归档" },
   { id: "high", label: "综合 9.0+" },
   { id: "animation", label: "动画" },
   { id: "documentary", label: "纪录片" },
@@ -144,6 +151,8 @@ export default function MovieRatingApp({ dataset }: { dataset: Dataset }) {
           .join(" ")
           .toLocaleLowerCase("zh-CN");
         if (search && !haystack.includes(search)) return false;
+        if (filter === "current" && movie.catalogStatus !== "current") return false;
+        if (filter === "archived" && movie.catalogStatus !== "archived") return false;
         if (filter === "high" && (movie.composite ?? 0) < 9) return false;
         if (filter === "animation" && !movie.genres.includes("动画")) return false;
         if (filter === "documentary" && !movie.genres.includes("纪录片")) return false;
@@ -222,7 +231,7 @@ export default function MovieRatingApp({ dataset }: { dataset: Dataset }) {
               </select>
             </label>
           </div>
-          <div className="catalog-heading"><span>共 {ranked.length} 部</span><span>综合分 / 10</span></div>
+          <div className="catalog-heading"><span>共 {ranked.length} 部 · 在映 {dataset.catalogStatus.current}</span><span>校准综合分 / 10</span></div>
           <div className="movie-list">
             {ranked.map((movie, index) => (
               <button key={movie.id} type="button" className={`movie-row ${selected?.id === movie.id ? "is-selected" : ""}`} onClick={() => setSelectedId(movie.id)}>
@@ -230,7 +239,7 @@ export default function MovieRatingApp({ dataset }: { dataset: Dataset }) {
                 <Poster movie={movie} compact />
                 <span className="row-copy">
                   <strong>{movie.title}</strong>
-                  <small>{movie.year} · {movie.genres.slice(0, 2).join(" / ")}</small>
+                  <small>{movie.catalogStatus === "current" ? "在映" : "归档"} · {movie.year} · {movie.genres.slice(0, 2).join(" / ")}</small>
                   <span>{movie.director} 导演</span>
                 </span>
                 <span className="row-score">{movie.composite?.toFixed(1) ?? "—"}<small>映鉴</small></span>
@@ -248,7 +257,7 @@ export default function MovieRatingApp({ dataset }: { dataset: Dataset }) {
               <div className="detail-lead">
                 <Poster movie={selected} />
                 <div className="detail-headline">
-                  <div className="detail-kicker"><span>中国上映 {formatDate(selected.releaseDateChina)}</span><span>{selected.region}</span></div>
+                  <div className="detail-kicker"><span>{selected.catalogStatus === "current" ? "正在上映" : "历史归档"} · 中国上映 {formatDate(selected.releaseDateChina)}</span><span>{selected.region}</span></div>
                   <h2>{selected.title}</h2>
                   <p className="english-title">{selected.englishTitle}</p>
                   <div className="tag-row">{selected.genres.map((genre) => <span key={genre}>{genre}</span>)}<span>{selected.runtimeMinutes} 分钟</span></div>
@@ -309,7 +318,7 @@ export default function MovieRatingApp({ dataset }: { dataset: Dataset }) {
             <button className="modal-close" type="button" aria-label="关闭评分方法" onClick={() => setMethodOpen(false)}>×</button>
             <p className="eyebrow">TRANSPARENT BY DESIGN</p>
             <h2 id="method-title">评分方法</h2>
-            <p className="method-intro">系统先用共同影片样本计算每个平台的均值和标准差，将原始分映射到均值 7.5、标准差 1.0 的共同尺度，再按权重合成。这样猫眼或淘票票的 9.5 不会被直接当成豆瓣的 9.5。拖动权重后，榜单会立即重算。</p>
+            <p className="method-intro">系统先用共同影片样本计算每个平台的均值和标准差，将原始分映射到均值 7.5、标准差 1.0 的共同尺度，再按权重合成。Z 值限制在 ±2.5，避免小样本极端值被过度放大。这样猫眼或淘票票的 9.5 不会被直接当成豆瓣的 9.5。</p>
             <div className="calibration-stats" aria-label="当前平台校准参数">
               {PLATFORMS.map((platform) => (
                 <span key={platform}><i style={{ background: PLATFORM_META[platform].color }} />{PLATFORM_META[platform].name}<strong>均值 {dataset.calibration.platforms[platform].mean.toFixed(2)}</strong><small>标准差 {dataset.calibration.platforms[platform].standardDeviation.toFixed(2)}</small></span>
