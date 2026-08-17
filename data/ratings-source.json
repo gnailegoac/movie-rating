@@ -172,6 +172,28 @@
         "maoyan": { "score": 8.2, "checkedAt": "2026-08-17", "url": "https://www.maoyan.com/films/1531115", "linkLabel": "猫眼电影页", "status": "cached", "collectionMode": "public-json" },
         "taopiaopiao": { "score": 9.4, "checkedAt": "2026-08-17", "url": "https://dianying.taobao.com/showDetail.htm?showId=1536250&n_s=new", "linkLabel": "淘票票电影页", "status": "cached", "collectionMode": "public-page" }
       }
+    },
+    {
+      "id": "national-theatre-live-hamlet-2015",
+      "title": "哈姆雷特",
+      "englishTitle": "National Theatre Live: Hamlet",
+      "year": 2015,
+      "originalYear": 2015,
+      "releaseDateChina": "2026-07-18",
+      "director": "林赛·特纳",
+      "genres": ["剧情", "戏剧影像"],
+      "runtimeMinutes": 175,
+      "region": "英国",
+      "summary": "英国国家剧院现场影像记录本尼迪克特·康伯巴奇主演的舞台版《哈姆雷特》，并于 2026 年在中国内地重映。",
+      "editorial": "猫眼尚未开分，当前综合分由豆瓣社区评分与淘票票购票评分在分布校准后共同构成。",
+      "palette": ["#332d3e", "#b99462"],
+      "motif": "王",
+      "platformIds": { "douban": "26588017", "maoyan": "641862", "taopiaopiao": "224785" },
+      "ratings": {
+        "douban": { "score": 8.3, "checkedAt": "2026-08-17", "url": "https://movie.douban.com/subject/26588017/", "linkLabel": "豆瓣电影页", "status": "cached", "collectionMode": "public-page" },
+        "maoyan": { "score": null, "checkedAt": "2026-08-17", "url": "https://www.maoyan.com/films/641862", "linkLabel": "猫眼电影页", "status": "unavailable", "collectionMode": "public-json" },
+        "taopiaopiao": { "score": 8.9, "checkedAt": "2026-08-17", "url": "https://dianying.taobao.com/showDetail.htm?showId=224785&n_s=new", "linkLabel": "淘票票电影页", "status": "cached", "collectionMode": "public-page" }
+      }
     }
   ]
 }

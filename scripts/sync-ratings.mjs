@@ -1,5 +1,6 @@
 import { readFile, writeFile } from "node:fs/promises";
 import { calculateCalibration, calculateComposite } from "../lib/ratings.js";
+import { selectDoubanCandidate } from "../lib/movie-match.js";
 
 const sourcePath = new URL("../data/ratings-source.json", import.meta.url);
 const outputPath = new URL("../data/movies.json", import.meta.url);
@@ -113,10 +114,8 @@ async function fetchDouban(movie) {
     "User-Agent": "Mozilla/5.0 (compatible; MovieRatingSnapshot/1.0; +https://github.com/gnailegoac/movie-rating)",
   });
   const candidates = result?.subjects?.items ?? [];
-  const expectedId = String(movie.platformIds?.douban ?? "");
-  const match = candidates.find(({ target }) => expectedId && String(target?.id) === expectedId)
-    ?? candidates.find(({ target }) => normalizedTitle(target?.title) === normalizedTitle(movie.title));
-  if (!match?.target) throw new Error(`No exact Douban result for ${movie.title}`);
+  const match = selectDoubanCandidate(candidates, movie);
+  if (!match?.target) throw new Error(`No exact Douban title/year result for ${movie.title}`);
   assertTitle(movie, match.target.title, "douban");
   const expectedYear = Number(movie.originalYear ?? movie.year);
   if (match.target.year && Number.isFinite(expectedYear) && Math.abs(Number(match.target.year) - expectedYear) > 1) {
