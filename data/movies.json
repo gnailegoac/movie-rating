@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "snapshotLabel": "示例评分快照",
-  "generatedAt": "2026-08-17T00:00:00.000Z",
-  "isDemo": true,
+  "snapshotLabel": "三平台公开评分快照",
+  "generatedAt": "2026-08-17T04:53:35.530Z",
+  "isDemo": false,
   "defaultWeights": {
     "douban": 50,
     "maoyan": 25,
@@ -10,343 +10,523 @@
   },
   "movies": [
     {
-      "id": "herstory-2024",
-      "title": "好东西",
-      "englishTitle": "Her Story",
-      "year": 2024,
-      "releaseDateChina": "2024-11-22",
-      "director": "邵艺辉",
+      "id": "once-upon-a-time-middle-east-2026",
+      "title": "欢迎来龙餐馆",
+      "englishTitle": "Once Upon a Time in the Middle East",
+      "year": 2026,
+      "releaseDateChina": "2026-08-11",
+      "director": "文牧野",
       "genres": [
         "剧情",
-        "爱情"
+        "战争"
       ],
-      "runtimeMinutes": 123,
+      "runtimeMinutes": 140,
       "region": "中国大陆",
-      "summary": "单亲妈妈王铁梅带着女儿搬到新家，结识了邻居小叶。两位处境不同的女性，在工作、情感与日常生活中彼此照亮。",
-      "editorial": "三平台评价接近，观众与影迷口碑均衡，是综合分最具参考性的类型。",
+      "summary": "东北大厨徐福远赴中东谋生，在与伙伴经营中餐馆的过程中遭遇战火，也努力守住日常生活与人与人之间的善意。",
+      "editorial": "豆瓣更克制，两个购票平台都在高分区；综合分保留了这种显著的平台差异。",
       "palette": [
-        "#17322c",
-        "#ef6541"
+        "#4c231b",
+        "#d89743"
       ],
-      "motif": "好",
-      "ratings": {
-        "douban": {
-          "score": 8.9,
-          "checkedAt": "2026-08-17",
-          "url": "https://search.douban.com/movie/subject_search?search_text=%E5%A5%BD%E4%B8%9C%E8%A5%BF",
-          "linkLabel": "豆瓣站内搜索"
-        },
-        "maoyan": {
-          "score": 9.2,
-          "checkedAt": "2026-08-17",
-          "url": "https://www.maoyan.com/query?kw=%E5%A5%BD%E4%B8%9C%E8%A5%BF",
-          "linkLabel": "猫眼站内搜索"
-        },
-        "taopiaopiao": {
-          "score": 9.4,
-          "checkedAt": "2026-08-17",
-          "url": "https://dianying.taobao.com/",
-          "linkLabel": "淘票票首页"
-        }
+      "motif": "龙",
+      "platformIds": {
+        "douban": "35811064",
+        "maoyan": "1462628",
+        "taopiaopiao": "1425620"
       },
-      "cachedComposite": 9.1
-    },
-    {
-      "id": "nezha-2-2025",
-      "title": "哪吒之魔童闹海",
-      "englishTitle": "Ne Zha 2",
-      "year": 2025,
-      "releaseDateChina": "2025-01-29",
-      "director": "饺子",
-      "genres": [
-        "动画",
-        "奇幻",
-        "喜剧"
-      ],
-      "runtimeMinutes": 144,
-      "region": "中国大陆",
-      "summary": "天劫之后，哪吒与敖丙的灵魂得以保全，却面临魂飞魄散的危机。太乙真人尝试用七色宝莲重塑二人的肉身。",
-      "editorial": "票务平台分数显著高于豆瓣，综合分保留了两类观众的差异，不等同于简单平均。",
-      "palette": [
-        "#922e22",
-        "#f1a33d"
-      ],
-      "motif": "吒",
       "ratings": {
         "douban": {
           "score": 8.5,
           "checkedAt": "2026-08-17",
-          "url": "https://search.douban.com/movie/subject_search?search_text=%E5%93%AA%E5%90%92%E4%B9%8B%E9%AD%94%E7%AB%A5%E9%97%B9%E6%B5%B7",
-          "linkLabel": "豆瓣站内搜索"
+          "url": "https://movie.douban.com/subject/35811064/",
+          "linkLabel": "豆瓣电影页",
+          "status": "live",
+          "collectionMode": "public-json",
+          "voteCount": 360765,
+          "platformId": "35811064",
+          "lastAttemptAt": "2026-08-17T04:53:35.530Z"
         },
         "maoyan": {
           "score": 9.7,
           "checkedAt": "2026-08-17",
-          "url": "https://www.maoyan.com/query?kw=%E5%93%AA%E5%90%92%E4%B9%8B%E9%AD%94%E7%AB%A5%E9%97%B9%E6%B5%B7",
-          "linkLabel": "猫眼站内搜索"
+          "url": "https://www.maoyan.com/films/1462628",
+          "linkLabel": "猫眼电影页",
+          "status": "live",
+          "collectionMode": "public-json",
+          "voteCount": 189679,
+          "platformId": "1462628",
+          "lastAttemptAt": "2026-08-17T04:53:35.530Z"
         },
         "taopiaopiao": {
-          "score": 9.8,
+          "score": 9.9,
           "checkedAt": "2026-08-17",
-          "url": "https://dianying.taobao.com/",
-          "linkLabel": "淘票票首页"
+          "url": "https://dianying.taobao.com/showDetail.htm?showId=1425620&n_s=new",
+          "linkLabel": "淘票票电影页",
+          "status": "live",
+          "collectionMode": "public-page",
+          "voteCount": null,
+          "platformId": "1425620",
+          "lastAttemptAt": "2026-08-17T04:53:35.530Z"
         }
       },
-      "cachedComposite": 9.1
+      "cachedComposite": 9.2
     },
     {
-      "id": "lisbon-maru-2024",
-      "title": "里斯本丸沉没",
-      "englishTitle": "The Sinking of the Lisbon Maru",
-      "year": 2024,
-      "releaseDateChina": "2024-09-06",
-      "director": "方励",
+      "id": "all-wishes-come-true-2026",
+      "title": "八仙！",
+      "englishTitle": "All Wishes Come True!",
+      "year": 2026,
+      "releaseDateChina": "2026-07-18",
+      "director": "牟正洋",
       "genres": [
-        "纪录片",
-        "历史"
+        "动画",
+        "喜剧",
+        "奇幻",
+        "冒险"
       ],
-      "runtimeMinutes": 123,
+      "runtimeMinutes": 144,
       "region": "中国大陆",
-      "summary": "通过长达八年的调查与寻访，还原二战期间“里斯本丸”沉船事件及舟山东极岛渔民营救英军战俘的历史。",
-      "editorial": "三平台均进入高分区，且分差很小；在默认权重下仍保持样例榜首。",
+      "summary": "八位身份各异的凡人在蓬莱意外成团，开起道观帮助百姓，也被卷入一场隐藏在仙境中的阴谋。",
+      "editorial": "三平台都给出正向评价，豆瓣与购票平台仍有约一点多的分差。",
       "palette": [
-        "#173d55",
-        "#d8b46e"
+        "#166f72",
+        "#f2b842"
       ],
-      "motif": "丸",
+      "motif": "仙",
+      "platformIds": {
+        "douban": "36882191",
+        "maoyan": "1525868",
+        "taopiaopiao": "1525003"
+      },
+      "ratings": {
+        "douban": {
+          "score": 8.2,
+          "checkedAt": "2026-08-17",
+          "url": "https://movie.douban.com/subject/36882191/",
+          "linkLabel": "豆瓣电影页",
+          "status": "live",
+          "collectionMode": "public-json",
+          "voteCount": 371729,
+          "platformId": "36882191",
+          "lastAttemptAt": "2026-08-17T04:53:35.530Z"
+        },
+        "maoyan": {
+          "score": 9.7,
+          "checkedAt": "2026-08-17",
+          "url": "https://www.maoyan.com/films/1525868",
+          "linkLabel": "猫眼电影页",
+          "status": "live",
+          "collectionMode": "public-json",
+          "voteCount": 255809,
+          "platformId": "1525868",
+          "lastAttemptAt": "2026-08-17T04:53:35.530Z"
+        },
+        "taopiaopiao": {
+          "score": 9.6,
+          "checkedAt": "2026-08-17",
+          "url": "https://dianying.taobao.com/showDetail.htm?showId=1525003&n_s=new",
+          "linkLabel": "淘票票电影页",
+          "status": "live",
+          "collectionMode": "public-page",
+          "voteCount": null,
+          "platformId": "1525003",
+          "lastAttemptAt": "2026-08-17T04:53:35.530Z"
+        }
+      },
+      "cachedComposite": 8.9
+    },
+    {
+      "id": "to-your-island-2026",
+      "title": "去你的岛",
+      "englishTitle": "To Your Island",
+      "year": 2026,
+      "releaseDateChina": "2026-08-07",
+      "director": "周浩然",
+      "genres": [
+        "动画",
+        "爱情",
+        "奇幻"
+      ],
+      "runtimeMinutes": 119,
+      "region": "中国大陆",
+      "summary": "王结香进入一座奇幻小岛，与化身兔子的失忆前男友共同闯关，在循环冒险中重新面对遗憾与和解。",
+      "editorial": "购票评分明显更高，默认权重让豆瓣的社区口碑对最终结果发挥更大影响。",
+      "palette": [
+        "#334a84",
+        "#ef8f9b"
+      ],
+      "motif": "岛",
+      "platformIds": {
+        "douban": "35275131",
+        "maoyan": "1375786",
+        "taopiaopiao": "1428844"
+      },
+      "ratings": {
+        "douban": {
+          "score": 7.9,
+          "checkedAt": "2026-08-17",
+          "url": "https://movie.douban.com/subject/35275131/",
+          "linkLabel": "豆瓣电影页",
+          "status": "live",
+          "collectionMode": "public-json",
+          "voteCount": 21852,
+          "platformId": "35275131",
+          "lastAttemptAt": "2026-08-17T04:53:35.530Z"
+        },
+        "maoyan": {
+          "score": 9.5,
+          "checkedAt": "2026-08-17",
+          "url": "https://www.maoyan.com/films/1375786",
+          "linkLabel": "猫眼电影页",
+          "status": "live",
+          "collectionMode": "public-json",
+          "voteCount": 32212,
+          "platformId": "1375786",
+          "lastAttemptAt": "2026-08-17T04:53:35.530Z"
+        },
+        "taopiaopiao": {
+          "score": 9.2,
+          "checkedAt": "2026-08-17",
+          "url": "https://dianying.taobao.com/showDetail.htm?showId=1428844&n_s=new",
+          "linkLabel": "淘票票电影页",
+          "status": "live",
+          "collectionMode": "public-page",
+          "voteCount": null,
+          "platformId": "1428844",
+          "lastAttemptAt": "2026-08-17T04:53:35.530Z"
+        }
+      },
+      "cachedComposite": 8.6
+    },
+    {
+      "id": "kung-fu-soccer-2026",
+      "title": "功夫女足",
+      "englishTitle": "Kung Fu Soccer",
+      "year": 2026,
+      "releaseDateChina": "2026-07-11",
+      "director": "周星驰",
+      "genres": [
+        "喜剧",
+        "运动"
+      ],
+      "runtimeMinutes": 106,
+      "region": "中国大陆 / 中国香港",
+      "summary": "一支身怀功夫的女足球队迎战强敌与赛场之外的压力，尝试用自己的方式完成逆风翻盘。",
+      "editorial": "三个平台分差接近三分，是最能体现权重选择如何改变综合结果的影片之一。",
+      "palette": [
+        "#225d3b",
+        "#e0c040"
+      ],
+      "motif": "足",
+      "platformIds": {
+        "douban": "36452545",
+        "maoyan": "1500469",
+        "taopiaopiao": "1521067"
+      },
+      "ratings": {
+        "douban": {
+          "score": 6.4,
+          "checkedAt": "2026-08-17",
+          "url": "https://movie.douban.com/subject/36452545/",
+          "linkLabel": "豆瓣电影页",
+          "status": "live",
+          "collectionMode": "public-json",
+          "voteCount": 300898,
+          "platformId": "36452545",
+          "lastAttemptAt": "2026-08-17T04:53:35.530Z"
+        },
+        "maoyan": {
+          "score": 9.4,
+          "checkedAt": "2026-08-17",
+          "url": "https://www.maoyan.com/films/1500469",
+          "linkLabel": "猫眼电影页",
+          "status": "live",
+          "collectionMode": "public-json",
+          "voteCount": 687717,
+          "platformId": "1500469",
+          "lastAttemptAt": "2026-08-17T04:53:35.530Z"
+        },
+        "taopiaopiao": {
+          "score": 9.1,
+          "checkedAt": "2026-08-17",
+          "url": "https://dianying.taobao.com/showDetail.htm?showId=1521067&n_s=new",
+          "linkLabel": "淘票票电影页",
+          "status": "live",
+          "collectionMode": "public-page",
+          "voteCount": null,
+          "platformId": "1521067",
+          "lastAttemptAt": "2026-08-17T04:53:35.530Z"
+        }
+      },
+      "cachedComposite": 7.8
+    },
+    {
+      "id": "make-zhonghe-great-again-2026",
+      "title": "年会不能停！2",
+      "englishTitle": "Make Zhonghe Great Again",
+      "year": 2026,
+      "releaseDateChina": "2026-08-01",
+      "director": "董润年",
+      "genres": [
+        "喜剧",
+        "职场"
+      ],
+      "runtimeMinutes": 125,
+      "region": "中国大陆",
+      "summary": "两个职场倒霉蛋意外陷入反复重启的一天，在一次次重来中挑战不公，也追查公司乱象背后的原因。",
+      "editorial": "豆瓣与购票平台评价分化明显，综合分避免直接沿用任何一家平台的结论。",
+      "palette": [
+        "#814635",
+        "#e9c35d"
+      ],
+      "motif": "会",
+      "platformIds": {
+        "douban": "36850814",
+        "maoyan": "1525000",
+        "taopiaopiao": "1577748"
+      },
+      "ratings": {
+        "douban": {
+          "score": 6.6,
+          "checkedAt": "2026-08-17",
+          "url": "https://movie.douban.com/subject/36850814/",
+          "linkLabel": "豆瓣电影页",
+          "status": "cached",
+          "collectionMode": "public-json",
+          "lastAttemptAt": "2026-08-17T04:53:35.530Z",
+          "statusReason": "HTTP 403"
+        },
+        "maoyan": {
+          "score": 9.5,
+          "checkedAt": "2026-08-17",
+          "url": "https://www.maoyan.com/films/1525000",
+          "linkLabel": "猫眼电影页",
+          "status": "live",
+          "collectionMode": "public-json",
+          "voteCount": 39667,
+          "platformId": "1525000",
+          "lastAttemptAt": "2026-08-17T04:53:35.530Z"
+        },
+        "taopiaopiao": {
+          "score": 9.2,
+          "checkedAt": "2026-08-17",
+          "url": "https://dianying.taobao.com/showDetail.htm?showId=1577748&n_s=new",
+          "linkLabel": "淘票票电影页",
+          "status": "live",
+          "collectionMode": "public-page",
+          "voteCount": null,
+          "platformId": "1577748",
+          "lastAttemptAt": "2026-08-17T04:53:35.530Z"
+        }
+      },
+      "cachedComposite": 8
+    },
+    {
+      "id": "dear-you-2026",
+      "title": "给阿嬷的情书",
+      "englishTitle": "Dear You",
+      "year": 2026,
+      "releaseDateChina": "2026-04-30",
+      "director": "蓝鸿春",
+      "genres": [
+        "剧情",
+        "家庭",
+        "爱情"
+      ],
+      "runtimeMinutes": 118,
+      "region": "中国大陆",
+      "summary": "孙子为寻找传闻中的阿公展开调查，一封封往来多年的信件由此揭开阿嬷隐藏半生的情感往事。",
+      "editorial": "三家评分高度一致，是当前榜单中平台分歧最小、综合分最稳定的影片。",
+      "palette": [
+        "#6f4b35",
+        "#d8ad77"
+      ],
+      "motif": "嬷",
+      "platformIds": {
+        "douban": "37116446",
+        "maoyan": "1516982",
+        "taopiaopiao": "1515727"
+      },
       "ratings": {
         "douban": {
           "score": 9.3,
           "checkedAt": "2026-08-17",
-          "url": "https://search.douban.com/movie/subject_search?search_text=%E9%87%8C%E6%96%AF%E6%9C%AC%E4%B8%B8%E6%B2%89%E6%B2%A1",
-          "linkLabel": "豆瓣站内搜索"
+          "url": "https://movie.douban.com/subject/37116446/",
+          "linkLabel": "豆瓣电影页",
+          "status": "live",
+          "collectionMode": "public-json",
+          "voteCount": 929394,
+          "platformId": "37116446",
+          "lastAttemptAt": "2026-08-17T04:53:35.530Z"
         },
         "maoyan": {
-          "score": 9.5,
+          "score": 9.7,
           "checkedAt": "2026-08-17",
-          "url": "https://www.maoyan.com/query?kw=%E9%87%8C%E6%96%AF%E6%9C%AC%E4%B8%B8%E6%B2%89%E6%B2%A1",
-          "linkLabel": "猫眼站内搜索"
-        },
-        "taopiaopiao": {
-          "score": 9.6,
-          "checkedAt": "2026-08-17",
-          "url": "https://dianying.taobao.com/",
-          "linkLabel": "淘票票首页"
-        }
-      },
-      "cachedComposite": 9.4
-    },
-    {
-      "id": "i-am-what-i-am-2-2024",
-      "title": "雄狮少年2",
-      "englishTitle": "I Am What I Am 2",
-      "year": 2024,
-      "releaseDateChina": "2024-12-14",
-      "director": "孙海鹏",
-      "genres": [
-        "动画",
-        "喜剧",
-        "动作"
-      ],
-      "runtimeMinutes": 133,
-      "region": "中国大陆",
-      "summary": "阿娟为给父亲治病留在上海打工，并代表没落的传武拳馆参加格斗比赛，重新寻找心中的雄狮。",
-      "editorial": "票务平台热度突出，豆瓣同样保持高位，综合评价稳定。",
-      "palette": [
-        "#7d2022",
-        "#f0cc75"
-      ],
-      "motif": "狮",
-      "ratings": {
-        "douban": {
-          "score": 8.5,
-          "checkedAt": "2026-08-17",
-          "url": "https://search.douban.com/movie/subject_search?search_text=%E9%9B%84%E7%8B%AE%E5%B0%91%E5%B9%B42",
-          "linkLabel": "豆瓣站内搜索"
-        },
-        "maoyan": {
-          "score": 9.6,
-          "checkedAt": "2026-08-17",
-          "url": "https://www.maoyan.com/query?kw=%E9%9B%84%E7%8B%AE%E5%B0%91%E5%B9%B42",
-          "linkLabel": "猫眼站内搜索"
+          "url": "https://www.maoyan.com/films/1516982",
+          "linkLabel": "猫眼电影页",
+          "status": "live",
+          "collectionMode": "public-json",
+          "voteCount": 422175,
+          "platformId": "1516982",
+          "lastAttemptAt": "2026-08-17T04:53:35.530Z"
         },
         "taopiaopiao": {
           "score": 9.7,
           "checkedAt": "2026-08-17",
-          "url": "https://dianying.taobao.com/",
-          "linkLabel": "淘票票首页"
+          "url": "https://dianying.taobao.com/showDetail.htm?showId=1515727&n_s=new",
+          "linkLabel": "淘票票电影页",
+          "status": "live",
+          "collectionMode": "public-page",
+          "voteCount": null,
+          "platformId": "1515727",
+          "lastAttemptAt": "2026-08-17T04:53:35.530Z"
         }
       },
-      "cachedComposite": 9.1
+      "cachedComposite": 9.5
     },
     {
-      "id": "dead-talents-society-2024",
-      "title": "鬼才之道",
-      "englishTitle": "Dead Talents Society",
-      "year": 2024,
-      "releaseDateChina": "2025-02-22",
-      "director": "徐汉强",
-      "genres": [
-        "喜剧",
-        "奇幻",
-        "恐怖"
-      ],
-      "runtimeMinutes": 110,
-      "region": "中国台湾",
-      "summary": "默默无名的新鬼为了不被世界遗忘，进入鬼界演艺圈，跟随过气鬼后努力成为吓人的都市传说。",
-      "editorial": "类型片受众差异明显，调整三平台权重可以直观看到综合分如何变化。",
-      "palette": [
-        "#4b2b64",
-        "#87c9be"
-      ],
-      "motif": "鬼",
-      "ratings": {
-        "douban": {
-          "score": 7.8,
-          "checkedAt": "2026-08-17",
-          "url": "https://search.douban.com/movie/subject_search?search_text=%E9%AC%BC%E6%89%8D%E4%B9%8B%E9%81%93",
-          "linkLabel": "豆瓣站内搜索"
-        },
-        "maoyan": {
-          "score": 9.1,
-          "checkedAt": "2026-08-17",
-          "url": "https://www.maoyan.com/query?kw=%E9%AC%BC%E6%89%8D%E4%B9%8B%E9%81%93",
-          "linkLabel": "猫眼站内搜索"
-        },
-        "taopiaopiao": {
-          "score": 9.2,
-          "checkedAt": "2026-08-17",
-          "url": "https://dianying.taobao.com/",
-          "linkLabel": "淘票票首页"
-        }
-      },
-      "cachedComposite": 8.5
-    },
-    {
-      "id": "the-last-dance-2024",
-      "title": "破·地狱",
-      "englishTitle": "The Last Dance",
-      "year": 2024,
-      "releaseDateChina": "2024-12-14",
-      "director": "陈茂贤",
+      "id": "i-know-who-you-are-2026",
+      "title": "抓特务",
+      "englishTitle": "I Know Who You Are",
+      "year": 2026,
+      "releaseDateChina": "2026-06-19",
+      "director": "冯小刚",
       "genres": [
         "剧情",
-        "家庭"
+        "年代"
       ],
-      "runtimeMinutes": 126,
-      "region": "中国香港",
-      "summary": "婚礼策划师道生转行成为殡葬经纪，与传统喃呒师傅文哥从冲突走向理解，重新认识生死与告别。",
-      "editorial": "票务平台与社区评分都处在高分段，平台分差温和。",
+      "runtimeMinutes": 141,
+      "region": "中国大陆",
+      "summary": "新中国成立之初，一位派出所所长搬进胡同追查潜伏特务；长期相处让两人的较量牵动了两个家庭。",
+      "editorial": "两个购票平台给分较高，豆瓣相对谨慎，默认权重下综合分落在两类评价之间。",
       "palette": [
-        "#332a25",
-        "#d49e49"
+        "#263b3f",
+        "#c28d51"
       ],
-      "motif": "破",
+      "motif": "谍",
+      "platformIds": {
+        "douban": "36812879",
+        "maoyan": "1522873",
+        "taopiaopiao": "1521692"
+      },
       "ratings": {
         "douban": {
-          "score": 8.5,
+          "score": 7.4,
           "checkedAt": "2026-08-17",
-          "url": "https://search.douban.com/movie/subject_search?search_text=%E7%A0%B4%C2%B7%E5%9C%B0%E7%8B%B1",
-          "linkLabel": "豆瓣站内搜索"
+          "url": "https://movie.douban.com/subject/36812879/",
+          "linkLabel": "豆瓣电影页",
+          "status": "live",
+          "collectionMode": "public-json",
+          "voteCount": 70961,
+          "platformId": "36812879",
+          "lastAttemptAt": "2026-08-17T04:53:35.530Z"
         },
         "maoyan": {
-          "score": 9.4,
+          "score": 9,
           "checkedAt": "2026-08-17",
-          "url": "https://www.maoyan.com/query?kw=%E7%A0%B4%C2%B7%E5%9C%B0%E7%8B%B1",
-          "linkLabel": "猫眼站内搜索"
+          "url": "https://www.maoyan.com/films/1522873",
+          "linkLabel": "猫眼电影页",
+          "status": "live",
+          "collectionMode": "public-json",
+          "voteCount": 21903,
+          "platformId": "1522873",
+          "lastAttemptAt": "2026-08-17T04:53:35.530Z"
         },
         "taopiaopiao": {
           "score": 9.5,
           "checkedAt": "2026-08-17",
-          "url": "https://dianying.taobao.com/",
-          "linkLabel": "淘票票首页"
-        }
-      },
-      "cachedComposite": 9
-    },
-    {
-      "id": "all-shall-be-well-2024",
-      "title": "从今以后",
-      "englishTitle": "All Shall Be Well",
-      "year": 2024,
-      "releaseDateChina": "2025-02-21",
-      "director": "杨曜恺",
-      "genres": [
-        "剧情",
-        "家庭"
-      ],
-      "runtimeMinutes": 93,
-      "region": "中国香港",
-      "summary": "相伴数十年的伴侣忽然离世后，留下的人在没有法律保障的关系里，面对亲情、住房与自我选择。",
-      "editorial": "淘票票评分暂缺，系统不会将缺失值按零分处理，而是按豆瓣与猫眼原有比例重新归一化。",
-      "palette": [
-        "#43534c",
-        "#d6aa83"
-      ],
-      "motif": "今",
-      "ratings": {
-        "douban": {
-          "score": 8,
-          "checkedAt": "2026-08-17",
-          "url": "https://search.douban.com/movie/subject_search?search_text=%E4%BB%8E%E4%BB%8A%E4%BB%A5%E5%90%8E",
-          "linkLabel": "豆瓣站内搜索"
-        },
-        "maoyan": {
-          "score": 8.8,
-          "checkedAt": "2026-08-17",
-          "url": "https://www.maoyan.com/query?kw=%E4%BB%8E%E4%BB%8A%E4%BB%A5%E5%90%8E",
-          "linkLabel": "猫眼站内搜索"
-        },
-        "taopiaopiao": {
-          "score": null,
-          "checkedAt": "2026-08-17",
-          "url": "https://dianying.taobao.com/",
-          "linkLabel": "淘票票首页"
+          "url": "https://dianying.taobao.com/showDetail.htm?showId=1521692&n_s=new",
+          "linkLabel": "淘票票电影页",
+          "status": "live",
+          "collectionMode": "public-page",
+          "voteCount": null,
+          "platformId": "1521692",
+          "lastAttemptAt": "2026-08-17T04:53:35.530Z"
         }
       },
       "cachedComposite": 8.3
     },
     {
-      "id": "the-stage-2025",
-      "title": "戏台",
-      "englishTitle": "The Stage",
-      "year": 2025,
-      "releaseDateChina": "2025-07-25",
-      "director": "陈佩斯",
+      "id": "keep-real-2026",
+      "title": "特立独行",
+      "englishTitle": "Keep Real",
+      "year": 2026,
+      "releaseDateChina": "2026-07-03",
+      "director": "邢文雄",
       "genres": [
         "喜剧",
         "剧情"
       ],
-      "runtimeMinutes": 117,
+      "runtimeMinutes": 121,
       "region": "中国大陆",
-      "summary": "民国年间，一家戏班进京演出，台前幕后阴差阳错，名角、军阀与普通人在一方戏台上相遇。",
-      "editorial": "社区与购票用户评价有一定落差，综合分能够减少单一平台带来的偏差。",
+      "summary": "王长海回乡履职后直面不公，却在人情与规则中不断碰壁，并重新选择理想与现实之间的位置。",
+      "editorial": "社区评分低于两个购票平台，综合分展示了不同评分人群对影片接受度的差别。",
       "palette": [
-        "#6d2220",
-        "#e4bc72"
+        "#41433c",
+        "#d37c42"
       ],
-      "motif": "戏",
+      "motif": "行",
+      "platformIds": {
+        "douban": "36953973",
+        "maoyan": "1531115",
+        "taopiaopiao": "1536250"
+      },
       "ratings": {
         "douban": {
-          "score": 7.9,
+          "score": 6.7,
           "checkedAt": "2026-08-17",
-          "url": "https://search.douban.com/movie/subject_search?search_text=%E6%88%8F%E5%8F%B0",
-          "linkLabel": "豆瓣站内搜索"
+          "url": "https://movie.douban.com/subject/36953973/",
+          "linkLabel": "豆瓣电影页",
+          "status": "live",
+          "collectionMode": "public-json",
+          "voteCount": 51365,
+          "platformId": "36953973",
+          "lastAttemptAt": "2026-08-17T04:53:35.530Z"
         },
         "maoyan": {
-          "score": 9.4,
+          "score": 8.2,
           "checkedAt": "2026-08-17",
-          "url": "https://www.maoyan.com/query?kw=%E6%88%8F%E5%8F%B0",
-          "linkLabel": "猫眼站内搜索"
+          "url": "https://www.maoyan.com/films/1531115",
+          "linkLabel": "猫眼电影页",
+          "status": "live",
+          "collectionMode": "public-json",
+          "voteCount": 28715,
+          "platformId": "1531115",
+          "lastAttemptAt": "2026-08-17T04:53:35.530Z"
         },
         "taopiaopiao": {
-          "score": 9.5,
+          "score": 9.4,
           "checkedAt": "2026-08-17",
-          "url": "https://dianying.taobao.com/",
-          "linkLabel": "淘票票首页"
+          "url": "https://dianying.taobao.com/showDetail.htm?showId=1536250&n_s=new",
+          "linkLabel": "淘票票电影页",
+          "status": "live",
+          "collectionMode": "public-page",
+          "voteCount": null,
+          "platformId": "1536250",
+          "lastAttemptAt": "2026-08-17T04:53:35.530Z"
         }
       },
-      "cachedComposite": 8.7
+      "cachedComposite": 7.8
     }
-  ]
+  ],
+  "sourceStatus": {
+    "douban": {
+      "live": 7,
+      "cached": 1,
+      "unavailable": 0,
+      "total": 8
+    },
+    "maoyan": {
+      "live": 8,
+      "cached": 0,
+      "unavailable": 0,
+      "total": 8
+    },
+    "taopiaopiao": {
+      "live": 8,
+      "cached": 0,
+      "unavailable": 0,
+      "total": 8
+    }
+  }
 }

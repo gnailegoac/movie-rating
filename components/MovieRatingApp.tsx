@@ -11,7 +11,15 @@ import {
 } from "../lib/ratings.js";
 
 type Platform = "douban" | "maoyan" | "taopiaopiao";
-type Rating = { score: number | null; checkedAt: string; url: string; linkLabel: string };
+type Rating = {
+  score: number | null;
+  checkedAt: string;
+  url: string;
+  linkLabel: string;
+  status: "live" | "cached" | "unavailable";
+  collectionMode: "public-json" | "public-page" | "feed";
+  voteCount?: number | null;
+};
 type Movie = {
   id: string;
   title: string;
@@ -34,6 +42,7 @@ type Dataset = {
   snapshotLabel: string;
   isDemo: boolean;
   defaultWeights: Record<Platform, number>;
+  sourceStatus?: Record<Platform, { live: number; cached: number; unavailable: number; total: number }>;
   movies: Movie[];
 };
 type Weights = Record<Platform, number>;
@@ -60,6 +69,12 @@ function scoreSpread(movie: Movie) {
     (score): score is number => Number.isFinite(score),
   );
   return scores.length > 1 ? Math.max(...scores) - Math.min(...scores) : 0;
+}
+
+function ratingStatusLabel(rating: Rating) {
+  if (rating.status === "live") return "本次已核验";
+  if (rating.status === "cached") return "沿用有效缓存";
+  return "平台暂无评分";
 }
 
 function Poster({ movie, compact = false }: { movie: Movie; compact?: boolean }) {
@@ -136,6 +151,10 @@ export default function MovieRatingApp({ dataset }: { dataset: Dataset }) {
   const selectedApplied = selected
     ? (effectiveWeights(selected.ratings, weights) as Record<Platform, number>)
     : normalized;
+  const liveSourceCount = dataset.sourceStatus
+    ? PLATFORMS.reduce((sum, platform) => sum + dataset.sourceStatus![platform].live, 0)
+    : 0;
+  const totalSourceCount = dataset.movies.length * PLATFORMS.length;
 
   return (
     <main className="site-shell" id="top">
@@ -148,7 +167,7 @@ export default function MovieRatingApp({ dataset }: { dataset: Dataset }) {
           <a href="#ranking">评分榜</a>
           <button type="button" onClick={() => setMethodOpen(true)}>计算方法</button>
         </nav>
-        <div className="data-status" title={dataset.isDemo ? "当前为产品演示数据，不代表平台实时评分" : "已连接正式数据源"}>
+        <div className="data-status" title={dataset.isDemo ? "当前为产品演示数据，不代表平台实时评分" : `本轮成功核验 ${liveSourceCount}/${totalSourceCount} 条平台评分；失败项沿用上次有效值`}>
           <i /> {dataset.snapshotLabel} · {formatDate(dataset.generatedAt)}
         </div>
       </header>
@@ -241,6 +260,7 @@ export default function MovieRatingApp({ dataset }: { dataset: Dataset }) {
                         <div className="source-name"><span style={{ background: meta.color }}>{meta.short}</span><strong>{meta.name}</strong><em>有效权重 {Math.round(selectedApplied[platform] * 100)}%</em></div>
                         <div className={`platform-score ${rating.score === null ? "is-missing" : ""}`}>{rating.score?.toFixed(1) ?? "暂无"}</div>
                         <div className="score-track"><i style={{ width: `${(rating.score ?? 0) * 10}%`, background: meta.color }} /></div>
+                        <div className={`source-freshness is-${rating.status}`}><span>{ratingStatusLabel(rating)}</span><time>{rating.checkedAt || "—"}</time></div>
                         <a href={rating.url} target="_blank" rel="noreferrer">{rating.linkLabel} <span>↗</span></a>
                       </article>
                     );
@@ -268,7 +288,7 @@ export default function MovieRatingApp({ dataset }: { dataset: Dataset }) {
 
       <footer>
         <div className="brand footer-brand"><span className="brand-mark">映</span><span><strong>映鉴</strong><small>看见分数背后的差异</small></span></div>
-        <p>{dataset.isDemo ? "当前展示示例快照；正式使用时请连接经授权的数据源，并遵守各平台条款。" : "评分随数据源更新，仅供选片参考。"}</p>
+        <p>{dataset.isDemo ? "当前展示示例快照；正式使用时请连接经授权的数据源，并遵守各平台条款。" : `公开评分每日核验；本轮 ${liveSourceCount}/${totalSourceCount} 条成功。平台临时不可访问时沿用上次有效值，不按 0 分处理。`}</p>
         <button type="button" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>回到顶部 ↑</button>
       </footer>
 

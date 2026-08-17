@@ -123,6 +123,10 @@ button { color: inherit; }
 .platform-score.is-missing { color: #aaa79e; font: 600 19px/1 Georgia,"SimSun",serif; }
 .score-track { height: 3px; background: var(--paper-deep); }
 .score-track i { display: block; height: 100%; }
+.source-freshness { display: flex; justify-content: space-between; gap: 10px; margin-top: 10px; color: #4d9564; font-size: 8px; }
+.source-freshness.is-cached { color: #9a6b31; }
+.source-freshness.is-unavailable { color: var(--muted); }
+.source-freshness time { color: var(--muted); font-variant-numeric: tabular-nums; }
 .source-score-card a { display: inline-block; margin-top: 13px; color: var(--muted); font-size: 8px; text-decoration: none; }
 .source-score-card a:hover { color: var(--accent); }
 .source-score-card a span { margin-left: 4px; }
