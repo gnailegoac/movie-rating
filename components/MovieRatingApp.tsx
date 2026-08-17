@@ -14,12 +14,16 @@ import {
 type Platform = "douban" | "mtime" | "maoyan" | "taopiaopiao";
 type Rating = {
   score: number | null;
+  scoreType?: "official" | "estimated-subitems";
+  confidence?: number;
   checkedAt: string;
   url: string;
   linkLabel: string;
   status: "live" | "cached" | "unavailable";
   collectionMode: "public-json" | "public-page" | "feed";
   voteCount?: number | null;
+  subItemVoteCount?: number | null;
+  subItemRatings?: Array<{ title: string; score: number }>;
 };
 type Movie = {
   id: string;
@@ -56,7 +60,7 @@ type Dataset = {
     platforms: Record<Platform, { count: number; mean: number; standardDeviation: number }>;
   };
   catalogStatus: { current: number; archived: number; autoDiscovered: number; total: number };
-  sourceStatus?: Record<Platform, { live: number; cached: number; unavailable: number; total: number }>;
+  sourceStatus?: Record<Platform, { live: number; cached: number; unavailable: number; estimated?: number; total: number }>;
   movies: Movie[];
 };
 type Weights = Record<Platform, number>;
@@ -89,6 +93,10 @@ function scoreSpread(movie: Movie) {
 }
 
 function ratingStatusLabel(rating: Rating) {
+  if (rating.scoreType === "estimated-subitems") {
+    const sample = rating.subItemVoteCount ?? rating.voteCount;
+    return `五项估算${sample ? ` · ${sample}人` : ""}`;
+  }
   if (rating.status === "live") return "本次已核验";
   if (rating.status === "cached") return "沿用有效缓存";
   return "平台暂无评分";
@@ -175,6 +183,7 @@ export default function MovieRatingApp({ dataset }: { dataset: Dataset }) {
     ? PLATFORMS.reduce((sum, platform) => sum + dataset.sourceStatus![platform].live, 0)
     : 0;
   const totalSourceCount = dataset.movies.length * PLATFORMS.length;
+  const estimatedSourceCount = dataset.sourceStatus?.mtime.estimated ?? 0;
 
   return (
     <main className="site-shell" id="top">
@@ -187,7 +196,7 @@ export default function MovieRatingApp({ dataset }: { dataset: Dataset }) {
           <a href="#ranking">评分榜</a>
           <button type="button" onClick={() => setMethodOpen(true)}>计算方法</button>
         </nav>
-        <div className="data-status" title={dataset.isDemo ? "当前为产品演示数据，不代表平台实时评分" : `本轮成功核验 ${liveSourceCount}/${totalSourceCount} 条平台评分；失败项沿用上次有效值`}>
+        <div className="data-status" title={dataset.isDemo ? "当前为产品演示数据，不代表平台实时评分" : `本轮成功核验 ${liveSourceCount}/${totalSourceCount} 条平台评分；含 ${estimatedSourceCount} 条时光网分项估算；失败项沿用上次有效值`}>
           <i /> {dataset.snapshotLabel} · {formatDate(dataset.generatedAt)}
         </div>
       </header>
@@ -271,7 +280,7 @@ export default function MovieRatingApp({ dataset }: { dataset: Dataset }) {
               </div>
 
               <div className="score-breakdown">
-                <div className="section-heading"><div><p>评分拆解</p><h3>原始分可追溯，校准分可比较</h3></div><span>共同样本 {dataset.calibration.sampleSize} 部 · 覆盖度 {calculateCoverage(selected.ratings, weights)}%</span></div>
+                <div className="section-heading"><div><p>评分拆解</p><h3>原始分可追溯，校准分可比较</h3></div><span>共同样本 {dataset.calibration.sampleSize} 部 · 证据覆盖度 {calculateCoverage(selected.ratings, weights)}%</span></div>
                 <div className="source-scores">
                   {PLATFORMS.map((platform) => {
                     const rating = selected.ratings[platform];
@@ -279,10 +288,15 @@ export default function MovieRatingApp({ dataset }: { dataset: Dataset }) {
                     const calibratedScore = normalizePlatformScore(rating.score, platform, dataset.calibration);
                     return (
                       <article className="source-score-card" key={platform}>
-                        <div className="source-name"><span style={{ background: meta.color }}>{meta.short}</span><strong>{meta.name}</strong><em>有效权重 {Math.round(selectedApplied[platform] * 100)}%</em></div>
-                        <div className={`platform-score ${rating.score === null ? "is-missing" : ""}`}>{rating.score?.toFixed(1) ?? "暂无"}</div>
-                        <div className="calibrated-score">校准后 {calibratedScore?.toFixed(1) ?? "—"}</div>
+                        <div className="source-name"><span style={{ background: meta.color }}>{meta.short}</span><strong>{meta.name}{rating.scoreType === "estimated-subitems" ? <small>估算</small> : null}</strong><em>有效权重 {Math.round(selectedApplied[platform] * 100)}%</em></div>
+                        <div className={`platform-score ${rating.score === null ? "is-missing" : ""}`}>{rating.scoreType === "estimated-subitems" ? "≈" : ""}{rating.score?.toFixed(1) ?? "暂无"}</div>
+                        <div className="calibrated-score">校准后 {calibratedScore?.toFixed(1) ?? "—"}{rating.scoreType === "estimated-subitems" ? " · 可信度 50%" : ""}</div>
                         <div className="score-track"><i style={{ width: `${(rating.score ?? 0) * 10}%`, background: meta.color }} /></div>
+                        {rating.scoreType === "estimated-subitems" && rating.subItemRatings ? (
+                          <div className="subitem-breakdown" aria-label="时光网分项评分">
+                            {rating.subItemRatings.map((item) => <span key={item.title}>{item.title} {item.score.toFixed(1)}</span>)}
+                          </div>
+                        ) : null}
                         <div className={`source-freshness is-${rating.status}`}><span>{ratingStatusLabel(rating)}</span><time>{rating.checkedAt || "—"}</time></div>
                         <a href={rating.url} target="_blank" rel="noreferrer">{rating.linkLabel} <span>↗</span></a>
                       </article>
@@ -293,7 +307,7 @@ export default function MovieRatingApp({ dataset }: { dataset: Dataset }) {
                   <span className="formula-label">校准分公式</span>
                   <div className="formula-expression">
                     {PLATFORMS.filter((platform) => selected.ratings[platform].score !== null).map((platform, index, available) => (
-                      <span key={platform}>{normalizePlatformScore(selected.ratings[platform].score, platform, dataset.calibration)?.toFixed(1)} × {Math.round(selectedApplied[platform] * 100)}% {index < available.length - 1 ? <b>＋</b> : null}</span>
+                      <span key={platform}>{normalizePlatformScore(selected.ratings[platform].score, platform, dataset.calibration)?.toFixed(1)}{selected.ratings[platform].scoreType === "estimated-subitems" ? "（估）" : ""} × {Math.round(selectedApplied[platform] * 100)}% {index < available.length - 1 ? <b>＋</b> : null}</span>
                     ))}
                     <strong>＝ {selected.composite?.toFixed(1)}</strong>
                   </div>
@@ -311,7 +325,7 @@ export default function MovieRatingApp({ dataset }: { dataset: Dataset }) {
 
       <footer>
         <div className="brand footer-brand"><span className="brand-mark">映</span><span><strong>映鉴</strong><small>看见分数背后的差异</small></span></div>
-        <p>{dataset.isDemo ? "当前展示示例快照；正式使用时请连接经授权的数据源，并遵守各平台条款。" : `公开评分每日核验；本轮 ${liveSourceCount}/${totalSourceCount} 条成功。平台临时不可访问时沿用上次有效值，不按 0 分处理。`}</p>
+        <p>{dataset.isDemo ? "当前展示示例快照；正式使用时请连接经授权的数据源，并遵守各平台条款。" : `公开评分每日核验；本轮 ${liveSourceCount}/${totalSourceCount} 条成功，其中 ${estimatedSourceCount} 条为时光网分项估算。平台临时不可访问时沿用上次有效值，不按 0 分处理。`}</p>
         <button type="button" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>回到顶部 ↑</button>
       </footer>
 
@@ -345,6 +359,10 @@ export default function MovieRatingApp({ dataset }: { dataset: Dataset }) {
             <div className="method-rule">
               <strong>缺失评分怎么处理？</strong>
               <p>不按 0 分计算。系统只使用已有平台，并保持它们原来的相对权重。例如淘票票缺失时，25:25:25 会归一化为约 33%:33%:33%。</p>
+            </div>
+            <div className="method-rule">
+              <strong>时光网没有总分怎么办？</strong>
+              <p>五项分项评分齐全且至少有 10 人参与时，系统显示五项等权均值并标记为“估算”。估算分不参与校准样本，可信度按 50% 折算，因此不会被当作完整的官方来源。</p>
             </div>
             <div className="method-actions">
               <button type="button" className="secondary-button" onClick={() => setWeights({ ...DEFAULT_WEIGHTS } as Weights)}>恢复默认</button>

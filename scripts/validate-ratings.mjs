@@ -29,6 +29,13 @@ for (const movie of dataset.movies) {
     assert.ok(validStatuses.has(rating.status), `${movie.id}.${platform} status is invalid`);
     assert.match(rating.url, /^https:\/\//, `${movie.id}.${platform} source URL must use HTTPS`);
     if (rating.score !== null) assert.match(rating.checkedAt, /^\d{4}-\d{2}-\d{2}$/, `${movie.id}.${platform} checkedAt is invalid`);
+    if (rating.scoreType === "estimated-subitems") {
+      assert.equal(platform, "mtime", `${movie.id}.${platform} cannot use an Mtime estimate type`);
+      assert.equal(rating.confidence, 0.5, `${movie.id}.${platform} estimate confidence is invalid`);
+      assert.ok(rating.subItemVoteCount >= 10, `${movie.id}.${platform} estimate sample is too small`);
+      assert.equal(rating.subItemRatings?.length, 5, `${movie.id}.${platform} estimate needs five sub-items`);
+      assert.ok(rating.subItemRatings.every((item) => item.score > 0 && item.score <= 10), `${movie.id}.${platform} sub-item score is invalid`);
+    }
   }
   const score = calculateComposite(movie.ratings, dataset.defaultWeights, dataset.calibration);
   assert.equal(movie.cachedComposite, score, `${movie.id} cached score is stale`);
@@ -48,6 +55,7 @@ for (const platform of platforms) {
   const status = dataset.sourceStatus?.[platform];
   assert.ok(status, `Missing source status for ${platform}`);
   assert.equal(status.live + status.cached + status.unavailable, dataset.movies.length, `${platform} status totals do not reconcile`);
+  assert.equal(status.estimated ?? 0, dataset.movies.filter((movie) => movie.ratings[platform].scoreType === "estimated-subitems").length, `${platform} estimate count is stale`);
 }
 
 console.log(`Validated ${dataset.movies.length} movie records and all cached scores.`);

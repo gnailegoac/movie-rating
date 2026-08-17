@@ -1,4 +1,5 @@
 import { readFile, writeFile } from "node:fs/promises";
+import { estimateMtimeSubitemRating } from "../lib/mtime-rating.js";
 import { PLATFORMS, calculateCalibration, calculateComposite } from "../lib/ratings.js";
 import { selectDoubanCandidate, selectMtimeCandidate } from "../lib/movie-match.js";
 
@@ -192,18 +193,28 @@ async function fetchMtime(movie) {
     throw new Error(`Mtime year mismatch for ${movie.id}: ${subjectYear}`);
   }
 
-  const score = validScore(detail.overallRating);
+  const officialScore = validScore(detail.overallRating);
+  const estimate = officialScore === null
+    ? estimateMtimeSubitemRating(detail.movieSubItemRatings, detail.subItemRatingCount)
+    : null;
+  const score = officialScore ?? estimate?.score ?? null;
   return {
     score,
+    scoreType: officialScore !== null ? "official" : estimate?.scoreType,
+    confidence: officialScore !== null ? 1 : estimate?.confidence,
     checkedAt,
     url: `https://movie.mtime.com/${movieId}/`,
     linkLabel: "时光网电影页",
     status: score === null ? "unavailable" : "live",
     collectionMode: "public-json",
-    voteCount: Number(detail.ratingCount) || null,
+    voteCount: officialScore !== null ? Number(detail.ratingCount) || null : estimate?.voteCount ?? null,
+    overallVoteCount: Number(detail.ratingCount) || null,
+    subItemVoteCount: Number(detail.subItemRatingCount) || null,
+    subItemRatings: estimate?.subItemRatings,
     platformId: movieId,
     subjectYear,
     lastAttemptAt: attemptedAt,
+    statusReason: estimate ? "时光网未发布总分；按五项分项评分等权估算" : undefined,
   };
 }
 
@@ -610,6 +621,7 @@ const sourceStatus = Object.fromEntries(PLATFORMS.map((platform) => {
     live: statuses.filter((status) => status === "live").length,
     cached: statuses.filter((status) => status === "cached").length,
     unavailable: statuses.filter((status) => status === "unavailable").length,
+    estimated: movies.filter((movie) => movie.ratings[platform].scoreType === "estimated-subitems").length,
     total: movies.length,
   }];
 }));
