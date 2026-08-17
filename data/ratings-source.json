@@ -4,6 +4,12 @@
   "generatedAt": "2026-08-17T00:00:00.000Z",
   "isDemo": false,
   "defaultWeights": { "douban": 25, "mtime": 25, "maoyan": 25, "taopiaopiao": 25 },
+  "platformIdOverrides": {
+    "小黄人与大怪兽": { "douban": "36962219" },
+    "汪汪队立大功大电影3：勇闯恐龙岛": { "douban": "36791178" },
+    "蜘蛛侠：崭新之日": { "douban": "36246195" },
+    "四渡": { "douban": "37191746" }
+  },
   "movies": [
     {
       "id": "once-upon-a-time-middle-east-2026",

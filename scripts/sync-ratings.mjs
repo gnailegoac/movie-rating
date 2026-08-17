@@ -107,6 +107,37 @@ async function fetchJson(url, headers) {
 }
 
 async function fetchDouban(movie) {
+  if (movie.platformIds?.douban) {
+    const subjectId = String(movie.platformIds.douban);
+    const detail = await fetchJson(`https://m.douban.com/rexxar/api/v2/movie/${subjectId}`, {
+      Accept: "application/json",
+      Referer: `https://m.douban.com/movie/subject/${subjectId}/`,
+      "User-Agent": "Mozilla/5.0 (compatible; MovieRatingSnapshot/1.0; +https://github.com/gnailegoac/movie-rating)",
+    });
+    assertTitle(movie, detail.title, "douban");
+    const subjectYear = Number(detail.year) || null;
+    const expectedYear = Number(movie.originalYear ?? movie.year);
+    if (subjectYear && Number.isFinite(expectedYear) && Math.abs(subjectYear - expectedYear) > 1) {
+      throw new Error(`Douban year mismatch for ${movie.id}: ${subjectYear}`);
+    }
+    const score = validScore(detail.rating?.value);
+    return {
+      score,
+      scoreType: score === null ? undefined : "official",
+      confidence: score === null ? undefined : 1,
+      checkedAt,
+      url: `https://movie.douban.com/subject/${subjectId}/`,
+      linkLabel: "豆瓣电影页",
+      status: score === null ? "unavailable" : "live",
+      collectionMode: "public-json",
+      voteCount: Number(detail.rating?.count) || null,
+      platformId: subjectId,
+      subjectYear,
+      lastAttemptAt: attemptedAt,
+      statusReason: score === null ? String(detail.null_rating_reason || "豆瓣暂无评分") : undefined,
+    };
+  }
+
   const query = encodeURIComponent(movie.title);
   const searchUrl = `https://m.douban.com/rexxar/api/v2/search?q=${query}&start=0&count=10`;
   const result = await fetchJson(searchUrl, {
@@ -126,6 +157,8 @@ async function fetchDouban(movie) {
   const score = validScore(match.target.rating?.value);
   return {
     score,
+    scoreType: score === null ? undefined : "official",
+    confidence: score === null ? undefined : 1,
     checkedAt,
     url: `https://movie.douban.com/subject/${match.target.id}/`,
     linkLabel: "豆瓣电影页",
@@ -531,9 +564,10 @@ try {
 
 const catalogById = new Map(source.movies.map((movie) => {
   const prior = previousById.get(movie.id);
+  const overrides = source.platformIdOverrides?.[movie.title] ?? {};
   return [movie.id, {
     ...movie,
-    platformIds: { ...movie.platformIds, ...prior?.platformIds },
+    platformIds: { ...movie.platformIds, ...prior?.platformIds, ...overrides },
     catalogStatus: prior?.catalogStatus ?? movie.catalogStatus ?? "current",
     autoDiscovered: false,
     firstSeenInTheatersAt: prior?.firstSeenInTheatersAt,
@@ -544,7 +578,8 @@ const idByTitle = new Map(source.movies.map((movie) => [normalizedTitle(movie.ti
 
 for (const movie of previous?.movies ?? []) {
   if (catalogById.has(movie.id) || idByTitle.has(normalizedTitle(movie.title))) continue;
-  catalogById.set(movie.id, movie);
+  const overrides = source.platformIdOverrides?.[movie.title] ?? {};
+  catalogById.set(movie.id, { ...movie, platformIds: { ...movie.platformIds, ...overrides } });
   idByTitle.set(normalizedTitle(movie.title), movie.id);
 }
 
