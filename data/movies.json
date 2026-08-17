@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "snapshotLabel": "四平台公开评分快照",
-  "generatedAt": "2026-08-17T07:36:37.019Z",
+  "generatedAt": "2026-08-17T07:37:57.085Z",
   "isDemo": false,
   "defaultWeights": {
     "douban": 25,
@@ -63,7 +63,7 @@
           "voteCount": 13507,
           "platformId": "26588017",
           "subjectYear": 2015,
-          "lastAttemptAt": "2026-08-17T07:36:37.019Z"
+          "lastAttemptAt": "2026-08-17T07:37:57.085Z"
         },
         "mtime": {
           "score": null,
@@ -72,7 +72,7 @@
           "linkLabel": "时光网来源页",
           "status": "unavailable",
           "collectionMode": "public-json",
-          "lastAttemptAt": "2026-08-17T07:36:37.019Z",
+          "lastAttemptAt": "2026-08-17T07:37:57.085Z",
           "statusReason": "No exact Mtime title/year result for 哈姆雷特"
         },
         "maoyan": {
@@ -85,7 +85,7 @@
           "voteCount": 805,
           "platformId": "641862",
           "subjectYear": 2015,
-          "lastAttemptAt": "2026-08-17T07:36:37.019Z"
+          "lastAttemptAt": "2026-08-17T07:37:57.085Z"
         },
         "taopiaopiao": {
           "score": 8.9,
@@ -96,7 +96,7 @@
           "collectionMode": "public-page",
           "voteCount": null,
           "platformId": "224785",
-          "lastAttemptAt": "2026-08-17T07:36:37.019Z"
+          "lastAttemptAt": "2026-08-17T07:37:57.085Z"
         }
       },
       "catalogStatus": "current",
@@ -147,7 +147,7 @@
           "voteCount": null,
           "platformId": "36791178",
           "subjectYear": 2026,
-          "lastAttemptAt": "2026-08-17T07:36:37.019Z",
+          "lastAttemptAt": "2026-08-17T07:37:57.085Z",
           "statusReason": "暂无评分"
         },
         "mtime": {
@@ -162,7 +162,7 @@
           "subItemVoteCount": null,
           "platformId": "275788",
           "subjectYear": 2026,
-          "lastAttemptAt": "2026-08-17T07:36:37.019Z"
+          "lastAttemptAt": "2026-08-17T07:37:57.085Z"
         },
         "maoyan": {
           "score": 9.5,
@@ -171,10 +171,10 @@
           "linkLabel": "猫眼电影页",
           "status": "live",
           "collectionMode": "public-json",
-          "voteCount": 5430,
+          "voteCount": 5432,
           "platformId": "1521734",
           "subjectYear": 2026,
-          "lastAttemptAt": "2026-08-17T07:36:37.019Z"
+          "lastAttemptAt": "2026-08-17T07:37:57.085Z"
         },
         "taopiaopiao": {
           "score": 9.3,
@@ -185,7 +185,7 @@
           "collectionMode": "public-page",
           "voteCount": null,
           "platformId": "1520877",
-          "lastAttemptAt": "2026-08-17T07:36:37.019Z"
+          "lastAttemptAt": "2026-08-17T07:37:57.085Z"
         }
       },
       "cachedComposite": null,
@@ -227,10 +227,10 @@
           "linkLabel": "豆瓣电影页",
           "status": "live",
           "collectionMode": "public-json",
-          "voteCount": 97228,
+          "voteCount": 97229,
           "platformId": "36850814",
           "subjectYear": 2026,
-          "lastAttemptAt": "2026-08-17T07:36:37.019Z"
+          "lastAttemptAt": "2026-08-17T07:37:57.085Z"
         },
         "mtime": {
           "score": 6.8,
@@ -268,7 +268,7 @@
           ],
           "platformId": "278119",
           "subjectYear": 2026,
-          "lastAttemptAt": "2026-08-17T07:36:37.019Z",
+          "lastAttemptAt": "2026-08-17T07:37:57.085Z",
           "statusReason": "时光网未发布总分；按五项分项评分等权估算"
         },
         "maoyan": {
@@ -278,10 +278,10 @@
           "linkLabel": "猫眼电影页",
           "status": "live",
           "collectionMode": "public-json",
-          "voteCount": 39720,
+          "voteCount": 39721,
           "platformId": "1525000",
           "subjectYear": null,
-          "lastAttemptAt": "2026-08-17T07:36:37.019Z"
+          "lastAttemptAt": "2026-08-17T07:37:57.085Z"
         },
         "taopiaopiao": {
           "score": 9.2,
@@ -292,7 +292,7 @@
           "collectionMode": "public-page",
           "voteCount": null,
           "platformId": "1577748",
-          "lastAttemptAt": "2026-08-17T07:36:37.019Z"
+          "lastAttemptAt": "2026-08-17T07:37:57.085Z"
         }
       },
       "catalogStatus": "current",
@@ -341,7 +341,7 @@
           "voteCount": 21916,
           "platformId": "35275131",
           "subjectYear": 2026,
-          "lastAttemptAt": "2026-08-17T07:36:37.019Z"
+          "lastAttemptAt": "2026-08-17T07:37:57.085Z"
         },
         "mtime": {
           "score": null,
@@ -355,7 +355,7 @@
           "subItemVoteCount": 3,
           "platformId": "274060",
           "subjectYear": 2026,
-          "lastAttemptAt": "2026-08-17T07:36:37.019Z"
+          "lastAttemptAt": "2026-08-17T07:37:57.085Z"
         },
         "maoyan": {
           "score": 9.5,
@@ -364,10 +364,10 @@
           "linkLabel": "猫眼电影页",
           "status": "live",
           "collectionMode": "public-json",
-          "voteCount": 32493,
+          "voteCount": 32494,
           "platformId": "1375786",
           "subjectYear": null,
-          "lastAttemptAt": "2026-08-17T07:36:37.019Z"
+          "lastAttemptAt": "2026-08-17T07:37:57.085Z"
         },
         "taopiaopiao": {
           "score": 9.2,
@@ -378,7 +378,7 @@
           "collectionMode": "public-page",
           "voteCount": null,
           "platformId": "1428844",
-          "lastAttemptAt": "2026-08-17T07:36:37.019Z"
+          "lastAttemptAt": "2026-08-17T07:37:57.085Z"
         }
       },
       "catalogStatus": "current",
@@ -428,7 +428,7 @@
           "voteCount": null,
           "platformId": "37191746",
           "subjectYear": 2026,
-          "lastAttemptAt": "2026-08-17T07:36:37.019Z",
+          "lastAttemptAt": "2026-08-17T07:37:57.085Z",
           "statusReason": "暂无评分"
         },
         "mtime": {
@@ -467,7 +467,7 @@
           ],
           "platformId": "278306",
           "subjectYear": 2026,
-          "lastAttemptAt": "2026-08-17T07:36:37.019Z",
+          "lastAttemptAt": "2026-08-17T07:37:57.085Z",
           "statusReason": "时光网未发布总分；按五项分项评分等权估算"
         },
         "maoyan": {
@@ -480,7 +480,7 @@
           "voteCount": 44622,
           "platformId": "1545588",
           "subjectYear": 2026,
-          "lastAttemptAt": "2026-08-17T07:36:37.019Z"
+          "lastAttemptAt": "2026-08-17T07:37:57.085Z"
         },
         "taopiaopiao": {
           "score": 9.1,
@@ -491,7 +491,7 @@
           "collectionMode": "public-page",
           "voteCount": null,
           "platformId": "1554055",
-          "lastAttemptAt": "2026-08-17T07:36:37.019Z"
+          "lastAttemptAt": "2026-08-17T07:37:57.085Z"
         }
       },
       "cachedComposite": 6.8,
@@ -536,7 +536,7 @@
           "voteCount": 51370,
           "platformId": "36953973",
           "subjectYear": 2026,
-          "lastAttemptAt": "2026-08-17T07:36:37.019Z"
+          "lastAttemptAt": "2026-08-17T07:37:57.085Z"
         },
         "mtime": {
           "score": 6.2,
@@ -574,7 +574,7 @@
           ],
           "platformId": "277040",
           "subjectYear": 2026,
-          "lastAttemptAt": "2026-08-17T07:36:37.019Z",
+          "lastAttemptAt": "2026-08-17T07:37:57.085Z",
           "statusReason": "时光网未发布总分；按五项分项评分等权估算"
         },
         "maoyan": {
@@ -587,7 +587,7 @@
           "voteCount": 28724,
           "platformId": "1531115",
           "subjectYear": null,
-          "lastAttemptAt": "2026-08-17T07:36:37.019Z"
+          "lastAttemptAt": "2026-08-17T07:37:57.085Z"
         },
         "taopiaopiao": {
           "score": 9.4,
@@ -598,7 +598,7 @@
           "collectionMode": "public-page",
           "voteCount": null,
           "platformId": "1536250",
-          "lastAttemptAt": "2026-08-17T07:36:37.019Z"
+          "lastAttemptAt": "2026-08-17T07:37:57.085Z"
         }
       },
       "catalogStatus": "current",
@@ -650,7 +650,7 @@
           "voteCount": 16975,
           "platformId": "37021936",
           "subjectYear": 2026,
-          "lastAttemptAt": "2026-08-17T07:36:37.019Z"
+          "lastAttemptAt": "2026-08-17T07:37:57.085Z"
         },
         "mtime": {
           "score": null,
@@ -664,7 +664,7 @@
           "subItemVoteCount": 2,
           "platformId": "278454",
           "subjectYear": 2026,
-          "lastAttemptAt": "2026-08-17T07:36:37.019Z"
+          "lastAttemptAt": "2026-08-17T07:37:57.085Z"
         },
         "maoyan": {
           "score": 8.8,
@@ -673,10 +673,10 @@
           "linkLabel": "猫眼电影页",
           "status": "live",
           "collectionMode": "public-json",
-          "voteCount": 54694,
+          "voteCount": 54696,
           "platformId": "1531493",
           "subjectYear": null,
-          "lastAttemptAt": "2026-08-17T07:36:37.019Z"
+          "lastAttemptAt": "2026-08-17T07:37:57.085Z"
         },
         "taopiaopiao": {
           "score": 8.6,
@@ -687,7 +687,7 @@
           "collectionMode": "public-page",
           "voteCount": null,
           "platformId": "1537470",
-          "lastAttemptAt": "2026-08-17T07:36:37.019Z"
+          "lastAttemptAt": "2026-08-17T07:37:57.085Z"
         }
       },
       "cachedComposite": 6.5,
@@ -732,7 +732,7 @@
           "voteCount": 70981,
           "platformId": "36812879",
           "subjectYear": 2026,
-          "lastAttemptAt": "2026-08-17T07:36:37.019Z"
+          "lastAttemptAt": "2026-08-17T07:37:57.085Z"
         },
         "mtime": {
           "score": 7.5,
@@ -770,7 +770,7 @@
           ],
           "platformId": "276407",
           "subjectYear": 2026,
-          "lastAttemptAt": "2026-08-17T07:36:37.019Z",
+          "lastAttemptAt": "2026-08-17T07:37:57.085Z",
           "statusReason": "时光网未发布总分；按五项分项评分等权估算"
         },
         "maoyan": {
@@ -783,7 +783,7 @@
           "voteCount": 21906,
           "platformId": "1522873",
           "subjectYear": null,
-          "lastAttemptAt": "2026-08-17T07:36:37.019Z"
+          "lastAttemptAt": "2026-08-17T07:37:57.085Z"
         },
         "taopiaopiao": {
           "score": 9.5,
@@ -794,7 +794,7 @@
           "collectionMode": "public-page",
           "voteCount": null,
           "platformId": "1521692",
-          "lastAttemptAt": "2026-08-17T07:36:37.019Z"
+          "lastAttemptAt": "2026-08-17T07:37:57.085Z"
         }
       },
       "catalogStatus": "current",
@@ -845,10 +845,10 @@
           "linkLabel": "豆瓣电影页",
           "status": "live",
           "collectionMode": "public-json",
-          "voteCount": 230018,
+          "voteCount": 230035,
           "platformId": "36808876",
           "subjectYear": 2026,
-          "lastAttemptAt": "2026-08-17T07:36:37.019Z"
+          "lastAttemptAt": "2026-08-17T07:37:57.085Z"
         },
         "mtime": {
           "score": 8.1,
@@ -864,7 +864,7 @@
           "subItemVoteCount": 53,
           "platformId": "277238",
           "subjectYear": 2026,
-          "lastAttemptAt": "2026-08-17T07:36:37.019Z"
+          "lastAttemptAt": "2026-08-17T07:37:57.085Z"
         },
         "maoyan": {
           "score": 9.7,
@@ -873,10 +873,10 @@
           "linkLabel": "猫眼电影页",
           "status": "live",
           "collectionMode": "public-json",
-          "voteCount": 32869,
+          "voteCount": 32877,
           "platformId": "1545360",
           "subjectYear": 2026,
-          "lastAttemptAt": "2026-08-17T07:36:37.019Z"
+          "lastAttemptAt": "2026-08-17T07:37:57.085Z"
         },
         "taopiaopiao": {
           "score": 9.6,
@@ -887,7 +887,7 @@
           "collectionMode": "public-page",
           "voteCount": null,
           "platformId": "1556767",
-          "lastAttemptAt": "2026-08-17T07:36:37.019Z"
+          "lastAttemptAt": "2026-08-17T07:37:57.085Z"
         }
       },
       "cachedComposite": 8.2,
@@ -931,10 +931,10 @@
           "linkLabel": "豆瓣电影页",
           "status": "live",
           "collectionMode": "public-json",
-          "voteCount": 372245,
+          "voteCount": 372252,
           "platformId": "36882191",
           "subjectYear": 2026,
-          "lastAttemptAt": "2026-08-17T07:36:37.019Z"
+          "lastAttemptAt": "2026-08-17T07:37:57.085Z"
         },
         "mtime": {
           "score": 8.2,
@@ -950,7 +950,7 @@
           "subItemVoteCount": 74,
           "platformId": "278385",
           "subjectYear": 2026,
-          "lastAttemptAt": "2026-08-17T07:36:37.019Z"
+          "lastAttemptAt": "2026-08-17T07:37:57.085Z"
         },
         "maoyan": {
           "score": 9.7,
@@ -959,10 +959,10 @@
           "linkLabel": "猫眼电影页",
           "status": "live",
           "collectionMode": "public-json",
-          "voteCount": 256409,
+          "voteCount": 256414,
           "platformId": "1525868",
           "subjectYear": 2026,
-          "lastAttemptAt": "2026-08-17T07:36:37.019Z"
+          "lastAttemptAt": "2026-08-17T07:37:57.085Z"
         },
         "taopiaopiao": {
           "score": 9.6,
@@ -973,7 +973,7 @@
           "collectionMode": "public-page",
           "voteCount": null,
           "platformId": "1525003",
-          "lastAttemptAt": "2026-08-17T07:36:37.019Z"
+          "lastAttemptAt": "2026-08-17T07:37:57.085Z"
         }
       },
       "catalogStatus": "current",
@@ -1022,10 +1022,10 @@
           "linkLabel": "豆瓣电影页",
           "status": "live",
           "collectionMode": "public-json",
-          "voteCount": 239393,
+          "voteCount": 239397,
           "platformId": "37450627",
           "subjectYear": 2025,
-          "lastAttemptAt": "2026-08-17T07:36:37.019Z"
+          "lastAttemptAt": "2026-08-17T07:37:57.085Z"
         },
         "mtime": {
           "score": 7.4,
@@ -1041,7 +1041,7 @@
           "subItemVoteCount": 40,
           "platformId": "278455",
           "subjectYear": 2026,
-          "lastAttemptAt": "2026-08-17T07:36:37.019Z"
+          "lastAttemptAt": "2026-08-17T07:37:57.085Z"
         },
         "maoyan": {
           "score": 9,
@@ -1050,10 +1050,10 @@
           "linkLabel": "猫眼电影页",
           "status": "live",
           "collectionMode": "public-json",
-          "voteCount": 38104,
+          "voteCount": 38108,
           "platformId": "1587931",
           "subjectYear": 2025,
-          "lastAttemptAt": "2026-08-17T07:36:37.019Z"
+          "lastAttemptAt": "2026-08-17T07:37:57.085Z"
         },
         "taopiaopiao": {
           "score": 9,
@@ -1064,7 +1064,7 @@
           "collectionMode": "public-page",
           "voteCount": null,
           "platformId": "1615638",
-          "lastAttemptAt": "2026-08-17T07:36:37.019Z"
+          "lastAttemptAt": "2026-08-17T07:37:57.085Z"
         }
       },
       "cachedComposite": 7.1,
@@ -1110,7 +1110,7 @@
           "voteCount": 929488,
           "platformId": "37116446",
           "subjectYear": 2026,
-          "lastAttemptAt": "2026-08-17T07:36:37.019Z"
+          "lastAttemptAt": "2026-08-17T07:37:57.085Z"
         },
         "mtime": {
           "score": 8.5,
@@ -1126,7 +1126,7 @@
           "subItemVoteCount": 90,
           "platformId": "278420",
           "subjectYear": 2026,
-          "lastAttemptAt": "2026-08-17T07:36:37.019Z"
+          "lastAttemptAt": "2026-08-17T07:37:57.085Z"
         },
         "maoyan": {
           "score": 9.7,
@@ -1135,10 +1135,10 @@
           "linkLabel": "猫眼电影页",
           "status": "live",
           "collectionMode": "public-json",
-          "voteCount": 422246,
+          "voteCount": 422247,
           "platformId": "1516982",
           "subjectYear": 2026,
-          "lastAttemptAt": "2026-08-17T07:36:37.019Z"
+          "lastAttemptAt": "2026-08-17T07:37:57.085Z"
         },
         "taopiaopiao": {
           "score": 9.7,
@@ -1149,7 +1149,7 @@
           "collectionMode": "public-page",
           "voteCount": null,
           "platformId": "1515727",
-          "lastAttemptAt": "2026-08-17T07:36:37.019Z"
+          "lastAttemptAt": "2026-08-17T07:37:57.085Z"
         }
       },
       "catalogStatus": "current",
@@ -1194,10 +1194,10 @@
           "linkLabel": "豆瓣电影页",
           "status": "live",
           "collectionMode": "public-json",
-          "voteCount": 301049,
+          "voteCount": 301050,
           "platformId": "36452545",
           "subjectYear": 2026,
-          "lastAttemptAt": "2026-08-17T07:36:37.019Z"
+          "lastAttemptAt": "2026-08-17T07:37:57.085Z"
         },
         "mtime": {
           "score": 5.9,
@@ -1213,7 +1213,7 @@
           "subItemVoteCount": 75,
           "platformId": "275043",
           "subjectYear": 2026,
-          "lastAttemptAt": "2026-08-17T07:36:37.019Z"
+          "lastAttemptAt": "2026-08-17T07:37:57.085Z"
         },
         "maoyan": {
           "score": 9.4,
@@ -1222,10 +1222,10 @@
           "linkLabel": "猫眼电影页",
           "status": "live",
           "collectionMode": "public-json",
-          "voteCount": 687958,
+          "voteCount": 687959,
           "platformId": "1500469",
           "subjectYear": 2026,
-          "lastAttemptAt": "2026-08-17T07:36:37.019Z"
+          "lastAttemptAt": "2026-08-17T07:37:57.085Z"
         },
         "taopiaopiao": {
           "score": 9.1,
@@ -1236,7 +1236,7 @@
           "collectionMode": "public-page",
           "voteCount": null,
           "platformId": "1521067",
-          "lastAttemptAt": "2026-08-17T07:36:37.019Z"
+          "lastAttemptAt": "2026-08-17T07:37:57.085Z"
         }
       },
       "catalogStatus": "current",
@@ -1286,10 +1286,10 @@
           "linkLabel": "豆瓣电影页",
           "status": "live",
           "collectionMode": "public-json",
-          "voteCount": 126558,
+          "voteCount": 126559,
           "platformId": "36235977",
           "subjectYear": 2026,
-          "lastAttemptAt": "2026-08-17T07:36:37.019Z"
+          "lastAttemptAt": "2026-08-17T07:37:57.085Z"
         },
         "mtime": {
           "score": 7,
@@ -1305,7 +1305,7 @@
           "subItemVoteCount": 49,
           "platformId": "273754",
           "subjectYear": 2026,
-          "lastAttemptAt": "2026-08-17T07:36:37.019Z"
+          "lastAttemptAt": "2026-08-17T07:37:57.085Z"
         },
         "maoyan": {
           "score": 8,
@@ -1317,7 +1317,7 @@
           "voteCount": 37931,
           "platformId": "1591067",
           "subjectYear": 2026,
-          "lastAttemptAt": "2026-08-17T07:36:37.019Z"
+          "lastAttemptAt": "2026-08-17T07:37:57.085Z"
         },
         "taopiaopiao": {
           "score": 7.7,
@@ -1328,7 +1328,7 @@
           "collectionMode": "public-page",
           "voteCount": null,
           "platformId": "1567301",
-          "lastAttemptAt": "2026-08-17T07:36:37.019Z"
+          "lastAttemptAt": "2026-08-17T07:37:57.085Z"
         }
       },
       "cachedComposite": 5.7,
@@ -1370,10 +1370,10 @@
           "linkLabel": "豆瓣电影页",
           "status": "live",
           "collectionMode": "public-json",
-          "voteCount": 363607,
+          "voteCount": 363652,
           "platformId": "35811064",
           "subjectYear": 2026,
-          "lastAttemptAt": "2026-08-17T07:36:37.019Z"
+          "lastAttemptAt": "2026-08-17T07:37:57.085Z"
         },
         "mtime": {
           "score": 8.8,
@@ -1389,7 +1389,7 @@
           "subItemVoteCount": 59,
           "platformId": "271884",
           "subjectYear": 2026,
-          "lastAttemptAt": "2026-08-17T07:36:37.019Z"
+          "lastAttemptAt": "2026-08-17T07:37:57.085Z"
         },
         "maoyan": {
           "score": 9.7,
@@ -1398,10 +1398,10 @@
           "linkLabel": "猫眼电影页",
           "status": "live",
           "collectionMode": "public-json",
-          "voteCount": 191716,
+          "voteCount": 191730,
           "platformId": "1462628",
           "subjectYear": null,
-          "lastAttemptAt": "2026-08-17T07:36:37.019Z"
+          "lastAttemptAt": "2026-08-17T07:37:57.085Z"
         },
         "taopiaopiao": {
           "score": 9.9,
@@ -1412,7 +1412,7 @@
           "collectionMode": "public-page",
           "voteCount": null,
           "platformId": "1425620",
-          "lastAttemptAt": "2026-08-17T07:36:37.019Z"
+          "lastAttemptAt": "2026-08-17T07:37:57.085Z"
         }
       },
       "catalogStatus": "current",
@@ -1461,10 +1461,10 @@
           "linkLabel": "豆瓣电影页",
           "status": "live",
           "collectionMode": "public-json",
-          "voteCount": 1051159,
+          "voteCount": 1051160,
           "platformId": "3011051",
           "subjectYear": 2009,
-          "lastAttemptAt": "2026-08-17T07:36:37.019Z"
+          "lastAttemptAt": "2026-08-17T07:37:57.085Z"
         },
         "mtime": {
           "score": 7.8,
@@ -1480,7 +1480,7 @@
           "subItemVoteCount": 2976,
           "platformId": "99272",
           "subjectYear": 2009,
-          "lastAttemptAt": "2026-08-17T07:36:37.019Z"
+          "lastAttemptAt": "2026-08-17T07:37:57.085Z"
         },
         "maoyan": {
           "score": 8.5,
@@ -1492,7 +1492,7 @@
           "voteCount": 11656,
           "platformId": "38270",
           "subjectYear": 2009,
-          "lastAttemptAt": "2026-08-17T07:36:37.019Z"
+          "lastAttemptAt": "2026-08-17T07:37:57.085Z"
         },
         "taopiaopiao": {
           "score": 8.8,
@@ -1503,7 +1503,7 @@
           "collectionMode": "public-page",
           "voteCount": null,
           "platformId": "77409",
-          "lastAttemptAt": "2026-08-17T07:36:37.019Z"
+          "lastAttemptAt": "2026-08-17T07:37:57.085Z"
         }
       },
       "cachedComposite": 7.2,
@@ -1552,7 +1552,7 @@
           "voteCount": 63500,
           "platformId": "36916000",
           "subjectYear": 2026,
-          "lastAttemptAt": "2026-08-17T07:36:37.019Z"
+          "lastAttemptAt": "2026-08-17T07:37:57.085Z"
         },
         "mtime": {
           "score": 7.7,
@@ -1568,7 +1568,7 @@
           "subItemVoteCount": 25,
           "platformId": "278440",
           "subjectYear": 2026,
-          "lastAttemptAt": "2026-08-17T07:36:37.019Z"
+          "lastAttemptAt": "2026-08-17T07:37:57.085Z"
         },
         "maoyan": {
           "score": 9,
@@ -1580,7 +1580,7 @@
           "voteCount": 6303,
           "platformId": "1594038",
           "subjectYear": 2026,
-          "lastAttemptAt": "2026-08-17T07:36:37.019Z"
+          "lastAttemptAt": "2026-08-17T07:37:57.085Z"
         },
         "taopiaopiao": {
           "score": 9.2,
@@ -1591,7 +1591,7 @@
           "collectionMode": "public-page",
           "voteCount": null,
           "platformId": "1597480",
-          "lastAttemptAt": "2026-08-17T07:36:37.019Z"
+          "lastAttemptAt": "2026-08-17T07:37:57.085Z"
         }
       },
       "cachedComposite": 7.5,
@@ -1641,7 +1641,7 @@
           "voteCount": 116958,
           "platformId": "36238849",
           "subjectYear": 2026,
-          "lastAttemptAt": "2026-08-17T07:36:37.019Z"
+          "lastAttemptAt": "2026-08-17T07:37:57.085Z"
         },
         "mtime": {
           "score": 7.4,
@@ -1657,7 +1657,7 @@
           "subItemVoteCount": 43,
           "platformId": "275693",
           "subjectYear": 2026,
-          "lastAttemptAt": "2026-08-17T07:36:37.019Z"
+          "lastAttemptAt": "2026-08-17T07:37:57.085Z"
         },
         "maoyan": {
           "score": 9.3,
@@ -1669,7 +1669,7 @@
           "voteCount": 27472,
           "platformId": "1490532",
           "subjectYear": 2026,
-          "lastAttemptAt": "2026-08-17T07:36:37.019Z"
+          "lastAttemptAt": "2026-08-17T07:37:57.085Z"
         },
         "taopiaopiao": {
           "score": 9.4,
@@ -1680,7 +1680,7 @@
           "collectionMode": "public-page",
           "voteCount": null,
           "platformId": "1519975",
-          "lastAttemptAt": "2026-08-17T07:36:37.019Z"
+          "lastAttemptAt": "2026-08-17T07:37:57.085Z"
         }
       },
       "cachedComposite": 7.5,
@@ -1731,7 +1731,7 @@
           "voteCount": 52538,
           "platformId": "36962219",
           "subjectYear": 2026,
-          "lastAttemptAt": "2026-08-17T07:36:37.019Z"
+          "lastAttemptAt": "2026-08-17T07:37:57.085Z"
         },
         "mtime": {
           "score": 6.6,
@@ -1769,7 +1769,7 @@
           ],
           "platformId": "278383",
           "subjectYear": 2026,
-          "lastAttemptAt": "2026-08-17T07:36:37.019Z",
+          "lastAttemptAt": "2026-08-17T07:37:57.085Z",
           "statusReason": "时光网未发布总分；按五项分项评分等权估算"
         },
         "maoyan": {
@@ -1782,7 +1782,7 @@
           "voteCount": 30197,
           "platformId": "1528803",
           "subjectYear": 2026,
-          "lastAttemptAt": "2026-08-17T07:36:37.019Z"
+          "lastAttemptAt": "2026-08-17T07:37:57.085Z"
         },
         "taopiaopiao": {
           "score": 8.6,
@@ -1793,7 +1793,7 @@
           "collectionMode": "public-page",
           "voteCount": null,
           "platformId": "1591520",
-          "lastAttemptAt": "2026-08-17T07:36:37.019Z"
+          "lastAttemptAt": "2026-08-17T07:37:57.085Z"
         }
       },
       "cachedComposite": 6.3,
@@ -1839,10 +1839,10 @@
           "linkLabel": "豆瓣电影页",
           "status": "live",
           "collectionMode": "public-json",
-          "voteCount": 358586,
+          "voteCount": 358592,
           "platformId": "36246195",
           "subjectYear": 2026,
-          "lastAttemptAt": "2026-08-17T07:36:37.019Z"
+          "lastAttemptAt": "2026-08-17T07:37:57.085Z"
         },
         "mtime": {
           "score": 7.6,
@@ -1858,7 +1858,7 @@
           "subItemVoteCount": 70,
           "platformId": "274481",
           "subjectYear": 2026,
-          "lastAttemptAt": "2026-08-17T07:36:37.019Z"
+          "lastAttemptAt": "2026-08-17T07:37:57.085Z"
         },
         "maoyan": {
           "score": 9.5,
@@ -1867,10 +1867,10 @@
           "linkLabel": "猫眼电影页",
           "status": "live",
           "collectionMode": "public-json",
-          "voteCount": 187557,
+          "voteCount": 187560,
           "platformId": "1490607",
           "subjectYear": 2026,
-          "lastAttemptAt": "2026-08-17T07:36:37.019Z"
+          "lastAttemptAt": "2026-08-17T07:37:57.085Z"
         },
         "taopiaopiao": {
           "score": 9.2,
@@ -1881,7 +1881,7 @@
           "collectionMode": "public-page",
           "voteCount": null,
           "platformId": "1522792",
-          "lastAttemptAt": "2026-08-17T07:36:37.019Z"
+          "lastAttemptAt": "2026-08-17T07:37:57.085Z"
         }
       },
       "cachedComposite": 7.6,
