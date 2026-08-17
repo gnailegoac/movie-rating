@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
-import { PLATFORMS, calculateComposite, calculateCoverage } from "../lib/ratings.js";
+import { PLATFORMS, calculateComposite, calculateCoverage, hasRatingAnchor } from "../lib/ratings.js";
 
 const path = new URL("../data/movies.json", import.meta.url);
 const dataset = JSON.parse(await readFile(path, "utf8"));
@@ -40,7 +40,13 @@ for (const movie of dataset.movies) {
   const score = calculateComposite(movie.ratings, dataset.defaultWeights, dataset.calibration);
   assert.equal(movie.cachedComposite, score, `${movie.id} cached score is stale`);
   assert.ok(score === null || (score >= 0 && score <= 10), `${movie.id} score is out of range`);
-  assert.ok(calculateCoverage(movie.ratings, dataset.defaultWeights) > 0, `${movie.id} has no score coverage`);
+  const coverage = calculateCoverage(movie.ratings, dataset.defaultWeights);
+  if (hasRatingAnchor(movie.ratings, dataset.defaultWeights)) {
+    assert.ok(coverage > 0, `${movie.id} has no score coverage`);
+  } else {
+    assert.equal(score, null, `${movie.id} must not publish a ticketing-only composite`);
+    assert.equal(coverage, 0, `${movie.id} ticketing-only coverage must be zero`);
+  }
 }
 
 assert.equal(dataset.catalogStatus?.current + dataset.catalogStatus?.archived, dataset.movies.length, "Catalog status totals do not reconcile");

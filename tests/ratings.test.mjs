@@ -6,6 +6,7 @@ import {
   calculateComposite,
   calculateCoverage,
   effectiveWeights,
+  hasRatingAnchor,
   normalizePlatformScore,
   normalizeWeights,
 } from "../lib/ratings.js";
@@ -28,6 +29,20 @@ test("renormalizes remaining weights when a platform score is missing", () => {
   assert.equal(calculateCoverage(partial), 75);
 });
 
+test("does not publish a composite from ticketing-platform scores alone", () => {
+  const ticketingOnly = {
+    douban: { score: null },
+    mtime: { score: null },
+    maoyan: { score: 9.4 },
+    taopiaopiao: { score: 9.2 },
+  };
+  assert.equal(hasRatingAnchor(ticketingOnly), false);
+  assert.deepEqual(effectiveWeights(ticketingOnly), { douban: 0, mtime: 0, maoyan: 0, taopiaopiao: 0 });
+  assert.equal(calculateCoverage(ticketingOnly), 0);
+  assert.equal(calculateComposite(ticketingOnly), null);
+  assert.equal(calculateComposite(ratings, { douban: 0, mtime: 0, maoyan: 50, taopiaopiao: 50 }), null);
+});
+
 test("normalizes user supplied weights and handles all-zero input", () => {
   assert.deepEqual(normalizeWeights({ douban: 20, mtime: 10, maoyan: 30, taopiaopiao: 40 }), { douban: .2, mtime: .1, maoyan: .3, taopiaopiao: .4 });
   assert.deepEqual(normalizeWeights({ douban: 0, mtime: 0, maoyan: 0, taopiaopiao: 0 }), { douban: .25, mtime: .25, maoyan: .25, taopiaopiao: .25 });
@@ -41,6 +56,7 @@ test("discounts an estimated Mtime score to 50% confidence", () => {
   assert.deepEqual(effectiveWeights(withEstimate), { douban: 2 / 7, mtime: 1 / 7, maoyan: 2 / 7, taopiaopiao: 2 / 7 });
   assert.equal(calculateCoverage(withEstimate), 88);
   assert.equal(calculateComposite(withEstimate), 8.9);
+  assert.equal(hasRatingAnchor(withEstimate), true);
 });
 
 test("estimates Mtime only from all five valid sub-items and enough votes", () => {

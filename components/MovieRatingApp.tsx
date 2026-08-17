@@ -7,6 +7,7 @@ import {
   calculateComposite,
   calculateCoverage,
   effectiveWeights,
+  hasRatingAnchor,
   normalizePlatformScore,
   normalizeWeights,
 } from "../lib/ratings.js";
@@ -179,6 +180,7 @@ export default function MovieRatingApp({ dataset }: { dataset: Dataset }) {
   const selectedApplied = selected
     ? (effectiveWeights(selected.ratings, weights) as Record<Platform, number>)
     : normalized;
+  const selectedHasAnchor = selected ? hasRatingAnchor(selected.ratings, weights) : false;
   const liveSourceCount = dataset.sourceStatus
     ? PLATFORMS.reduce((sum, platform) => sum + dataset.sourceStatus![platform].live, 0)
     : 0;
@@ -306,10 +308,14 @@ export default function MovieRatingApp({ dataset }: { dataset: Dataset }) {
                 <div className="formula-strip">
                   <span className="formula-label">校准分公式</span>
                   <div className="formula-expression">
-                    {PLATFORMS.filter((platform) => selected.ratings[platform].score !== null).map((platform, index, available) => (
-                      <span key={platform}>{normalizePlatformScore(selected.ratings[platform].score, platform, dataset.calibration)?.toFixed(1)}{selected.ratings[platform].scoreType === "estimated-subitems" ? "（估）" : ""} × {Math.round(selectedApplied[platform] * 100)}% {index < available.length - 1 ? <b>＋</b> : null}</span>
-                    ))}
-                    <strong>＝ {selected.composite?.toFixed(1)}</strong>
+                    {selectedHasAnchor ? (
+                      <>
+                        {PLATFORMS.filter((platform) => selected.ratings[platform].score !== null).map((platform, index, available) => (
+                          <span key={platform}>{normalizePlatformScore(selected.ratings[platform].score, platform, dataset.calibration)?.toFixed(1)}{selected.ratings[platform].scoreType === "estimated-subitems" ? "（估）" : ""} × {Math.round(selectedApplied[platform] * 100)}% {index < available.length - 1 ? <b>＋</b> : null}</span>
+                        ))}
+                        <strong>＝ {selected.composite?.toFixed(1)}</strong>
+                      </>
+                    ) : <strong>需豆瓣或时光网至少一项有效评分</strong>}
                   </div>
                 </div>
               </div>
@@ -358,7 +364,7 @@ export default function MovieRatingApp({ dataset }: { dataset: Dataset }) {
             </div>
             <div className="method-rule">
               <strong>缺失评分怎么处理？</strong>
-              <p>不按 0 分计算。系统只使用已有平台，并保持它们原来的相对权重。例如淘票票缺失时，25:25:25 会归一化为约 33%:33%:33%。</p>
+              <p>不按 0 分计算。系统只使用已有平台，并保持它们原来的相对权重；但豆瓣或时光网必须至少有一个有效分数。若只有猫眼和淘票票，系统不发布综合分。</p>
             </div>
             <div className="method-rule">
               <strong>时光网没有总分怎么办？</strong>

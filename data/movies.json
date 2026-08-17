@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "snapshotLabel": "四平台公开评分快照",
-  "generatedAt": "2026-08-17T07:29:05.327Z",
+  "generatedAt": "2026-08-17T07:36:37.019Z",
   "isDemo": false,
   "defaultWeights": {
     "douban": 25,
@@ -63,7 +63,7 @@
           "voteCount": 13507,
           "platformId": "26588017",
           "subjectYear": 2015,
-          "lastAttemptAt": "2026-08-17T07:29:05.327Z"
+          "lastAttemptAt": "2026-08-17T07:36:37.019Z"
         },
         "mtime": {
           "score": null,
@@ -72,7 +72,7 @@
           "linkLabel": "时光网来源页",
           "status": "unavailable",
           "collectionMode": "public-json",
-          "lastAttemptAt": "2026-08-17T07:29:05.327Z",
+          "lastAttemptAt": "2026-08-17T07:36:37.019Z",
           "statusReason": "No exact Mtime title/year result for 哈姆雷特"
         },
         "maoyan": {
@@ -85,19 +85,18 @@
           "voteCount": 805,
           "platformId": "641862",
           "subjectYear": 2015,
-          "lastAttemptAt": "2026-08-17T07:29:05.327Z"
+          "lastAttemptAt": "2026-08-17T07:36:37.019Z"
         },
         "taopiaopiao": {
           "score": 8.9,
           "checkedAt": "2026-08-17",
           "url": "https://dianying.taobao.com/showDetail.htm?showId=224785&n_s=new",
           "linkLabel": "淘票票电影页",
-          "status": "cached",
+          "status": "live",
           "collectionMode": "public-page",
           "voteCount": null,
           "platformId": "224785",
-          "lastAttemptAt": "2026-08-17T07:29:05.327Z",
-          "statusReason": "fetch failed"
+          "lastAttemptAt": "2026-08-17T07:36:37.019Z"
         }
       },
       "catalogStatus": "current",
@@ -148,7 +147,7 @@
           "voteCount": null,
           "platformId": "36791178",
           "subjectYear": 2026,
-          "lastAttemptAt": "2026-08-17T07:29:05.327Z",
+          "lastAttemptAt": "2026-08-17T07:36:37.019Z",
           "statusReason": "暂无评分"
         },
         "mtime": {
@@ -163,7 +162,7 @@
           "subItemVoteCount": null,
           "platformId": "275788",
           "subjectYear": 2026,
-          "lastAttemptAt": "2026-08-17T07:29:05.327Z"
+          "lastAttemptAt": "2026-08-17T07:36:37.019Z"
         },
         "maoyan": {
           "score": 9.5,
@@ -172,25 +171,24 @@
           "linkLabel": "猫眼电影页",
           "status": "live",
           "collectionMode": "public-json",
-          "voteCount": 5426,
+          "voteCount": 5430,
           "platformId": "1521734",
           "subjectYear": 2026,
-          "lastAttemptAt": "2026-08-17T07:29:05.327Z"
+          "lastAttemptAt": "2026-08-17T07:36:37.019Z"
         },
         "taopiaopiao": {
           "score": 9.3,
           "checkedAt": "2026-08-17",
           "url": "https://dianying.taobao.com/showDetail.htm?showId=1520877&n_s=new",
           "linkLabel": "淘票票电影页",
-          "status": "cached",
+          "status": "live",
           "collectionMode": "public-page",
           "voteCount": null,
           "platformId": "1520877",
-          "lastAttemptAt": "2026-08-17T07:29:05.327Z",
-          "statusReason": "fetch failed"
+          "lastAttemptAt": "2026-08-17T07:36:37.019Z"
         }
       },
-      "cachedComposite": 7.8,
+      "cachedComposite": null,
       "originalYear": 2026
     },
     {
@@ -229,10 +227,10 @@
           "linkLabel": "豆瓣电影页",
           "status": "live",
           "collectionMode": "public-json",
-          "voteCount": 97223,
+          "voteCount": 97228,
           "platformId": "36850814",
           "subjectYear": 2026,
-          "lastAttemptAt": "2026-08-17T07:29:05.327Z"
+          "lastAttemptAt": "2026-08-17T07:36:37.019Z"
         },
         "mtime": {
           "score": 6.8,
@@ -270,7 +268,7 @@
           ],
           "platformId": "278119",
           "subjectYear": 2026,
-          "lastAttemptAt": "2026-08-17T07:29:05.327Z",
+          "lastAttemptAt": "2026-08-17T07:36:37.019Z",
           "statusReason": "时光网未发布总分；按五项分项评分等权估算"
         },
         "maoyan": {
@@ -280,22 +278,21 @@
           "linkLabel": "猫眼电影页",
           "status": "live",
           "collectionMode": "public-json",
-          "voteCount": 39719,
+          "voteCount": 39720,
           "platformId": "1525000",
           "subjectYear": null,
-          "lastAttemptAt": "2026-08-17T07:29:05.327Z"
+          "lastAttemptAt": "2026-08-17T07:36:37.019Z"
         },
         "taopiaopiao": {
           "score": 9.2,
           "checkedAt": "2026-08-17",
           "url": "https://dianying.taobao.com/showDetail.htm?showId=1577748&n_s=new",
           "linkLabel": "淘票票电影页",
-          "status": "cached",
+          "status": "live",
           "collectionMode": "public-page",
           "voteCount": null,
           "platformId": "1577748",
-          "lastAttemptAt": "2026-08-17T07:29:05.327Z",
-          "statusReason": "fetch failed"
+          "lastAttemptAt": "2026-08-17T07:36:37.019Z"
         }
       },
       "catalogStatus": "current",
@@ -341,10 +338,10 @@
           "linkLabel": "豆瓣电影页",
           "status": "live",
           "collectionMode": "public-json",
-          "voteCount": 21912,
+          "voteCount": 21916,
           "platformId": "35275131",
           "subjectYear": 2026,
-          "lastAttemptAt": "2026-08-17T07:29:05.327Z"
+          "lastAttemptAt": "2026-08-17T07:36:37.019Z"
         },
         "mtime": {
           "score": null,
@@ -358,7 +355,7 @@
           "subItemVoteCount": 3,
           "platformId": "274060",
           "subjectYear": 2026,
-          "lastAttemptAt": "2026-08-17T07:29:05.327Z"
+          "lastAttemptAt": "2026-08-17T07:36:37.019Z"
         },
         "maoyan": {
           "score": 9.5,
@@ -367,22 +364,21 @@
           "linkLabel": "猫眼电影页",
           "status": "live",
           "collectionMode": "public-json",
-          "voteCount": 32479,
+          "voteCount": 32493,
           "platformId": "1375786",
           "subjectYear": null,
-          "lastAttemptAt": "2026-08-17T07:29:05.327Z"
+          "lastAttemptAt": "2026-08-17T07:36:37.019Z"
         },
         "taopiaopiao": {
           "score": 9.2,
           "checkedAt": "2026-08-17",
           "url": "https://dianying.taobao.com/showDetail.htm?showId=1428844&n_s=new",
           "linkLabel": "淘票票电影页",
-          "status": "cached",
+          "status": "live",
           "collectionMode": "public-page",
           "voteCount": null,
           "platformId": "1428844",
-          "lastAttemptAt": "2026-08-17T07:29:05.327Z",
-          "statusReason": "fetch failed"
+          "lastAttemptAt": "2026-08-17T07:36:37.019Z"
         }
       },
       "catalogStatus": "current",
@@ -432,7 +428,7 @@
           "voteCount": null,
           "platformId": "37191746",
           "subjectYear": 2026,
-          "lastAttemptAt": "2026-08-17T07:29:05.327Z",
+          "lastAttemptAt": "2026-08-17T07:36:37.019Z",
           "statusReason": "暂无评分"
         },
         "mtime": {
@@ -471,7 +467,7 @@
           ],
           "platformId": "278306",
           "subjectYear": 2026,
-          "lastAttemptAt": "2026-08-17T07:29:05.327Z",
+          "lastAttemptAt": "2026-08-17T07:36:37.019Z",
           "statusReason": "时光网未发布总分；按五项分项评分等权估算"
         },
         "maoyan": {
@@ -481,22 +477,21 @@
           "linkLabel": "猫眼电影页",
           "status": "live",
           "collectionMode": "public-json",
-          "voteCount": 44620,
+          "voteCount": 44622,
           "platformId": "1545588",
           "subjectYear": 2026,
-          "lastAttemptAt": "2026-08-17T07:29:05.327Z"
+          "lastAttemptAt": "2026-08-17T07:36:37.019Z"
         },
         "taopiaopiao": {
           "score": 9.1,
           "checkedAt": "2026-08-17",
           "url": "https://dianying.taobao.com/showDetail.htm?showId=1554055&n_s=new",
           "linkLabel": "淘票票电影页",
-          "status": "cached",
+          "status": "live",
           "collectionMode": "public-page",
           "voteCount": null,
           "platformId": "1554055",
-          "lastAttemptAt": "2026-08-17T07:29:05.327Z",
-          "statusReason": "fetch failed"
+          "lastAttemptAt": "2026-08-17T07:36:37.019Z"
         }
       },
       "cachedComposite": 6.8,
@@ -541,7 +536,7 @@
           "voteCount": 51370,
           "platformId": "36953973",
           "subjectYear": 2026,
-          "lastAttemptAt": "2026-08-17T07:29:05.327Z"
+          "lastAttemptAt": "2026-08-17T07:36:37.019Z"
         },
         "mtime": {
           "score": 6.2,
@@ -579,7 +574,7 @@
           ],
           "platformId": "277040",
           "subjectYear": 2026,
-          "lastAttemptAt": "2026-08-17T07:29:05.327Z",
+          "lastAttemptAt": "2026-08-17T07:36:37.019Z",
           "statusReason": "时光网未发布总分；按五项分项评分等权估算"
         },
         "maoyan": {
@@ -589,22 +584,21 @@
           "linkLabel": "猫眼电影页",
           "status": "live",
           "collectionMode": "public-json",
-          "voteCount": 28723,
+          "voteCount": 28724,
           "platformId": "1531115",
           "subjectYear": null,
-          "lastAttemptAt": "2026-08-17T07:29:05.327Z"
+          "lastAttemptAt": "2026-08-17T07:36:37.019Z"
         },
         "taopiaopiao": {
           "score": 9.4,
           "checkedAt": "2026-08-17",
           "url": "https://dianying.taobao.com/showDetail.htm?showId=1536250&n_s=new",
           "linkLabel": "淘票票电影页",
-          "status": "cached",
+          "status": "live",
           "collectionMode": "public-page",
           "voteCount": null,
           "platformId": "1536250",
-          "lastAttemptAt": "2026-08-17T07:29:05.327Z",
-          "statusReason": "fetch failed"
+          "lastAttemptAt": "2026-08-17T07:36:37.019Z"
         }
       },
       "catalogStatus": "current",
@@ -656,7 +650,7 @@
           "voteCount": 16975,
           "platformId": "37021936",
           "subjectYear": 2026,
-          "lastAttemptAt": "2026-08-17T07:29:05.327Z"
+          "lastAttemptAt": "2026-08-17T07:36:37.019Z"
         },
         "mtime": {
           "score": null,
@@ -670,7 +664,7 @@
           "subItemVoteCount": 2,
           "platformId": "278454",
           "subjectYear": 2026,
-          "lastAttemptAt": "2026-08-17T07:29:05.327Z"
+          "lastAttemptAt": "2026-08-17T07:36:37.019Z"
         },
         "maoyan": {
           "score": 8.8,
@@ -679,22 +673,21 @@
           "linkLabel": "猫眼电影页",
           "status": "live",
           "collectionMode": "public-json",
-          "voteCount": 54692,
+          "voteCount": 54694,
           "platformId": "1531493",
           "subjectYear": null,
-          "lastAttemptAt": "2026-08-17T07:29:05.327Z"
+          "lastAttemptAt": "2026-08-17T07:36:37.019Z"
         },
         "taopiaopiao": {
           "score": 8.6,
           "checkedAt": "2026-08-17",
           "url": "https://dianying.taobao.com/showDetail.htm?showId=1537470&n_s=new",
           "linkLabel": "淘票票电影页",
-          "status": "cached",
+          "status": "live",
           "collectionMode": "public-page",
           "voteCount": null,
           "platformId": "1537470",
-          "lastAttemptAt": "2026-08-17T07:29:05.327Z",
-          "statusReason": "fetch failed"
+          "lastAttemptAt": "2026-08-17T07:36:37.019Z"
         }
       },
       "cachedComposite": 6.5,
@@ -736,10 +729,10 @@
           "linkLabel": "豆瓣电影页",
           "status": "live",
           "collectionMode": "public-json",
-          "voteCount": 70980,
+          "voteCount": 70981,
           "platformId": "36812879",
           "subjectYear": 2026,
-          "lastAttemptAt": "2026-08-17T07:29:05.327Z"
+          "lastAttemptAt": "2026-08-17T07:36:37.019Z"
         },
         "mtime": {
           "score": 7.5,
@@ -777,7 +770,7 @@
           ],
           "platformId": "276407",
           "subjectYear": 2026,
-          "lastAttemptAt": "2026-08-17T07:29:05.327Z",
+          "lastAttemptAt": "2026-08-17T07:36:37.019Z",
           "statusReason": "时光网未发布总分；按五项分项评分等权估算"
         },
         "maoyan": {
@@ -787,22 +780,21 @@
           "linkLabel": "猫眼电影页",
           "status": "live",
           "collectionMode": "public-json",
-          "voteCount": 21905,
+          "voteCount": 21906,
           "platformId": "1522873",
           "subjectYear": null,
-          "lastAttemptAt": "2026-08-17T07:29:05.327Z"
+          "lastAttemptAt": "2026-08-17T07:36:37.019Z"
         },
         "taopiaopiao": {
           "score": 9.5,
           "checkedAt": "2026-08-17",
           "url": "https://dianying.taobao.com/showDetail.htm?showId=1521692&n_s=new",
           "linkLabel": "淘票票电影页",
-          "status": "cached",
+          "status": "live",
           "collectionMode": "public-page",
           "voteCount": null,
           "platformId": "1521692",
-          "lastAttemptAt": "2026-08-17T07:29:05.327Z",
-          "statusReason": "fetch failed"
+          "lastAttemptAt": "2026-08-17T07:36:37.019Z"
         }
       },
       "catalogStatus": "current",
@@ -853,10 +845,10 @@
           "linkLabel": "豆瓣电影页",
           "status": "live",
           "collectionMode": "public-json",
-          "voteCount": 229889,
+          "voteCount": 230018,
           "platformId": "36808876",
           "subjectYear": 2026,
-          "lastAttemptAt": "2026-08-17T07:29:05.327Z"
+          "lastAttemptAt": "2026-08-17T07:36:37.019Z"
         },
         "mtime": {
           "score": 8.1,
@@ -872,7 +864,7 @@
           "subItemVoteCount": 53,
           "platformId": "277238",
           "subjectYear": 2026,
-          "lastAttemptAt": "2026-08-17T07:29:05.327Z"
+          "lastAttemptAt": "2026-08-17T07:36:37.019Z"
         },
         "maoyan": {
           "score": 9.7,
@@ -881,22 +873,21 @@
           "linkLabel": "猫眼电影页",
           "status": "live",
           "collectionMode": "public-json",
-          "voteCount": 32849,
+          "voteCount": 32869,
           "platformId": "1545360",
           "subjectYear": 2026,
-          "lastAttemptAt": "2026-08-17T07:29:05.327Z"
+          "lastAttemptAt": "2026-08-17T07:36:37.019Z"
         },
         "taopiaopiao": {
           "score": 9.6,
           "checkedAt": "2026-08-17",
           "url": "https://dianying.taobao.com/showDetail.htm?showId=1556767&n_s=new",
           "linkLabel": "淘票票电影页",
-          "status": "cached",
+          "status": "live",
           "collectionMode": "public-page",
           "voteCount": null,
           "platformId": "1556767",
-          "lastAttemptAt": "2026-08-17T07:29:05.327Z",
-          "statusReason": "fetch failed"
+          "lastAttemptAt": "2026-08-17T07:36:37.019Z"
         }
       },
       "cachedComposite": 8.2,
@@ -940,10 +931,10 @@
           "linkLabel": "豆瓣电影页",
           "status": "live",
           "collectionMode": "public-json",
-          "voteCount": 372217,
+          "voteCount": 372245,
           "platformId": "36882191",
           "subjectYear": 2026,
-          "lastAttemptAt": "2026-08-17T07:29:05.327Z"
+          "lastAttemptAt": "2026-08-17T07:36:37.019Z"
         },
         "mtime": {
           "score": 8.2,
@@ -959,7 +950,7 @@
           "subItemVoteCount": 74,
           "platformId": "278385",
           "subjectYear": 2026,
-          "lastAttemptAt": "2026-08-17T07:29:05.327Z"
+          "lastAttemptAt": "2026-08-17T07:36:37.019Z"
         },
         "maoyan": {
           "score": 9.7,
@@ -968,22 +959,21 @@
           "linkLabel": "猫眼电影页",
           "status": "live",
           "collectionMode": "public-json",
-          "voteCount": 256379,
+          "voteCount": 256409,
           "platformId": "1525868",
           "subjectYear": 2026,
-          "lastAttemptAt": "2026-08-17T07:29:05.327Z"
+          "lastAttemptAt": "2026-08-17T07:36:37.019Z"
         },
         "taopiaopiao": {
           "score": 9.6,
           "checkedAt": "2026-08-17",
           "url": "https://dianying.taobao.com/showDetail.htm?showId=1525003&n_s=new",
           "linkLabel": "淘票票电影页",
-          "status": "cached",
+          "status": "live",
           "collectionMode": "public-page",
           "voteCount": null,
           "platformId": "1525003",
-          "lastAttemptAt": "2026-08-17T07:29:05.327Z",
-          "statusReason": "fetch failed"
+          "lastAttemptAt": "2026-08-17T07:36:37.019Z"
         }
       },
       "catalogStatus": "current",
@@ -1032,10 +1022,10 @@
           "linkLabel": "豆瓣电影页",
           "status": "live",
           "collectionMode": "public-json",
-          "voteCount": 239375,
+          "voteCount": 239393,
           "platformId": "37450627",
           "subjectYear": 2025,
-          "lastAttemptAt": "2026-08-17T07:29:05.327Z"
+          "lastAttemptAt": "2026-08-17T07:36:37.019Z"
         },
         "mtime": {
           "score": 7.4,
@@ -1051,7 +1041,7 @@
           "subItemVoteCount": 40,
           "platformId": "278455",
           "subjectYear": 2026,
-          "lastAttemptAt": "2026-08-17T07:29:05.327Z"
+          "lastAttemptAt": "2026-08-17T07:36:37.019Z"
         },
         "maoyan": {
           "score": 9,
@@ -1060,22 +1050,21 @@
           "linkLabel": "猫眼电影页",
           "status": "live",
           "collectionMode": "public-json",
-          "voteCount": 38101,
+          "voteCount": 38104,
           "platformId": "1587931",
           "subjectYear": 2025,
-          "lastAttemptAt": "2026-08-17T07:29:05.327Z"
+          "lastAttemptAt": "2026-08-17T07:36:37.019Z"
         },
         "taopiaopiao": {
           "score": 9,
           "checkedAt": "2026-08-17",
           "url": "https://dianying.taobao.com/showDetail.htm?showId=1615638&n_s=new",
           "linkLabel": "淘票票电影页",
-          "status": "cached",
+          "status": "live",
           "collectionMode": "public-page",
           "voteCount": null,
           "platformId": "1615638",
-          "lastAttemptAt": "2026-08-17T07:29:05.327Z",
-          "statusReason": "fetch failed"
+          "lastAttemptAt": "2026-08-17T07:36:37.019Z"
         }
       },
       "cachedComposite": 7.1,
@@ -1121,7 +1110,7 @@
           "voteCount": 929488,
           "platformId": "37116446",
           "subjectYear": 2026,
-          "lastAttemptAt": "2026-08-17T07:29:05.327Z"
+          "lastAttemptAt": "2026-08-17T07:36:37.019Z"
         },
         "mtime": {
           "score": 8.5,
@@ -1137,7 +1126,7 @@
           "subItemVoteCount": 90,
           "platformId": "278420",
           "subjectYear": 2026,
-          "lastAttemptAt": "2026-08-17T07:29:05.327Z"
+          "lastAttemptAt": "2026-08-17T07:36:37.019Z"
         },
         "maoyan": {
           "score": 9.7,
@@ -1146,22 +1135,21 @@
           "linkLabel": "猫眼电影页",
           "status": "live",
           "collectionMode": "public-json",
-          "voteCount": 422242,
+          "voteCount": 422246,
           "platformId": "1516982",
           "subjectYear": 2026,
-          "lastAttemptAt": "2026-08-17T07:29:05.327Z"
+          "lastAttemptAt": "2026-08-17T07:36:37.019Z"
         },
         "taopiaopiao": {
           "score": 9.7,
           "checkedAt": "2026-08-17",
           "url": "https://dianying.taobao.com/showDetail.htm?showId=1515727&n_s=new",
           "linkLabel": "淘票票电影页",
-          "status": "cached",
+          "status": "live",
           "collectionMode": "public-page",
           "voteCount": null,
           "platformId": "1515727",
-          "lastAttemptAt": "2026-08-17T07:29:05.327Z",
-          "statusReason": "fetch failed"
+          "lastAttemptAt": "2026-08-17T07:36:37.019Z"
         }
       },
       "catalogStatus": "current",
@@ -1206,10 +1194,10 @@
           "linkLabel": "豆瓣电影页",
           "status": "live",
           "collectionMode": "public-json",
-          "voteCount": 301041,
+          "voteCount": 301049,
           "platformId": "36452545",
           "subjectYear": 2026,
-          "lastAttemptAt": "2026-08-17T07:29:05.327Z"
+          "lastAttemptAt": "2026-08-17T07:36:37.019Z"
         },
         "mtime": {
           "score": 5.9,
@@ -1225,7 +1213,7 @@
           "subItemVoteCount": 75,
           "platformId": "275043",
           "subjectYear": 2026,
-          "lastAttemptAt": "2026-08-17T07:29:05.327Z"
+          "lastAttemptAt": "2026-08-17T07:36:37.019Z"
         },
         "maoyan": {
           "score": 9.4,
@@ -1234,22 +1222,21 @@
           "linkLabel": "猫眼电影页",
           "status": "live",
           "collectionMode": "public-json",
-          "voteCount": 687945,
+          "voteCount": 687958,
           "platformId": "1500469",
           "subjectYear": 2026,
-          "lastAttemptAt": "2026-08-17T07:29:05.327Z"
+          "lastAttemptAt": "2026-08-17T07:36:37.019Z"
         },
         "taopiaopiao": {
           "score": 9.1,
           "checkedAt": "2026-08-17",
           "url": "https://dianying.taobao.com/showDetail.htm?showId=1521067&n_s=new",
           "linkLabel": "淘票票电影页",
-          "status": "cached",
+          "status": "live",
           "collectionMode": "public-page",
           "voteCount": null,
           "platformId": "1521067",
-          "lastAttemptAt": "2026-08-17T07:29:05.327Z",
-          "statusReason": "fetch failed"
+          "lastAttemptAt": "2026-08-17T07:36:37.019Z"
         }
       },
       "catalogStatus": "current",
@@ -1299,10 +1286,10 @@
           "linkLabel": "豆瓣电影页",
           "status": "live",
           "collectionMode": "public-json",
-          "voteCount": 126554,
+          "voteCount": 126558,
           "platformId": "36235977",
           "subjectYear": 2026,
-          "lastAttemptAt": "2026-08-17T07:29:05.327Z"
+          "lastAttemptAt": "2026-08-17T07:36:37.019Z"
         },
         "mtime": {
           "score": 7,
@@ -1318,7 +1305,7 @@
           "subItemVoteCount": 49,
           "platformId": "273754",
           "subjectYear": 2026,
-          "lastAttemptAt": "2026-08-17T07:29:05.327Z"
+          "lastAttemptAt": "2026-08-17T07:36:37.019Z"
         },
         "maoyan": {
           "score": 8,
@@ -1330,19 +1317,18 @@
           "voteCount": 37931,
           "platformId": "1591067",
           "subjectYear": 2026,
-          "lastAttemptAt": "2026-08-17T07:29:05.327Z"
+          "lastAttemptAt": "2026-08-17T07:36:37.019Z"
         },
         "taopiaopiao": {
           "score": 7.7,
           "checkedAt": "2026-08-17",
           "url": "https://dianying.taobao.com/showDetail.htm?showId=1567301&n_s=new",
           "linkLabel": "淘票票电影页",
-          "status": "cached",
+          "status": "live",
           "collectionMode": "public-page",
           "voteCount": null,
           "platformId": "1567301",
-          "lastAttemptAt": "2026-08-17T07:29:05.327Z",
-          "statusReason": "fetch failed"
+          "lastAttemptAt": "2026-08-17T07:36:37.019Z"
         }
       },
       "cachedComposite": 5.7,
@@ -1384,10 +1370,10 @@
           "linkLabel": "豆瓣电影页",
           "status": "live",
           "collectionMode": "public-json",
-          "voteCount": 363474,
+          "voteCount": 363607,
           "platformId": "35811064",
           "subjectYear": 2026,
-          "lastAttemptAt": "2026-08-17T07:29:05.327Z"
+          "lastAttemptAt": "2026-08-17T07:36:37.019Z"
         },
         "mtime": {
           "score": 8.8,
@@ -1403,7 +1389,7 @@
           "subItemVoteCount": 59,
           "platformId": "271884",
           "subjectYear": 2026,
-          "lastAttemptAt": "2026-08-17T07:29:05.327Z"
+          "lastAttemptAt": "2026-08-17T07:36:37.019Z"
         },
         "maoyan": {
           "score": 9.7,
@@ -1412,22 +1398,21 @@
           "linkLabel": "猫眼电影页",
           "status": "live",
           "collectionMode": "public-json",
-          "voteCount": 191599,
+          "voteCount": 191716,
           "platformId": "1462628",
           "subjectYear": null,
-          "lastAttemptAt": "2026-08-17T07:29:05.327Z"
+          "lastAttemptAt": "2026-08-17T07:36:37.019Z"
         },
         "taopiaopiao": {
           "score": 9.9,
           "checkedAt": "2026-08-17",
           "url": "https://dianying.taobao.com/showDetail.htm?showId=1425620&n_s=new",
           "linkLabel": "淘票票电影页",
-          "status": "cached",
+          "status": "live",
           "collectionMode": "public-page",
           "voteCount": null,
           "platformId": "1425620",
-          "lastAttemptAt": "2026-08-17T07:29:05.327Z",
-          "statusReason": "fetch failed"
+          "lastAttemptAt": "2026-08-17T07:36:37.019Z"
         }
       },
       "catalogStatus": "current",
@@ -1476,10 +1461,10 @@
           "linkLabel": "豆瓣电影页",
           "status": "live",
           "collectionMode": "public-json",
-          "voteCount": 1051157,
+          "voteCount": 1051159,
           "platformId": "3011051",
           "subjectYear": 2009,
-          "lastAttemptAt": "2026-08-17T07:29:05.327Z"
+          "lastAttemptAt": "2026-08-17T07:36:37.019Z"
         },
         "mtime": {
           "score": 7.8,
@@ -1495,7 +1480,7 @@
           "subItemVoteCount": 2976,
           "platformId": "99272",
           "subjectYear": 2009,
-          "lastAttemptAt": "2026-08-17T07:29:05.327Z"
+          "lastAttemptAt": "2026-08-17T07:36:37.019Z"
         },
         "maoyan": {
           "score": 8.5,
@@ -1507,19 +1492,18 @@
           "voteCount": 11656,
           "platformId": "38270",
           "subjectYear": 2009,
-          "lastAttemptAt": "2026-08-17T07:29:05.327Z"
+          "lastAttemptAt": "2026-08-17T07:36:37.019Z"
         },
         "taopiaopiao": {
           "score": 8.8,
           "checkedAt": "2026-08-17",
           "url": "https://dianying.taobao.com/showDetail.htm?showId=77409&n_s=new",
           "linkLabel": "淘票票电影页",
-          "status": "cached",
+          "status": "live",
           "collectionMode": "public-page",
           "voteCount": null,
           "platformId": "77409",
-          "lastAttemptAt": "2026-08-17T07:29:05.327Z",
-          "statusReason": "fetch failed"
+          "lastAttemptAt": "2026-08-17T07:36:37.019Z"
         }
       },
       "cachedComposite": 7.2,
@@ -1565,10 +1549,10 @@
           "linkLabel": "豆瓣电影页",
           "status": "live",
           "collectionMode": "public-json",
-          "voteCount": 63499,
+          "voteCount": 63500,
           "platformId": "36916000",
           "subjectYear": 2026,
-          "lastAttemptAt": "2026-08-17T07:29:05.327Z"
+          "lastAttemptAt": "2026-08-17T07:36:37.019Z"
         },
         "mtime": {
           "score": 7.7,
@@ -1584,7 +1568,7 @@
           "subItemVoteCount": 25,
           "platformId": "278440",
           "subjectYear": 2026,
-          "lastAttemptAt": "2026-08-17T07:29:05.327Z"
+          "lastAttemptAt": "2026-08-17T07:36:37.019Z"
         },
         "maoyan": {
           "score": 9,
@@ -1596,19 +1580,18 @@
           "voteCount": 6303,
           "platformId": "1594038",
           "subjectYear": 2026,
-          "lastAttemptAt": "2026-08-17T07:29:05.327Z"
+          "lastAttemptAt": "2026-08-17T07:36:37.019Z"
         },
         "taopiaopiao": {
           "score": 9.2,
           "checkedAt": "2026-08-17",
           "url": "https://dianying.taobao.com/showDetail.htm?showId=1597480&n_s=new",
           "linkLabel": "淘票票电影页",
-          "status": "cached",
+          "status": "live",
           "collectionMode": "public-page",
           "voteCount": null,
           "platformId": "1597480",
-          "lastAttemptAt": "2026-08-17T07:29:05.327Z",
-          "statusReason": "fetch failed"
+          "lastAttemptAt": "2026-08-17T07:36:37.019Z"
         }
       },
       "cachedComposite": 7.5,
@@ -1658,7 +1641,7 @@
           "voteCount": 116958,
           "platformId": "36238849",
           "subjectYear": 2026,
-          "lastAttemptAt": "2026-08-17T07:29:05.327Z"
+          "lastAttemptAt": "2026-08-17T07:36:37.019Z"
         },
         "mtime": {
           "score": 7.4,
@@ -1674,7 +1657,7 @@
           "subItemVoteCount": 43,
           "platformId": "275693",
           "subjectYear": 2026,
-          "lastAttemptAt": "2026-08-17T07:29:05.327Z"
+          "lastAttemptAt": "2026-08-17T07:36:37.019Z"
         },
         "maoyan": {
           "score": 9.3,
@@ -1686,19 +1669,18 @@
           "voteCount": 27472,
           "platformId": "1490532",
           "subjectYear": 2026,
-          "lastAttemptAt": "2026-08-17T07:29:05.327Z"
+          "lastAttemptAt": "2026-08-17T07:36:37.019Z"
         },
         "taopiaopiao": {
           "score": 9.4,
           "checkedAt": "2026-08-17",
           "url": "https://dianying.taobao.com/showDetail.htm?showId=1519975&n_s=new",
           "linkLabel": "淘票票电影页",
-          "status": "cached",
+          "status": "live",
           "collectionMode": "public-page",
           "voteCount": null,
           "platformId": "1519975",
-          "lastAttemptAt": "2026-08-17T07:29:05.327Z",
-          "statusReason": "fetch failed"
+          "lastAttemptAt": "2026-08-17T07:36:37.019Z"
         }
       },
       "cachedComposite": 7.5,
@@ -1746,10 +1728,10 @@
           "linkLabel": "豆瓣电影页",
           "status": "live",
           "collectionMode": "public-json",
-          "voteCount": 52535,
+          "voteCount": 52538,
           "platformId": "36962219",
           "subjectYear": 2026,
-          "lastAttemptAt": "2026-08-17T07:29:05.327Z"
+          "lastAttemptAt": "2026-08-17T07:36:37.019Z"
         },
         "mtime": {
           "score": 6.6,
@@ -1787,7 +1769,7 @@
           ],
           "platformId": "278383",
           "subjectYear": 2026,
-          "lastAttemptAt": "2026-08-17T07:29:05.327Z",
+          "lastAttemptAt": "2026-08-17T07:36:37.019Z",
           "statusReason": "时光网未发布总分；按五项分项评分等权估算"
         },
         "maoyan": {
@@ -1800,19 +1782,18 @@
           "voteCount": 30197,
           "platformId": "1528803",
           "subjectYear": 2026,
-          "lastAttemptAt": "2026-08-17T07:29:05.327Z"
+          "lastAttemptAt": "2026-08-17T07:36:37.019Z"
         },
         "taopiaopiao": {
           "score": 8.6,
           "checkedAt": "2026-08-17",
           "url": "https://dianying.taobao.com/showDetail.htm?showId=1591520&n_s=new",
           "linkLabel": "淘票票电影页",
-          "status": "cached",
+          "status": "live",
           "collectionMode": "public-page",
           "voteCount": null,
           "platformId": "1591520",
-          "lastAttemptAt": "2026-08-17T07:29:05.327Z",
-          "statusReason": "fetch failed"
+          "lastAttemptAt": "2026-08-17T07:36:37.019Z"
         }
       },
       "cachedComposite": 6.3,
@@ -1858,10 +1839,10 @@
           "linkLabel": "豆瓣电影页",
           "status": "live",
           "collectionMode": "public-json",
-          "voteCount": 358556,
+          "voteCount": 358586,
           "platformId": "36246195",
           "subjectYear": 2026,
-          "lastAttemptAt": "2026-08-17T07:29:05.327Z"
+          "lastAttemptAt": "2026-08-17T07:36:37.019Z"
         },
         "mtime": {
           "score": 7.6,
@@ -1877,7 +1858,7 @@
           "subItemVoteCount": 70,
           "platformId": "274481",
           "subjectYear": 2026,
-          "lastAttemptAt": "2026-08-17T07:29:05.327Z"
+          "lastAttemptAt": "2026-08-17T07:36:37.019Z"
         },
         "maoyan": {
           "score": 9.5,
@@ -1886,22 +1867,21 @@
           "linkLabel": "猫眼电影页",
           "status": "live",
           "collectionMode": "public-json",
-          "voteCount": 187527,
+          "voteCount": 187557,
           "platformId": "1490607",
           "subjectYear": 2026,
-          "lastAttemptAt": "2026-08-17T07:29:05.327Z"
+          "lastAttemptAt": "2026-08-17T07:36:37.019Z"
         },
         "taopiaopiao": {
           "score": 9.2,
           "checkedAt": "2026-08-17",
           "url": "https://dianying.taobao.com/showDetail.htm?showId=1522792&n_s=new",
           "linkLabel": "淘票票电影页",
-          "status": "cached",
+          "status": "live",
           "collectionMode": "public-page",
           "voteCount": null,
           "platformId": "1522792",
-          "lastAttemptAt": "2026-08-17T07:29:05.327Z",
-          "statusReason": "fetch failed"
+          "lastAttemptAt": "2026-08-17T07:36:37.019Z"
         }
       },
       "cachedComposite": 7.6,
@@ -1962,8 +1942,8 @@
       "total": 20
     },
     "taopiaopiao": {
-      "live": 0,
-      "cached": 20,
+      "live": 20,
+      "cached": 0,
       "unavailable": 0,
       "estimated": 0,
       "total": 20
