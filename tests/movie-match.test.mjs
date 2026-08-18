@@ -1,7 +1,10 @@
 import assert from "node:assert/strict";
+import { readFile } from "node:fs/promises";
 import test from "node:test";
 import { selectDiscoveryCards } from "../lib/movie-discovery.js";
 import { selectDoubanCandidate, selectMtimeCandidate } from "../lib/movie-match.js";
+
+const source = JSON.parse(await readFile(new URL("../data/ratings-source.json", import.meta.url), "utf8"));
 
 const candidate = (id, title, year) => ({ target: { id, title, year } });
 
@@ -27,6 +30,10 @@ test("prefers a persisted Douban id for a known re-release", () => {
     platformIds: { douban: "known" },
   });
   assert.equal(match.target.id, "known");
+});
+
+test("persists the verified Douban subject id when public search is blocked", () => {
+  assert.equal(source.platformIdOverrides["逃出绝命街"].douban, "36318703");
 });
 
 test("rejects same-title candidates from the wrong production year", () => {
