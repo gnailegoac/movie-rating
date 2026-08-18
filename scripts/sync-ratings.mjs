@@ -1,4 +1,5 @@
 import { readFile, writeFile } from "node:fs/promises";
+import { selectDiscoveryCards } from "../lib/movie-discovery.js";
 import { estimateMtimeSubitemRating } from "../lib/mtime-rating.js";
 import { PLATFORMS, calculateCalibration, calculateComposite } from "../lib/ratings.js";
 import { selectDoubanCandidate, selectMtimeCandidate } from "../lib/movie-match.js";
@@ -10,7 +11,10 @@ const PLATFORM_NAMES = { douban: "豆瓣", mtime: "时光网", maoyan: "猫眼",
 const now = new Date();
 const attemptedAt = now.toISOString();
 const checkedAt = attemptedAt.slice(0, 10);
-const discoveryLimit = Math.max(0, Number(process.env.DISCOVERY_LIMIT ?? 24));
+const configuredDiscoveryLimit = process.env.DISCOVERY_LIMIT;
+const discoveryLimit = configuredDiscoveryLimit === undefined
+  ? Infinity
+  : Math.max(0, Number(configuredDiscoveryLimit));
 const source = JSON.parse(await readFile(sourcePath, "utf8"));
 
 let previous = null;
@@ -409,39 +413,34 @@ async function discoverMovie(card) {
   try {
     ({ movieId, detail } = await fetchMaoyanDetail(provisional));
   } catch (error) {
-    console.warn(`Skipping ${card.title}: Maoyan metadata unavailable (${error.message})`);
-    return null;
+    console.warn(`Using Taopiaopiao metadata for ${card.title}: Maoyan metadata unavailable (${error.message})`);
   }
 
-  const releaseDate = String(detail.pubDesc ?? "").match(/\d{4}-\d{2}-\d{2}/)?.[0];
-  if (!releaseDate) {
-    console.warn(`Skipping ${card.title}: no China release date`);
-    return null;
-  }
-  const genres = String(detail.cat || card.genres.join(","))
+  const releaseDate = String(detail?.pubDesc ?? "").match(/\d{4}-\d{2}-\d{2}/)?.[0] ?? checkedAt;
+  const genres = String(detail?.cat || card.genres.join(","))
     .split(/[，,]/)
     .map((item) => item.trim())
     .filter(Boolean);
   if (genres.includes("影展")) return null;
-  const director = String(detail.dir || card.director || "待补充").split(/[，,/]/)[0].trim();
+  const director = String(detail?.dir || card.director || "待补充").split(/[，,/]/)[0].trim();
   const chinaReleaseYear = Number(releaseDate.slice(0, 4));
-  const originalYear = Number(String(detail.frt ?? "").slice(0, 4)) || chinaReleaseYear;
+  const originalYear = Number(String(detail?.frt ?? "").slice(0, 4)) || chinaReleaseYear;
   const ratings = {};
   const movie = {
     ...provisional,
-    englishTitle: detail.enm || card.title,
+    englishTitle: detail?.enm || card.title,
     year: originalYear,
     originalYear,
     releaseDateChina: releaseDate,
     director,
     genres: genres.length ? genres : ["电影"],
-    runtimeMinutes: Number(detail.dur || card.runtimeMinutes) || 0,
-    region: card.region || detail.src || "中国上映",
+    runtimeMinutes: Number(detail?.dur || card.runtimeMinutes) || 0,
+    region: card.region || detail?.src || "中国上映",
     summary: `${card.title}于 ${releaseDate} 在中国内地上映，由${director}执导，类型包括${(genres.length ? genres : ["电影"]).slice(0, 3).join("、")}。`,
     editorial: "",
     palette: generatedPalette(card.title),
     motif: generatedMotif(card.title),
-    platformIds: { maoyan: movieId, taopiaopiao: card.id },
+    platformIds: { ...(movieId ? { maoyan: movieId } : {}), taopiaopiao: card.id },
     catalogStatus: "current",
     autoDiscovered: true,
     firstSeenInTheatersAt: checkedAt,
@@ -449,7 +448,7 @@ async function discoverMovie(card) {
     ratings,
   };
 
-  ratings.maoyan = maoyanRating(movieId, detail);
+  ratings.maoyan = detail ? maoyanRating(movieId, detail) : emptyRating("maoyan", movie);
   ratings.taopiaopiao = {
     score: card.score,
     checkedAt,
@@ -479,8 +478,7 @@ async function discoverMovie(card) {
   movie.editorial = generatedEditorial(movie.ratings);
   await delay(450);
 
-  const available = PLATFORMS.filter((platform) => Number.isFinite(movie.ratings[platform]?.score));
-  return available.length >= 2 ? movie : null;
+  return movie;
 }
 
 async function refreshMovie(movie) {
@@ -598,9 +596,7 @@ if (currentCards) {
     });
   }
 
-  const discoveryCards = currentCards
-    .filter((card) => Number.isFinite(card.score) && !card.genres.includes("影展"))
-    .slice(0, discoveryLimit);
+  const discoveryCards = selectDiscoveryCards(currentCards, discoveryLimit);
   for (const card of discoveryCards) {
     if (idByTitle.has(normalizedTitle(card.title))) continue;
     const discovered = await discoverMovie(card);

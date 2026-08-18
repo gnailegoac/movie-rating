@@ -1,5 +1,6 @@
 import assert from "node:assert/strict";
 import test from "node:test";
+import { selectDiscoveryCards } from "../lib/movie-discovery.js";
 import { selectDoubanCandidate, selectMtimeCandidate } from "../lib/movie-match.js";
 
 const candidate = (id, title, year) => ({ target: { id, title, year } });
@@ -59,4 +60,14 @@ test("rejects ambiguous Mtime versions when the English title does not agree", (
     originalYear: 2015,
   });
   assert.equal(match, null);
+});
+
+test("discovers unscored current movies and only excludes festival event cards", () => {
+  const cards = [
+    { title: "已开分电影", score: 9.2, genres: ["剧情"] },
+    { title: "尚未开分电影", score: null, genres: ["动作"] },
+    { title: "电影节展映", score: null, genres: ["影展"] },
+  ];
+  assert.deepEqual(selectDiscoveryCards(cards).map(({ title }) => title), ["已开分电影", "尚未开分电影"]);
+  assert.deepEqual(selectDiscoveryCards(cards, 1).map(({ title }) => title), ["已开分电影"]);
 });
