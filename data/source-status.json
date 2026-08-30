@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-29T08:59:46.428Z",
+  "generatedAt": "2026-08-30T08:16:41.756Z",
   "sources": {
     "douban": {
       "live": 24,
@@ -12,7 +12,7 @@
       "live": 20,
       "cached": 0,
       "unavailable": 51,
-      "estimated": 6,
+      "estimated": 5,
       "total": 71
     },
     "maoyan": {
@@ -31,8 +31,8 @@
     }
   },
   "catalog": {
-    "current": 55,
-    "archived": 16,
+    "current": 48,
+    "archived": 23,
     "autoDiscovered": 62,
     "total": 71
   }
