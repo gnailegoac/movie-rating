@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-03T07:08:36.601Z",
+  "generatedAt": "2026-09-04T07:19:17.440Z",
   "sources": {
     "douban": {
       "live": 30,
@@ -16,15 +16,15 @@
       "total": 80
     },
     "maoyan": {
-      "live": 28,
-      "cached": 0,
+      "live": 27,
+      "cached": 1,
       "unavailable": 52,
       "estimated": 0,
       "total": 80
     },
     "taopiaopiao": {
-      "live": 24,
-      "cached": 2,
+      "live": 0,
+      "cached": 26,
       "unavailable": 54,
       "estimated": 0,
       "total": 80
