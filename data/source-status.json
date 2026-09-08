@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-07T07:17:24.702Z",
+  "generatedAt": "2026-09-08T07:12:53.241Z",
   "sources": {
     "douban": {
       "live": 35,
@@ -23,8 +23,8 @@
       "total": 89
     },
     "taopiaopiao": {
-      "live": 25,
-      "cached": 3,
+      "live": 0,
+      "cached": 28,
       "unavailable": 61,
       "estimated": 0,
       "total": 89
