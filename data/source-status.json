@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-10-04T08:24:29.095Z",
+  "generatedAt": "2026-10-05T08:57:53.741Z",
   "sources": {
     "douban": {
-      "live": 42,
-      "cached": 0,
+      "live": 30,
+      "cached": 12,
       "unavailable": 87,
       "estimated": 0,
       "total": 129
@@ -31,8 +31,8 @@
     }
   },
   "catalog": {
-    "current": 55,
-    "archived": 74,
+    "current": 51,
+    "archived": 78,
     "autoDiscovered": 120,
     "total": 129
   }
