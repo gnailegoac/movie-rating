@@ -1,39 +1,39 @@
 {
-  "generatedAt": "2026-11-16T09:33:31.668Z",
+  "generatedAt": "2026-11-17T10:39:39.979Z",
   "sources": {
     "douban": {
-      "live": 52,
-      "cached": 14,
-      "unavailable": 138,
+      "live": 25,
+      "cached": 45,
+      "unavailable": 137,
       "estimated": 0,
-      "total": 204
+      "total": 207
     },
     "mtime": {
-      "live": 51,
+      "live": 52,
       "cached": 0,
-      "unavailable": 153,
+      "unavailable": 155,
       "estimated": 10,
-      "total": 204
+      "total": 207
     },
     "maoyan": {
-      "live": 80,
+      "live": 81,
       "cached": 1,
-      "unavailable": 123,
+      "unavailable": 125,
       "estimated": 0,
-      "total": 204
+      "total": 207
     },
     "taopiaopiao": {
       "live": 40,
       "cached": 28,
-      "unavailable": 136,
+      "unavailable": 139,
       "estimated": 0,
-      "total": 204
+      "total": 207
     }
   },
   "catalog": {
-    "current": 84,
-    "archived": 120,
-    "autoDiscovered": 195,
-    "total": 204
+    "current": 89,
+    "archived": 118,
+    "autoDiscovered": 198,
+    "total": 207
   }
 }
