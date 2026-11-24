@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-11-23T10:41:09.312Z",
+  "generatedAt": "2026-11-24T12:23:56.505Z",
   "sources": {
     "douban": {
-      "live": 30,
-      "cached": 73,
-      "unavailable": 114,
+      "live": 6,
+      "cached": 98,
+      "unavailable": 113,
       "estimated": 0,
       "total": 217
     },
@@ -16,9 +16,9 @@
       "total": 217
     },
     "maoyan": {
-      "live": 81,
+      "live": 83,
       "cached": 1,
-      "unavailable": 135,
+      "unavailable": 133,
       "estimated": 0,
       "total": 217
     },
